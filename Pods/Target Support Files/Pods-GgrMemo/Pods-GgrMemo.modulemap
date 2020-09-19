@@ -1,0 +1,6 @@
+framework module Pods_GgrMemo {
+  umbrella header "Pods-GgrMemo-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,1464 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		062392C8499AE5542E9B9DA5 /* Pods_GgrMemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EC7A058E3D93AD4276DEC43 /* Pods_GgrMemo.framework */; };
+		7349D6B1251361A800F38708 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7349D6AF251361A800F38708 /* SettingViewController.xib */; };
+		7349D6B2251361A800F38708 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7349D6B0251361A800F38708 /* SettingViewController.swift */; };
+		7349D6C52513694100F38708 /* SettingViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7349D6C32513694100F38708 /* SettingViewCell.swift */; };
+		7349D6C62513694100F38708 /* SettingViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7349D6C42513694100F38708 /* SettingViewCell.xib */; };
+		7349D6CF2514485B00F38708 /* SpaceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7349D6CD2514485B00F38708 /* SpaceCollectionViewCell.swift */; };
+		7349D6D02514485B00F38708 /* SpaceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7349D6CE2514485B00F38708 /* SpaceCollectionViewCell.xib */; };
+		736A6CB225131F55004417AA /* SettingCellOfCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736A6CB025131F55004417AA /* SettingCellOfCell.swift */; };
+		736A6CB325131F55004417AA /* SettingCellOfCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 736A6CB125131F55004417AA /* SettingCellOfCell.xib */; };
+		73E2E7AB2503649E006CDBC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E2E7AA2503649E006CDBC8 /* AppDelegate.swift */; };
+		73E2E7AD2503649E006CDBC8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E2E7AC2503649E006CDBC8 /* SceneDelegate.swift */; };
+		73E2E7B72503649F006CDBC8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73E2E7B52503649F006CDBC8 /* LaunchScreen.storyboard */; };
+		73E2E7C725036843006CDBC8 /* GgrMemoView.h in Headers */ = {isa = PBXBuildFile; fileRef = 73E2E7C525036843006CDBC8 /* GgrMemoView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		73E2E7CA25036843006CDBC8 /* GgrMemoView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73E2E7C325036843006CDBC8 /* GgrMemoView.framework */; };
+		73E2E7CB25036843006CDBC8 /* GgrMemoView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 73E2E7C325036843006CDBC8 /* GgrMemoView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		73E2E7D925036860006CDBC8 /* GgrMemoPresenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 73E2E7D725036860006CDBC8 /* GgrMemoPresenter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		73E2E7DC25036860006CDBC8 /* GgrMemoPresenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73E2E7D525036860006CDBC8 /* GgrMemoPresenter.framework */; };
+		73E2E7DD25036860006CDBC8 /* GgrMemoPresenter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 73E2E7D525036860006CDBC8 /* GgrMemoPresenter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		73E2E7EA25036872006CDBC8 /* GgrMemoModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 73E2E7E825036872006CDBC8 /* GgrMemoModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		73E2E7ED25036872006CDBC8 /* GgrMemoModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73E2E7E625036872006CDBC8 /* GgrMemoModel.framework */; };
+		73E2E7EE25036872006CDBC8 /* GgrMemoModel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 73E2E7E625036872006CDBC8 /* GgrMemoModel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		73E2E7F32503692A006CDBC8 /* GgrMemoPresenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73E2E7D525036860006CDBC8 /* GgrMemoPresenter.framework */; };
+		73E2E7F42503692A006CDBC8 /* GgrMemoPresenter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 73E2E7D525036860006CDBC8 /* GgrMemoPresenter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		73E2E7F825036933006CDBC8 /* GgrMemoModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73E2E7E625036872006CDBC8 /* GgrMemoModel.framework */; };
+		73E2E7F925036933006CDBC8 /* GgrMemoModel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 73E2E7E625036872006CDBC8 /* GgrMemoModel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		73E2E80525036A2A006CDBC8 /* AddMemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E2E80325036A2A006CDBC8 /* AddMemoViewController.swift */; };
+		73E2E80625036A2A006CDBC8 /* AddMemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73E2E80425036A2A006CDBC8 /* AddMemoViewController.xib */; };
+		73E2E80925036A39006CDBC8 /* MemoListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73E2E80725036A39006CDBC8 /* MemoListViewController.xib */; };
+		73E2E80A25036A39006CDBC8 /* MemoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E2E80825036A39006CDBC8 /* MemoListViewController.swift */; };
+		73E2E80D25036A42006CDBC8 /* MemoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73E2E80B25036A42006CDBC8 /* MemoCollectionViewCell.xib */; };
+		73E2E80E25036A42006CDBC8 /* MemoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E2E80C25036A42006CDBC8 /* MemoCollectionViewCell.swift */; };
+		73E2E81025036A4C006CDBC8 /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E2E80F25036A4B006CDBC8 /* UICollectionView.swift */; };
+		73E2E81825036B1F006CDBC8 /* FatLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E2E81725036B1F006CDBC8 /* FatLogic.swift */; };
+		73E2E81A25036B2C006CDBC8 /* MemoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E2E81925036B2C006CDBC8 /* MemoData.swift */; };
+		73E2E81C25036B36006CDBC8 /* MemoListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E2E81B25036B36006CDBC8 /* MemoListPresenter.swift */; };
+		73E2E81E25036B3D006CDBC8 /* AddMemoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E2E81D25036B3D006CDBC8 /* AddMemoPresenter.swift */; };
+		73E2E8212503A63F006CDBC8 /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E2E81F2503A63F006CDBC8 /* TagCollectionViewCell.swift */; };
+		73E2E8222503A63F006CDBC8 /* TagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73E2E8202503A63F006CDBC8 /* TagCollectionViewCell.xib */; };
+		73E2E8272503DF40006CDBC8 /* AddMemoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E2E8252503DF40006CDBC8 /* AddMemoCollectionViewCell.swift */; };
+		73E2E8282503DF40006CDBC8 /* AddMemoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73E2E8262503DF40006CDBC8 /* AddMemoCollectionViewCell.xib */; };
+		73E2E82D25044964006CDBC8 /* TagListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E2E82B25044964006CDBC8 /* TagListCollectionViewCell.swift */; };
+		73E2E82E25044964006CDBC8 /* TagListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73E2E82C25044964006CDBC8 /* TagListCollectionViewCell.xib */; };
+		73E2E8382504F387006CDBC8 /* GgrMemoUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 73E2E8362504F387006CDBC8 /* GgrMemoUtility.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		73E2E83B2504F387006CDBC8 /* GgrMemoUtility.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73E2E8342504F387006CDBC8 /* GgrMemoUtility.framework */; };
+		73E2E83C2504F387006CDBC8 /* GgrMemoUtility.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 73E2E8342504F387006CDBC8 /* GgrMemoUtility.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		73E2E8402504F3D5006CDBC8 /* GgrMemoUtility.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73E2E8342504F387006CDBC8 /* GgrMemoUtility.framework */; };
+		73E2E8412504F3D5006CDBC8 /* GgrMemoUtility.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 73E2E8342504F387006CDBC8 /* GgrMemoUtility.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		73E2E8462504F42C006CDBC8 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E2E8452504F42C006CDBC8 /* String.swift */; };
+		73E2E8472504F5E2006CDBC8 /* GgrMemoUtility.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73E2E8342504F387006CDBC8 /* GgrMemoUtility.framework */; };
+		73E2E8482504F5E2006CDBC8 /* GgrMemoUtility.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 73E2E8342504F387006CDBC8 /* GgrMemoUtility.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		73E2E858250E100C006CDBC8 /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73E2E857250E100C006CDBC8 /* Image.xcassets */; };
+		73E2E85A250E1028006CDBC8 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73E2E859250E1028006CDBC8 /* Color.xcassets */; };
+		73E2E85D250E265A006CDBC8 /* ColorAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E2E85C250E265A006CDBC8 /* ColorAsset.swift */; };
+		73E2E85F250E41DE006CDBC8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73E2E85E250E41DE006CDBC8 /* Main.storyboard */; };
+		73E2E866250E6D21006CDBC8 /* ColorListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E2E864250E6D21006CDBC8 /* ColorListCollectionViewCell.swift */; };
+		73E2E867250E6D21006CDBC8 /* ColorListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73E2E865250E6D21006CDBC8 /* ColorListCollectionViewCell.xib */; };
+		73E2E86F2510855D006CDBC8 /* ColorAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E2E86E2510855D006CDBC8 /* ColorAsset.swift */; };
+		73E2E89D2512932A006CDBC8 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E2E89C2512932A006CDBC8 /* File.swift */; };
+		73E2E8A02512B9A1006CDBC8 /* SettingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E2E89E2512B9A1006CDBC8 /* SettingCollectionViewCell.swift */; };
+		73E2E8A12512B9A1006CDBC8 /* SettingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73E2E89F2512B9A1006CDBC8 /* SettingCollectionViewCell.xib */; };
+		94BA65DAE036F149A6AA77CC /* Pods_GgrMemo_GgrMemoModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB5EE67ADF754136A492BE4 /* Pods_GgrMemo_GgrMemoModel.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		73E2E7C825036843006CDBC8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 73E2E79F2503649E006CDBC8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 73E2E7C225036843006CDBC8;
+			remoteInfo = GgrMemoView;
+		};
+		73E2E7DA25036860006CDBC8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 73E2E79F2503649E006CDBC8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 73E2E7D425036860006CDBC8;
+			remoteInfo = GgrMemoPresenter;
+		};
+		73E2E7EB25036872006CDBC8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 73E2E79F2503649E006CDBC8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 73E2E7E525036872006CDBC8;
+			remoteInfo = GgrMemoModel;
+		};
+		73E2E7F52503692A006CDBC8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 73E2E79F2503649E006CDBC8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 73E2E7D425036860006CDBC8;
+			remoteInfo = GgrMemoPresenter;
+		};
+		73E2E7FA25036933006CDBC8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 73E2E79F2503649E006CDBC8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 73E2E7E525036872006CDBC8;
+			remoteInfo = GgrMemoModel;
+		};
+		73E2E8392504F387006CDBC8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 73E2E79F2503649E006CDBC8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 73E2E8332504F387006CDBC8;
+			remoteInfo = GgrMemoUtility;
+		};
+		73E2E8422504F3D5006CDBC8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 73E2E79F2503649E006CDBC8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 73E2E8332504F387006CDBC8;
+			remoteInfo = GgrMemoUtility;
+		};
+		73E2E8492504F5E2006CDBC8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 73E2E79F2503649E006CDBC8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 73E2E8332504F387006CDBC8;
+			remoteInfo = GgrMemoUtility;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		73E2E7CF25036843006CDBC8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				73E2E7DD25036860006CDBC8 /* GgrMemoPresenter.framework in Embed Frameworks */,
+				73E2E7EE25036872006CDBC8 /* GgrMemoModel.framework in Embed Frameworks */,
+				73E2E83C2504F387006CDBC8 /* GgrMemoUtility.framework in Embed Frameworks */,
+				73E2E7CB25036843006CDBC8 /* GgrMemoView.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73E2E7F72503692A006CDBC8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				73E2E8412504F3D5006CDBC8 /* GgrMemoUtility.framework in Embed Frameworks */,
+				73E2E7F42503692A006CDBC8 /* GgrMemoPresenter.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73E2E7FC25036933006CDBC8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				73E2E7F925036933006CDBC8 /* GgrMemoModel.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73E2E84B2504F5E2006CDBC8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				73E2E8482504F5E2006CDBC8 /* GgrMemoUtility.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		118DD9EF7A7B556BE8EC5201 /* Pods-GgrMemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GgrMemo.debug.xcconfig"; path = "Target Support Files/Pods-GgrMemo/Pods-GgrMemo.debug.xcconfig"; sourceTree = "<group>"; };
+		1198736F4311AF99D9DD1652 /* Pods-GgrMemo-GgrMemoModel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GgrMemo-GgrMemoModel.debug.xcconfig"; path = "Target Support Files/Pods-GgrMemo-GgrMemoModel/Pods-GgrMemo-GgrMemoModel.debug.xcconfig"; sourceTree = "<group>"; };
+		171C86FFD3BB0E3E89C030A4 /* Pods-GgrMemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GgrMemo.release.xcconfig"; path = "Target Support Files/Pods-GgrMemo/Pods-GgrMemo.release.xcconfig"; sourceTree = "<group>"; };
+		3EB5EE67ADF754136A492BE4 /* Pods_GgrMemo_GgrMemoModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GgrMemo_GgrMemoModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E20A082DB76C59666FBC0CA /* Pods-GgrMemo-GgrMemoModel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GgrMemo-GgrMemoModel.release.xcconfig"; path = "Target Support Files/Pods-GgrMemo-GgrMemoModel/Pods-GgrMemo-GgrMemoModel.release.xcconfig"; sourceTree = "<group>"; };
+		4EC7A058E3D93AD4276DEC43 /* Pods_GgrMemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GgrMemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7349D6AF251361A800F38708 /* SettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
+		7349D6B0251361A800F38708 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		7349D6C32513694100F38708 /* SettingViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewCell.swift; sourceTree = "<group>"; };
+		7349D6C42513694100F38708 /* SettingViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewCell.xib; sourceTree = "<group>"; };
+		7349D6CD2514485B00F38708 /* SpaceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceCollectionViewCell.swift; sourceTree = "<group>"; };
+		7349D6CE2514485B00F38708 /* SpaceCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpaceCollectionViewCell.xib; sourceTree = "<group>"; };
+		736A6CB025131F55004417AA /* SettingCellOfCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCellOfCell.swift; sourceTree = "<group>"; };
+		736A6CB125131F55004417AA /* SettingCellOfCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingCellOfCell.xib; sourceTree = "<group>"; };
+		73E2E7A72503649E006CDBC8 /* GgrMemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GgrMemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		73E2E7AA2503649E006CDBC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		73E2E7AC2503649E006CDBC8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		73E2E7B62503649F006CDBC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		73E2E7B82503649F006CDBC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		73E2E7C325036843006CDBC8 /* GgrMemoView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GgrMemoView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		73E2E7C525036843006CDBC8 /* GgrMemoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GgrMemoView.h; sourceTree = "<group>"; };
+		73E2E7C625036843006CDBC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		73E2E7D525036860006CDBC8 /* GgrMemoPresenter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GgrMemoPresenter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		73E2E7D725036860006CDBC8 /* GgrMemoPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GgrMemoPresenter.h; sourceTree = "<group>"; };
+		73E2E7D825036860006CDBC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		73E2E7E625036872006CDBC8 /* GgrMemoModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GgrMemoModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		73E2E7E825036872006CDBC8 /* GgrMemoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GgrMemoModel.h; sourceTree = "<group>"; };
+		73E2E7E925036872006CDBC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		73E2E80325036A2A006CDBC8 /* AddMemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMemoViewController.swift; sourceTree = "<group>"; };
+		73E2E80425036A2A006CDBC8 /* AddMemoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddMemoViewController.xib; sourceTree = "<group>"; };
+		73E2E80725036A39006CDBC8 /* MemoListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MemoListViewController.xib; sourceTree = "<group>"; };
+		73E2E80825036A39006CDBC8 /* MemoListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoListViewController.swift; sourceTree = "<group>"; };
+		73E2E80B25036A42006CDBC8 /* MemoCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MemoCollectionViewCell.xib; sourceTree = "<group>"; };
+		73E2E80C25036A42006CDBC8 /* MemoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoCollectionViewCell.swift; sourceTree = "<group>"; };
+		73E2E80F25036A4B006CDBC8 /* UICollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
+		73E2E81725036B1F006CDBC8 /* FatLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FatLogic.swift; sourceTree = "<group>"; };
+		73E2E81925036B2C006CDBC8 /* MemoData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoData.swift; sourceTree = "<group>"; };
+		73E2E81B25036B36006CDBC8 /* MemoListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoListPresenter.swift; sourceTree = "<group>"; };
+		73E2E81D25036B3D006CDBC8 /* AddMemoPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMemoPresenter.swift; sourceTree = "<group>"; };
+		73E2E81F2503A63F006CDBC8 /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
+		73E2E8202503A63F006CDBC8 /* TagCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagCollectionViewCell.xib; sourceTree = "<group>"; };
+		73E2E8252503DF40006CDBC8 /* AddMemoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemoCollectionViewCell.swift; sourceTree = "<group>"; };
+		73E2E8262503DF40006CDBC8 /* AddMemoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddMemoCollectionViewCell.xib; sourceTree = "<group>"; };
+		73E2E82B25044964006CDBC8 /* TagListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagListCollectionViewCell.swift; sourceTree = "<group>"; };
+		73E2E82C25044964006CDBC8 /* TagListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagListCollectionViewCell.xib; sourceTree = "<group>"; };
+		73E2E8342504F387006CDBC8 /* GgrMemoUtility.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GgrMemoUtility.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		73E2E8362504F387006CDBC8 /* GgrMemoUtility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GgrMemoUtility.h; sourceTree = "<group>"; };
+		73E2E8372504F387006CDBC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		73E2E8452504F42C006CDBC8 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		73E2E857250E100C006CDBC8 /* Image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Image.xcassets; sourceTree = "<group>"; };
+		73E2E859250E1028006CDBC8 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
+		73E2E85C250E265A006CDBC8 /* ColorAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorAsset.swift; sourceTree = "<group>"; };
+		73E2E85E250E41DE006CDBC8 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		73E2E864250E6D21006CDBC8 /* ColorListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorListCollectionViewCell.swift; sourceTree = "<group>"; };
+		73E2E865250E6D21006CDBC8 /* ColorListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorListCollectionViewCell.xib; sourceTree = "<group>"; };
+		73E2E86E2510855D006CDBC8 /* ColorAsset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorAsset.swift; sourceTree = "<group>"; };
+		73E2E89C2512932A006CDBC8 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		73E2E89E2512B9A1006CDBC8 /* SettingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCollectionViewCell.swift; sourceTree = "<group>"; };
+		73E2E89F2512B9A1006CDBC8 /* SettingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingCollectionViewCell.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		73E2E7A42503649E006CDBC8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73E2E7DC25036860006CDBC8 /* GgrMemoPresenter.framework in Frameworks */,
+				73E2E7ED25036872006CDBC8 /* GgrMemoModel.framework in Frameworks */,
+				73E2E83B2504F387006CDBC8 /* GgrMemoUtility.framework in Frameworks */,
+				73E2E7CA25036843006CDBC8 /* GgrMemoView.framework in Frameworks */,
+				062392C8499AE5542E9B9DA5 /* Pods_GgrMemo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73E2E7C025036843006CDBC8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73E2E8402504F3D5006CDBC8 /* GgrMemoUtility.framework in Frameworks */,
+				73E2E7F32503692A006CDBC8 /* GgrMemoPresenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73E2E7D225036860006CDBC8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73E2E7F825036933006CDBC8 /* GgrMemoModel.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73E2E7E325036872006CDBC8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73E2E8472504F5E2006CDBC8 /* GgrMemoUtility.framework in Frameworks */,
+				94BA65DAE036F149A6AA77CC /* Pods_GgrMemo_GgrMemoModel.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73E2E8312504F387006CDBC8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7349D69A2513514100F38708 /* SettingView */ = {
+			isa = PBXGroup;
+			children = (
+				7349D6A22513609200F38708 /* VC */,
+				7349D6A12513608900F38708 /* Cell */,
+			);
+			path = SettingView;
+			sourceTree = "<group>";
+		};
+		7349D6A12513608900F38708 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				7349D6C32513694100F38708 /* SettingViewCell.swift */,
+				7349D6C42513694100F38708 /* SettingViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		7349D6A22513609200F38708 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				7349D6B0251361A800F38708 /* SettingViewController.swift */,
+				7349D6AF251361A800F38708 /* SettingViewController.xib */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		73E2E79E2503649E006CDBC8 = {
+			isa = PBXGroup;
+			children = (
+				73E2E7A92503649E006CDBC8 /* GgrMemo */,
+				73E2E8352504F387006CDBC8 /* GgrMemoUtility */,
+				73E2E7C425036843006CDBC8 /* GgrMemoView */,
+				73E2E7D625036860006CDBC8 /* GgrMemoPresenter */,
+				73E2E7E725036872006CDBC8 /* GgrMemoModel */,
+				73E2E7A82503649E006CDBC8 /* Products */,
+				73E2E7F22503692A006CDBC8 /* Frameworks */,
+				CAD2A66583F019C125F1492C /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		73E2E7A82503649E006CDBC8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				73E2E7A72503649E006CDBC8 /* GgrMemo.app */,
+				73E2E7C325036843006CDBC8 /* GgrMemoView.framework */,
+				73E2E7D525036860006CDBC8 /* GgrMemoPresenter.framework */,
+				73E2E7E625036872006CDBC8 /* GgrMemoModel.framework */,
+				73E2E8342504F387006CDBC8 /* GgrMemoUtility.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		73E2E7A92503649E006CDBC8 /* GgrMemo */ = {
+			isa = PBXGroup;
+			children = (
+				73E2E7AA2503649E006CDBC8 /* AppDelegate.swift */,
+				73E2E7AC2503649E006CDBC8 /* SceneDelegate.swift */,
+				73E2E85E250E41DE006CDBC8 /* Main.storyboard */,
+				73E2E7B52503649F006CDBC8 /* LaunchScreen.storyboard */,
+				73E2E7B82503649F006CDBC8 /* Info.plist */,
+			);
+			path = GgrMemo;
+			sourceTree = "<group>";
+		};
+		73E2E7C425036843006CDBC8 /* GgrMemoView */ = {
+			isa = PBXGroup;
+			children = (
+				73E2E855250E0FEB006CDBC8 /* Assets */,
+				73E2E80025036984006CDBC8 /* App */,
+				7349D69A2513514100F38708 /* SettingView */,
+				73E2E7C525036843006CDBC8 /* GgrMemoView.h */,
+				73E2E7C625036843006CDBC8 /* Info.plist */,
+			);
+			path = GgrMemoView;
+			sourceTree = "<group>";
+		};
+		73E2E7D625036860006CDBC8 /* GgrMemoPresenter */ = {
+			isa = PBXGroup;
+			children = (
+				73E2E86A250FAA41006CDBC8 /* Enum */,
+				73E2E81225036A91006CDBC8 /* App */,
+				73E2E7D725036860006CDBC8 /* GgrMemoPresenter.h */,
+				73E2E7D825036860006CDBC8 /* Info.plist */,
+			);
+			path = GgrMemoPresenter;
+			sourceTree = "<group>";
+		};
+		73E2E7E725036872006CDBC8 /* GgrMemoModel */ = {
+			isa = PBXGroup;
+			children = (
+				73E2E81625036ABF006CDBC8 /* RealmObject */,
+				73E2E81725036B1F006CDBC8 /* FatLogic.swift */,
+				73E2E7E825036872006CDBC8 /* GgrMemoModel.h */,
+				73E2E7E925036872006CDBC8 /* Info.plist */,
+			);
+			path = GgrMemoModel;
+			sourceTree = "<group>";
+		};
+		73E2E7F22503692A006CDBC8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4EC7A058E3D93AD4276DEC43 /* Pods_GgrMemo.framework */,
+				3EB5EE67ADF754136A492BE4 /* Pods_GgrMemo_GgrMemoModel.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		73E2E7FD25036949006CDBC8 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				73E2E80F25036A4B006CDBC8 /* UICollectionView.swift */,
+				73E2E85C250E265A006CDBC8 /* ColorAsset.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		73E2E7FE25036955006CDBC8 /* MemoListView */ = {
+			isa = PBXGroup;
+			children = (
+				73E2E801250369B4006CDBC8 /* VC */,
+				73E2E802250369BA006CDBC8 /* Cell */,
+			);
+			path = MemoListView;
+			sourceTree = "<group>";
+		};
+		73E2E7FF2503696D006CDBC8 /* AddView */ = {
+			isa = PBXGroup;
+			children = (
+				73E2E8232503DED4006CDBC8 /* VC */,
+				73E2E8242503DEE1006CDBC8 /* Cell */,
+			);
+			path = AddView;
+			sourceTree = "<group>";
+		};
+		73E2E80025036984006CDBC8 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				73E2E7FD25036949006CDBC8 /* Extension */,
+				73E2E7FF2503696D006CDBC8 /* AddView */,
+				73E2E7FE25036955006CDBC8 /* MemoListView */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		73E2E801250369B4006CDBC8 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				73E2E80825036A39006CDBC8 /* MemoListViewController.swift */,
+				73E2E80725036A39006CDBC8 /* MemoListViewController.xib */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		73E2E802250369BA006CDBC8 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				73E2E80C25036A42006CDBC8 /* MemoCollectionViewCell.swift */,
+				73E2E80B25036A42006CDBC8 /* MemoCollectionViewCell.xib */,
+				73E2E81F2503A63F006CDBC8 /* TagCollectionViewCell.swift */,
+				73E2E8202503A63F006CDBC8 /* TagCollectionViewCell.xib */,
+				73E2E89E2512B9A1006CDBC8 /* SettingCollectionViewCell.swift */,
+				73E2E89F2512B9A1006CDBC8 /* SettingCollectionViewCell.xib */,
+				736A6CB025131F55004417AA /* SettingCellOfCell.swift */,
+				736A6CB125131F55004417AA /* SettingCellOfCell.xib */,
+				7349D6CD2514485B00F38708 /* SpaceCollectionViewCell.swift */,
+				7349D6CE2514485B00F38708 /* SpaceCollectionViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		73E2E81125036A7F006CDBC8 /* MemoList */ = {
+			isa = PBXGroup;
+			children = (
+				73E2E81525036AAB006CDBC8 /* Presenter */,
+			);
+			path = MemoList;
+			sourceTree = "<group>";
+		};
+		73E2E81225036A91006CDBC8 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				73E2E81325036A98006CDBC8 /* AddMemo */,
+				73E2E81125036A7F006CDBC8 /* MemoList */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		73E2E81325036A98006CDBC8 /* AddMemo */ = {
+			isa = PBXGroup;
+			children = (
+				73E2E81425036AA2006CDBC8 /* Presenter */,
+			);
+			path = AddMemo;
+			sourceTree = "<group>";
+		};
+		73E2E81425036AA2006CDBC8 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				73E2E81D25036B3D006CDBC8 /* AddMemoPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		73E2E81525036AAB006CDBC8 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				73E2E81B25036B36006CDBC8 /* MemoListPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		73E2E81625036ABF006CDBC8 /* RealmObject */ = {
+			isa = PBXGroup;
+			children = (
+				73E2E81925036B2C006CDBC8 /* MemoData.swift */,
+			);
+			path = RealmObject;
+			sourceTree = "<group>";
+		};
+		73E2E8232503DED4006CDBC8 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				73E2E80325036A2A006CDBC8 /* AddMemoViewController.swift */,
+				73E2E80425036A2A006CDBC8 /* AddMemoViewController.xib */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		73E2E8242503DEE1006CDBC8 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				73E2E8252503DF40006CDBC8 /* AddMemoCollectionViewCell.swift */,
+				73E2E8262503DF40006CDBC8 /* AddMemoCollectionViewCell.xib */,
+				73E2E82B25044964006CDBC8 /* TagListCollectionViewCell.swift */,
+				73E2E82C25044964006CDBC8 /* TagListCollectionViewCell.xib */,
+				73E2E864250E6D21006CDBC8 /* ColorListCollectionViewCell.swift */,
+				73E2E865250E6D21006CDBC8 /* ColorListCollectionViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		73E2E8352504F387006CDBC8 /* GgrMemoUtility */ = {
+			isa = PBXGroup;
+			children = (
+				73E2E89C2512932A006CDBC8 /* File.swift */,
+				73E2E8442504F419006CDBC8 /* Extension */,
+				73E2E8362504F387006CDBC8 /* GgrMemoUtility.h */,
+				73E2E8372504F387006CDBC8 /* Info.plist */,
+			);
+			path = GgrMemoUtility;
+			sourceTree = "<group>";
+		};
+		73E2E8442504F419006CDBC8 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				73E2E8452504F42C006CDBC8 /* String.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		73E2E855250E0FEB006CDBC8 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				73E2E857250E100C006CDBC8 /* Image.xcassets */,
+				73E2E859250E1028006CDBC8 /* Color.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		73E2E86A250FAA41006CDBC8 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				73E2E86E2510855D006CDBC8 /* ColorAsset.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		CAD2A66583F019C125F1492C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				118DD9EF7A7B556BE8EC5201 /* Pods-GgrMemo.debug.xcconfig */,
+				171C86FFD3BB0E3E89C030A4 /* Pods-GgrMemo.release.xcconfig */,
+				1198736F4311AF99D9DD1652 /* Pods-GgrMemo-GgrMemoModel.debug.xcconfig */,
+				4E20A082DB76C59666FBC0CA /* Pods-GgrMemo-GgrMemoModel.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		73E2E7BE25036843006CDBC8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73E2E7C725036843006CDBC8 /* GgrMemoView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73E2E7D025036860006CDBC8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73E2E7D925036860006CDBC8 /* GgrMemoPresenter.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73E2E7E125036872006CDBC8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73E2E7EA25036872006CDBC8 /* GgrMemoModel.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73E2E82F2504F387006CDBC8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73E2E8382504F387006CDBC8 /* GgrMemoUtility.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		73E2E7A62503649E006CDBC8 /* GgrMemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 73E2E7BB2503649F006CDBC8 /* Build configuration list for PBXNativeTarget "GgrMemo" */;
+			buildPhases = (
+				A3D9EE2BE3FA4AE0454216FB /* [CP] Check Pods Manifest.lock */,
+				73E2E7A32503649E006CDBC8 /* Sources */,
+				73E2E7A42503649E006CDBC8 /* Frameworks */,
+				73E2E7A52503649E006CDBC8 /* Resources */,
+				73E2E7CF25036843006CDBC8 /* Embed Frameworks */,
+				28B16059C498F605D17E98F3 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				73E2E7C925036843006CDBC8 /* PBXTargetDependency */,
+				73E2E7DB25036860006CDBC8 /* PBXTargetDependency */,
+				73E2E7EC25036872006CDBC8 /* PBXTargetDependency */,
+				73E2E83A2504F387006CDBC8 /* PBXTargetDependency */,
+			);
+			name = GgrMemo;
+			productName = GgrMemo;
+			productReference = 73E2E7A72503649E006CDBC8 /* GgrMemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		73E2E7C225036843006CDBC8 /* GgrMemoView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 73E2E7CC25036843006CDBC8 /* Build configuration list for PBXNativeTarget "GgrMemoView" */;
+			buildPhases = (
+				73E2E7BE25036843006CDBC8 /* Headers */,
+				73E2E7BF25036843006CDBC8 /* Sources */,
+				73E2E7C025036843006CDBC8 /* Frameworks */,
+				73E2E7C125036843006CDBC8 /* Resources */,
+				73E2E7F72503692A006CDBC8 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				73E2E7F62503692A006CDBC8 /* PBXTargetDependency */,
+				73E2E8432504F3D5006CDBC8 /* PBXTargetDependency */,
+			);
+			name = GgrMemoView;
+			productName = GgrMemoView;
+			productReference = 73E2E7C325036843006CDBC8 /* GgrMemoView.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		73E2E7D425036860006CDBC8 /* GgrMemoPresenter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 73E2E7DE25036860006CDBC8 /* Build configuration list for PBXNativeTarget "GgrMemoPresenter" */;
+			buildPhases = (
+				73E2E7D025036860006CDBC8 /* Headers */,
+				73E2E7D125036860006CDBC8 /* Sources */,
+				73E2E7D225036860006CDBC8 /* Frameworks */,
+				73E2E7D325036860006CDBC8 /* Resources */,
+				73E2E7FC25036933006CDBC8 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				73E2E7FB25036933006CDBC8 /* PBXTargetDependency */,
+			);
+			name = GgrMemoPresenter;
+			productName = GgrMemoPresenter;
+			productReference = 73E2E7D525036860006CDBC8 /* GgrMemoPresenter.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		73E2E7E525036872006CDBC8 /* GgrMemoModel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 73E2E7EF25036872006CDBC8 /* Build configuration list for PBXNativeTarget "GgrMemoModel" */;
+			buildPhases = (
+				84CA6BB30883D4EC0F669804 /* [CP] Check Pods Manifest.lock */,
+				73E2E7E125036872006CDBC8 /* Headers */,
+				73E2E7E225036872006CDBC8 /* Sources */,
+				73E2E7E325036872006CDBC8 /* Frameworks */,
+				73E2E7E425036872006CDBC8 /* Resources */,
+				73E2E84B2504F5E2006CDBC8 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				73E2E84A2504F5E2006CDBC8 /* PBXTargetDependency */,
+			);
+			name = GgrMemoModel;
+			productName = GgrMemoModel;
+			productReference = 73E2E7E625036872006CDBC8 /* GgrMemoModel.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		73E2E8332504F387006CDBC8 /* GgrMemoUtility */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 73E2E83D2504F387006CDBC8 /* Build configuration list for PBXNativeTarget "GgrMemoUtility" */;
+			buildPhases = (
+				73E2E82F2504F387006CDBC8 /* Headers */,
+				73E2E8302504F387006CDBC8 /* Sources */,
+				73E2E8312504F387006CDBC8 /* Frameworks */,
+				73E2E8322504F387006CDBC8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GgrMemoUtility;
+			productName = GgrMemoUtility;
+			productReference = 73E2E8342504F387006CDBC8 /* GgrMemoUtility.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		73E2E79F2503649E006CDBC8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1170;
+				LastUpgradeCheck = 1170;
+				ORGANIZATIONNAME = NK;
+				TargetAttributes = {
+					73E2E7A62503649E006CDBC8 = {
+						CreatedOnToolsVersion = 11.7;
+					};
+					73E2E7C225036843006CDBC8 = {
+						CreatedOnToolsVersion = 11.7;
+						LastSwiftMigration = 1170;
+					};
+					73E2E7D425036860006CDBC8 = {
+						CreatedOnToolsVersion = 11.7;
+						LastSwiftMigration = 1170;
+					};
+					73E2E7E525036872006CDBC8 = {
+						CreatedOnToolsVersion = 11.7;
+						LastSwiftMigration = 1170;
+					};
+					73E2E8332504F387006CDBC8 = {
+						CreatedOnToolsVersion = 11.7;
+						LastSwiftMigration = 1170;
+					};
+				};
+			};
+			buildConfigurationList = 73E2E7A22503649E006CDBC8 /* Build configuration list for PBXProject "GgrMemo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 73E2E79E2503649E006CDBC8;
+			productRefGroup = 73E2E7A82503649E006CDBC8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				73E2E7A62503649E006CDBC8 /* GgrMemo */,
+				73E2E8332504F387006CDBC8 /* GgrMemoUtility */,
+				73E2E7C225036843006CDBC8 /* GgrMemoView */,
+				73E2E7D425036860006CDBC8 /* GgrMemoPresenter */,
+				73E2E7E525036872006CDBC8 /* GgrMemoModel */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		73E2E7A52503649E006CDBC8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73E2E7B72503649F006CDBC8 /* LaunchScreen.storyboard in Resources */,
+				73E2E85F250E41DE006CDBC8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73E2E7C125036843006CDBC8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73E2E80925036A39006CDBC8 /* MemoListViewController.xib in Resources */,
+				7349D6D02514485B00F38708 /* SpaceCollectionViewCell.xib in Resources */,
+				73E2E8A12512B9A1006CDBC8 /* SettingCollectionViewCell.xib in Resources */,
+				73E2E85A250E1028006CDBC8 /* Color.xcassets in Resources */,
+				73E2E82E25044964006CDBC8 /* TagListCollectionViewCell.xib in Resources */,
+				73E2E8222503A63F006CDBC8 /* TagCollectionViewCell.xib in Resources */,
+				73E2E80D25036A42006CDBC8 /* MemoCollectionViewCell.xib in Resources */,
+				73E2E8282503DF40006CDBC8 /* AddMemoCollectionViewCell.xib in Resources */,
+				7349D6C62513694100F38708 /* SettingViewCell.xib in Resources */,
+				7349D6B1251361A800F38708 /* SettingViewController.xib in Resources */,
+				736A6CB325131F55004417AA /* SettingCellOfCell.xib in Resources */,
+				73E2E858250E100C006CDBC8 /* Image.xcassets in Resources */,
+				73E2E867250E6D21006CDBC8 /* ColorListCollectionViewCell.xib in Resources */,
+				73E2E80625036A2A006CDBC8 /* AddMemoViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73E2E7D325036860006CDBC8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73E2E7E425036872006CDBC8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73E2E8322504F387006CDBC8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		28B16059C498F605D17E98F3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GgrMemo/Pods-GgrMemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GgrMemo/Pods-GgrMemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GgrMemo/Pods-GgrMemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		84CA6BB30883D4EC0F669804 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GgrMemo-GgrMemoModel-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A3D9EE2BE3FA4AE0454216FB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GgrMemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		73E2E7A32503649E006CDBC8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73E2E7AB2503649E006CDBC8 /* AppDelegate.swift in Sources */,
+				73E2E7AD2503649E006CDBC8 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73E2E7BF25036843006CDBC8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73E2E82D25044964006CDBC8 /* TagListCollectionViewCell.swift in Sources */,
+				73E2E8272503DF40006CDBC8 /* AddMemoCollectionViewCell.swift in Sources */,
+				73E2E80E25036A42006CDBC8 /* MemoCollectionViewCell.swift in Sources */,
+				7349D6C52513694100F38708 /* SettingViewCell.swift in Sources */,
+				73E2E80A25036A39006CDBC8 /* MemoListViewController.swift in Sources */,
+				73E2E8212503A63F006CDBC8 /* TagCollectionViewCell.swift in Sources */,
+				73E2E8A02512B9A1006CDBC8 /* SettingCollectionViewCell.swift in Sources */,
+				73E2E85D250E265A006CDBC8 /* ColorAsset.swift in Sources */,
+				73E2E81025036A4C006CDBC8 /* UICollectionView.swift in Sources */,
+				7349D6CF2514485B00F38708 /* SpaceCollectionViewCell.swift in Sources */,
+				73E2E80525036A2A006CDBC8 /* AddMemoViewController.swift in Sources */,
+				736A6CB225131F55004417AA /* SettingCellOfCell.swift in Sources */,
+				73E2E866250E6D21006CDBC8 /* ColorListCollectionViewCell.swift in Sources */,
+				7349D6B2251361A800F38708 /* SettingViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73E2E7D125036860006CDBC8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73E2E81E25036B3D006CDBC8 /* AddMemoPresenter.swift in Sources */,
+				73E2E86F2510855D006CDBC8 /* ColorAsset.swift in Sources */,
+				73E2E81C25036B36006CDBC8 /* MemoListPresenter.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73E2E7E225036872006CDBC8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73E2E81825036B1F006CDBC8 /* FatLogic.swift in Sources */,
+				73E2E81A25036B2C006CDBC8 /* MemoData.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73E2E8302504F387006CDBC8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73E2E8462504F42C006CDBC8 /* String.swift in Sources */,
+				73E2E89D2512932A006CDBC8 /* File.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		73E2E7C925036843006CDBC8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 73E2E7C225036843006CDBC8 /* GgrMemoView */;
+			targetProxy = 73E2E7C825036843006CDBC8 /* PBXContainerItemProxy */;
+		};
+		73E2E7DB25036860006CDBC8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 73E2E7D425036860006CDBC8 /* GgrMemoPresenter */;
+			targetProxy = 73E2E7DA25036860006CDBC8 /* PBXContainerItemProxy */;
+		};
+		73E2E7EC25036872006CDBC8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 73E2E7E525036872006CDBC8 /* GgrMemoModel */;
+			targetProxy = 73E2E7EB25036872006CDBC8 /* PBXContainerItemProxy */;
+		};
+		73E2E7F62503692A006CDBC8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 73E2E7D425036860006CDBC8 /* GgrMemoPresenter */;
+			targetProxy = 73E2E7F52503692A006CDBC8 /* PBXContainerItemProxy */;
+		};
+		73E2E7FB25036933006CDBC8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 73E2E7E525036872006CDBC8 /* GgrMemoModel */;
+			targetProxy = 73E2E7FA25036933006CDBC8 /* PBXContainerItemProxy */;
+		};
+		73E2E83A2504F387006CDBC8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 73E2E8332504F387006CDBC8 /* GgrMemoUtility */;
+			targetProxy = 73E2E8392504F387006CDBC8 /* PBXContainerItemProxy */;
+		};
+		73E2E8432504F3D5006CDBC8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 73E2E8332504F387006CDBC8 /* GgrMemoUtility */;
+			targetProxy = 73E2E8422504F3D5006CDBC8 /* PBXContainerItemProxy */;
+		};
+		73E2E84A2504F5E2006CDBC8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 73E2E8332504F387006CDBC8 /* GgrMemoUtility */;
+			targetProxy = 73E2E8492504F5E2006CDBC8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		73E2E7B52503649F006CDBC8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				73E2E7B62503649F006CDBC8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		73E2E7B92503649F006CDBC8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		73E2E7BA2503649F006CDBC8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		73E2E7BC2503649F006CDBC8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 118DD9EF7A7B556BE8EC5201 /* Pods-GgrMemo.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 53H47X4HXT;
+				INFOPLIST_FILE = GgrMemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = GgrMemo.GgrMemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		73E2E7BD2503649F006CDBC8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 171C86FFD3BB0E3E89C030A4 /* Pods-GgrMemo.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 53H47X4HXT;
+				INFOPLIST_FILE = GgrMemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = GgrMemo.GgrMemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		73E2E7CD25036843006CDBC8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 53H47X4HXT;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = GgrMemoView/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = GgrMemo.GgrMemoView;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		73E2E7CE25036843006CDBC8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 53H47X4HXT;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = GgrMemoView/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = GgrMemo.GgrMemoView;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		73E2E7DF25036860006CDBC8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 53H47X4HXT;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = GgrMemoPresenter/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = GgrMemo.GgrMemoPresenter;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		73E2E7E025036860006CDBC8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 53H47X4HXT;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = GgrMemoPresenter/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = GgrMemo.GgrMemoPresenter;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		73E2E7F025036872006CDBC8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1198736F4311AF99D9DD1652 /* Pods-GgrMemo-GgrMemoModel.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 53H47X4HXT;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = GgrMemoModel/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = GgrMemo.GgrMemoModel;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		73E2E7F125036872006CDBC8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E20A082DB76C59666FBC0CA /* Pods-GgrMemo-GgrMemoModel.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 53H47X4HXT;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = GgrMemoModel/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = GgrMemo.GgrMemoModel;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		73E2E83E2504F387006CDBC8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 53H47X4HXT;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = GgrMemoUtility/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = GgrMemo.GgrMemoUtility;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		73E2E83F2504F387006CDBC8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 53H47X4HXT;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = GgrMemoUtility/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = GgrMemo.GgrMemoUtility;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		73E2E7A22503649E006CDBC8 /* Build configuration list for PBXProject "GgrMemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				73E2E7B92503649F006CDBC8 /* Debug */,
+				73E2E7BA2503649F006CDBC8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		73E2E7BB2503649F006CDBC8 /* Build configuration list for PBXNativeTarget "GgrMemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				73E2E7BC2503649F006CDBC8 /* Debug */,
+				73E2E7BD2503649F006CDBC8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		73E2E7CC25036843006CDBC8 /* Build configuration list for PBXNativeTarget "GgrMemoView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				73E2E7CD25036843006CDBC8 /* Debug */,
+				73E2E7CE25036843006CDBC8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		73E2E7DE25036860006CDBC8 /* Build configuration list for PBXNativeTarget "GgrMemoPresenter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				73E2E7DF25036860006CDBC8 /* Debug */,
+				73E2E7E025036860006CDBC8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		73E2E7EF25036872006CDBC8 /* Build configuration list for PBXNativeTarget "GgrMemoModel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				73E2E7F025036872006CDBC8 /* Debug */,
+				73E2E7F125036872006CDBC8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		73E2E83D2504F387006CDBC8 /* Build configuration list for PBXNativeTarget "GgrMemoUtility" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				73E2E83E2504F387006CDBC8 /* Debug */,
+				73E2E83F2504F387006CDBC8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 73E2E79F2503649E006CDBC8 /* Project object */;
+}
