@@ -77,12 +77,12 @@ public extension FatLogic {
         }
     }
     
-    static func addMemo(memo: Memo){
+    static func addMemo(memo: Memo, tag: Tag){
         guard !memo.value.isEmptyByTrimming else { return }
-        addNewMemo(memo: memo)
+        addNewMemo(memo: memo, tag: tag)
     }
     
-    private static func addNewMemo(memo: Memo) {
+    private static func addNewMemo(memo: Memo, tag: Tag) {
         // Realmを初期化
         let realm = try! Realm()
         print(Realm.Configuration.defaultConfiguration.fileURL!)
@@ -92,12 +92,12 @@ public extension FatLogic {
 //            savedMemoData.createDate = NSDate()
             savedMemoData.updateDate = NSDate()
             savedMemoData.memo = memo.value
-            savedMemoData.tag = memo.tag
+            savedMemoData.tag = tag.value
             realm.add(savedMemoData)
         }
     }
     
-    private static func updateMemo(memo: Memo, savedMemoDate: MemoData) {
+    private static func updateMemo(memo: Memo, tag: Tag, savedMemoDate: MemoData) {
         // Realmを初期化
         let realm = try! Realm()
         print(Realm.Configuration.defaultConfiguration.fileURL!)
@@ -106,7 +106,7 @@ public extension FatLogic {
         try! realm.write {
             savedMemoData.updateDate = NSDate()
             savedMemoData.memo = memo.value
-            savedMemoData.tag = memo.tag
+            savedMemoData.tag = tag.value
             savedMemoData.isChecked = false
             realm.add(savedMemoData)
         }

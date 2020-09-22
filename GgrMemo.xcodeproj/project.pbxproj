@@ -14,6 +14,9 @@
 		7349D6C62513694100F38708 /* SettingViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7349D6C42513694100F38708 /* SettingViewCell.xib */; };
 		7349D6CF2514485B00F38708 /* SpaceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7349D6CD2514485B00F38708 /* SpaceCollectionViewCell.swift */; };
 		7349D6D02514485B00F38708 /* SpaceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7349D6CE2514485B00F38708 /* SpaceCollectionViewCell.xib */; };
+		7349D6E425185AB400F38708 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7349D6E225185AB400F38708 /* WebViewController.swift */; };
+		7349D6E525185AB400F38708 /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7349D6E325185AB400F38708 /* WebViewController.xib */; };
+		7349D6E9251A599500F38708 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7349D6E8251A599500F38708 /* String.swift */; };
 		736A6CB225131F55004417AA /* SettingCellOfCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736A6CB025131F55004417AA /* SettingCellOfCell.swift */; };
 		736A6CB325131F55004417AA /* SettingCellOfCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 736A6CB125131F55004417AA /* SettingCellOfCell.xib */; };
 		73E2E7AB2503649E006CDBC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E2E7AA2503649E006CDBC8 /* AppDelegate.swift */; };
@@ -193,6 +196,9 @@
 		7349D6C42513694100F38708 /* SettingViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewCell.xib; sourceTree = "<group>"; };
 		7349D6CD2514485B00F38708 /* SpaceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceCollectionViewCell.swift; sourceTree = "<group>"; };
 		7349D6CE2514485B00F38708 /* SpaceCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpaceCollectionViewCell.xib; sourceTree = "<group>"; };
+		7349D6E225185AB400F38708 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		7349D6E325185AB400F38708 /* WebViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
+		7349D6E8251A599500F38708 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		736A6CB025131F55004417AA /* SettingCellOfCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCellOfCell.swift; sourceTree = "<group>"; };
 		736A6CB125131F55004417AA /* SettingCellOfCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingCellOfCell.xib; sourceTree = "<group>"; };
 		73E2E7A72503649E006CDBC8 /* GgrMemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GgrMemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -318,6 +324,15 @@
 			path = VC;
 			sourceTree = "<group>";
 		};
+		7349D6E125185A8E00F38708 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				7349D6E225185AB400F38708 /* WebViewController.swift */,
+				7349D6E325185AB400F38708 /* WebViewController.xib */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
 		73E2E79E2503649E006CDBC8 = {
 			isa = PBXGroup;
 			children = (
@@ -359,6 +374,7 @@
 		73E2E7C425036843006CDBC8 /* GgrMemoView */ = {
 			isa = PBXGroup;
 			children = (
+				73E2E7FD25036949006CDBC8 /* Extension */,
 				73E2E855250E0FEB006CDBC8 /* Assets */,
 				73E2E80025036984006CDBC8 /* App */,
 				7349D69A2513514100F38708 /* SettingView */,
@@ -404,6 +420,7 @@
 			children = (
 				73E2E80F25036A4B006CDBC8 /* UICollectionView.swift */,
 				73E2E85C250E265A006CDBC8 /* ColorAsset.swift */,
+				7349D6E8251A599500F38708 /* String.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -429,7 +446,7 @@
 		73E2E80025036984006CDBC8 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				73E2E7FD25036949006CDBC8 /* Extension */,
+				7349D6E125185A8E00F38708 /* WebView */,
 				73E2E7FF2503696D006CDBC8 /* AddView */,
 				73E2E7FE25036955006CDBC8 /* MemoListView */,
 			);
@@ -792,6 +809,7 @@
 				73E2E80925036A39006CDBC8 /* MemoListViewController.xib in Resources */,
 				7349D6D02514485B00F38708 /* SpaceCollectionViewCell.xib in Resources */,
 				73E2E8A12512B9A1006CDBC8 /* SettingCollectionViewCell.xib in Resources */,
+				7349D6E525185AB400F38708 /* WebViewController.xib in Resources */,
 				73E2E85A250E1028006CDBC8 /* Color.xcassets in Resources */,
 				73E2E82E25044964006CDBC8 /* TagListCollectionViewCell.xib in Resources */,
 				73E2E8222503A63F006CDBC8 /* TagCollectionViewCell.xib in Resources */,
@@ -920,6 +938,8 @@
 				73E2E80525036A2A006CDBC8 /* AddMemoViewController.swift in Sources */,
 				736A6CB225131F55004417AA /* SettingCellOfCell.swift in Sources */,
 				73E2E866250E6D21006CDBC8 /* ColorListCollectionViewCell.swift in Sources */,
+				7349D6E425185AB400F38708 /* WebViewController.swift in Sources */,
+				7349D6E9251A599500F38708 /* String.swift in Sources */,
 				7349D6B2251361A800F38708 /* SettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

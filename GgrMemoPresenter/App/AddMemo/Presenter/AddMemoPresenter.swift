@@ -8,9 +8,9 @@ final public class AddMemoPresenter {
     public init() {}
 
     public func addMemoData(addModel: AddMemoViewModel) {
-        addModel.memoList.memos.forEach {
-            FatLogic.addTag(tag: Tag($0.tag, color: addModel.memoList.color))
-            FatLogic.addMemo(memo: $0)
+        FatLogic.addTag(tag: addModel.tag)
+        addModel.memos.forEach {
+            FatLogic.addMemo(memo: $0, tag: addModel.tag)
             
         }
     }
@@ -18,10 +18,12 @@ final public class AddMemoPresenter {
 }
 
 public struct AddMemoViewModel {
-    public let memoList: MemoListModel
+    public let tag: Tag
+    public let memos: [Memo]
 
-    public init(memos: [Memo], color: ColorAsset) {
-        self.memoList = MemoListModel(memos: memos, color: color)
+    public init(tag: Tag, memos: [Memo]) {
+        self.tag = tag
+        self.memos = memos
     }
 
 }

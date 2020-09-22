@@ -177,25 +177,37 @@ extension MemoListViewController: UICollectionViewDelegate {
     
     // Cell がタップで選択されたときに呼ばれる
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        switch selectedTapAction {
-        case .checked:
-            if case .memoList(let memoList) = self.displayList[indexPath.section] {
+        
+        if case .memoList(let memoList) = self.displayList[indexPath.section] {
+            
+            switch selectedTapAction {
+            
+            case .checked:
                 view.isUserInteractionEnabled = false
                 presenter.checkedMemo(memo: memoList.memos[indexPath.row], indexPath: indexPath)
+            case .edit:
+                return
+            case .search:
+                let strUrl = "https://www.google.co.jp/search?q=\(memoList.memos[indexPath.row].value)"
+                guard let url = strUrl.url else { return }
+                present(WebViewController(url: url), animated: true, completion: nil)
+            case .searchOnSafari:
+                let strUrl = "https://www.google.co.jp/search?q=\(memoList.memos[indexPath.row].value)"
+                guard let url = strUrl.url else { return }
+                UIApplication.shared.open(url)
+            case .searchOnYoutube:
+                let strUrl = "youtube://results?search_query=\(memoList.memos[indexPath.row].value)"
+                guard let url = strUrl.url else { return }
+                UIApplication.shared.open(url)
+
+            case .searchOnTwitter:
+                let strUrl = "twitter://search?query=\(memoList.memos[indexPath.row].value)"
+                guard let url = strUrl.url else { return }
+                UIApplication.shared.open(url)
             }
-            
-        case .edit:
-            return
-            
-        case .search:
-            return
-        case .searchOnSafari:
-            return
-        case .searchOnYoutube:
-            return
-        case .searchOnTwitter:
-            return
+
         }
+        
         
         
         return

@@ -18,7 +18,11 @@ final class AddMemoViewController: UIViewController {
 
     private var memo: Memo? {
         guard let text = memoTextField.text?.trimming else { return nil }
-        return Memo(text, tag: tagTextField?.text?.trimming ?? "", isChecked: true)
+        return Memo(text, isChecked: true)
+    }
+    
+    private var tag: Tag {
+        Tag(tagTextField?.text?.trimming ?? "", color: selectedColor)
     }
     
     public init(memoList: [Memo] = []) {
@@ -92,7 +96,7 @@ final class AddMemoViewController: UIViewController {
         guard let memo = memo else { return }
         guard !(memoTextField.text?.isEmptyByTrimming ?? true) || !memoList.isEmpty else { return }
         hasAppendMemoList(memo: memo)
-        presenter.addMemoData(addModel: AddMemoViewModel(memos: memoList, color: selectedColor))
+        presenter.addMemoData(addModel: AddMemoViewModel(tag: tag, memos: memoList))
         self.dismiss(animated: true, completion: nil)
     }
     
