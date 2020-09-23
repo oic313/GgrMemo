@@ -79,7 +79,12 @@ public extension FatLogic {
     
     static func addMemo(memo: Memo, tag: Tag){
         guard !memo.value.isEmptyByTrimming else { return }
-        addNewMemo(memo: memo, tag: tag)
+        
+        if let savedMemoData = searchMemo(memo: memo) {
+            updateMemo(memo: memo, tag: tag, savedMemoDate: savedMemoData)
+        } else {
+            addNewMemo(memo: memo, tag: tag)
+        }
     }
     
     private static func addNewMemo(memo: Memo, tag: Tag) {

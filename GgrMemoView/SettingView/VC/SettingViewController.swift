@@ -73,7 +73,6 @@ extension SettingViewController: UICollectionViewDelegateFlowLayout {
         .init(width: view.frame.width, height: 35)
     }
     // cell達の周囲の余白
-    // cellをdaysPerWeekで割った余りを横方向の余白に当てることで割り切れなかった分の空白を埋めている
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         .zero
         

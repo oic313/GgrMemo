@@ -17,7 +17,8 @@ final class AddMemoViewController: UIViewController {
     private var selectedColor: ColorAsset = .sub
 
     private var memo: Memo? {
-        guard let text = memoTextField.text?.trimming else { return nil }
+        guard let text = memoTextField.text else { return nil }
+        guard !text.isEmptyByTrimming else { return nil }
         return Memo(text, isChecked: true)
     }
     
@@ -93,9 +94,8 @@ final class AddMemoViewController: UIViewController {
     }
     
     @IBAction func TapAddButton(_ sender: Any) {
-        guard let memo = memo else { return }
         guard !(memoTextField.text?.isEmptyByTrimming ?? true) || !memoList.isEmpty else { return }
-        hasAppendMemoList(memo: memo)
+        if let memo = memo { hasAppendMemoList(memo: memo) }
         presenter.addMemoData(addModel: AddMemoViewModel(tag: tag, memos: memoList))
         self.dismiss(animated: true, completion: nil)
     }
@@ -159,7 +159,6 @@ extension AddMemoViewController: UICollectionViewDataSource {
 extension AddMemoViewController: UICollectionViewDelegateFlowLayout {
     
     // cell達の周囲の余白
-    // cellをdaysPerWeekで割った余りを横方向の余白に当てることで割り切れなかった分の空白を埋めている
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         
         UIEdgeInsets(top: 0.0, left: 10.0, bottom: 0.0, right: 100.0)

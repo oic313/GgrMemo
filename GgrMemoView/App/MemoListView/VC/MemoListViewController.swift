@@ -139,7 +139,6 @@ extension MemoListViewController: UICollectionViewDelegateFlowLayout {
     }
     
     // cell達の周囲の余白
-    // cellをdaysPerWeekで割った余りを横方向の余白に当てることで割り切れなかった分の空白を埋めている
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         switch self.displayList[section] {
         case .memoList:
@@ -186,7 +185,8 @@ extension MemoListViewController: UICollectionViewDelegate {
                 view.isUserInteractionEnabled = false
                 presenter.checkedMemo(memo: memoList.memos[indexPath.row], indexPath: indexPath)
             case .edit:
-                return
+                let addMemoViewController = AddMemoViewController(memoList: [memoList.memos[indexPath.row]])
+                present(addMemoViewController, animated: true, completion: nil)
             case .search:
                 let strUrl = "https://www.google.co.jp/search?q=\(memoList.memos[indexPath.row].value)"
                 guard let url = strUrl.url else { return }
