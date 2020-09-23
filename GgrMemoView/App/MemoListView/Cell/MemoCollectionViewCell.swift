@@ -29,6 +29,11 @@ final class MemoCollectionViewCell: UICollectionViewCell {
     }
     
     func applyCheckedState(isCecked: Bool){
+        if isCecked {
+            memoLabel.textColor = ColorAsset.thin.value
+        } else {
+            memoLabel.textColor = ColorAsset.text.value
+        }
         checkMarkView.isHidden = !isCecked
         memoLabel.hoge(isCecked)
     }
@@ -41,13 +46,10 @@ extension UILabel {
         let attributeString: NSMutableAttributedString =  NSMutableAttributedString(string: self.text ?? "")
 
         if b {
-            attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 1, range: NSMakeRange(0, attributeString.length))
-            attributeString.addAttribute(NSAttributedString.Key.foregroundColor, value: ColorAsset.thin.value! , range: NSMakeRange(0, attributeString.length))
+            attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 2, range: NSMakeRange(0, attributeString.length))
 
         } else {
             attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 0, range: NSMakeRange(0, attributeString.length))
-            attributeString.addAttribute(NSAttributedString.Key.foregroundColor, value: ColorAsset.text.value! , range: NSMakeRange(0, attributeString.length))
-
         }
         self.attributedText = attributeString
     }

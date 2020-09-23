@@ -41,12 +41,30 @@ final public class MemoListPresenter {
         view.redraw(model: MemoListViewModel(displayList: displayList))
     }
     
+    public func checkedTag(tag: Tag, indexPath: IndexPath) {
+        guard let view = view else { return }
+        FatLogic.togleTagCheckedStatus(tag: tag)
+        view.redraw(model: MemoListViewModel(displayList: displayList))
+    }
+    
     public func deleteCheckedMemos() {
         guard let view = view else { return }
         FatLogic.deleteCheckedMemos()
         view.redraw(model: MemoListViewModel(displayList: displayList))
     }
     
+    public func deleteCheckedTags() {
+        guard let view = view else { return }
+        FatLogic.deleteCheckedTags()
+        view.redraw(model: MemoListViewModel(displayList: displayList))
+    }
+    
+    public func deselectionAll() {
+        guard let view = view else { return }
+        FatLogic.deselectionAllMemo()
+        FatLogic.deselectionAllTag()
+        view.redraw(model: MemoListViewModel(displayList: displayList))
+    }
     
 }
 

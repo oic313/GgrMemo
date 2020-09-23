@@ -178,9 +178,7 @@ extension MemoListViewController: UICollectionViewDelegate {
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if case .memoList(let memoList) = self.displayList[indexPath.section] {
-            
             switch selectedTapAction {
-            
             case .checked:
                 view.isUserInteractionEnabled = false
                 presenter.checkedMemo(memo: memoList.memos[indexPath.row], indexPath: indexPath)
@@ -205,10 +203,17 @@ extension MemoListViewController: UICollectionViewDelegate {
                 guard let url = strUrl.url else { return }
                 UIApplication.shared.open(url)
             }
-
+        } else if case .tag(let tag) = self.displayList[indexPath.section] {
+            switch selectedTapAction {
+            case .checked:
+                view.isUserInteractionEnabled = false
+                presenter.checkedTag(tag: tag, indexPath: indexPath)
+            case .edit:
+                return
+            default:
+                return
+            }
         }
-        
-        
         
         return
     }
@@ -260,10 +265,14 @@ extension MemoListViewController: TransitionSourceView {
     public func tapedEditAction(action: EditAction) {
         switch action {
         case .deleteMemo:
+            view.isUserInteractionEnabled = false
             presenter.deleteCheckedMemos()
-            return
-        default:
-            return
+        case .deleteTag:
+            view.isUserInteractionEnabled = false
+            presenter.deleteCheckedTags()
+        case .cancelCecked:
+            view.isUserInteractionEnabled = false
+            presenter.deselectionAll()
         }
     }
     

@@ -23,7 +23,7 @@ final class AddMemoViewController: UIViewController {
     }
     
     private var tag: Tag {
-        Tag(tagTextField?.text?.trimming ?? "", color: selectedColor)
+        Tag(tagTextField?.text?.trimming ?? "", color: selectedColor, isChecked: false)
     }
     
     public init(memoList: [Memo] = []) {
