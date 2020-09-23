@@ -12,9 +12,10 @@ final class AddMemoViewController: UIViewController {
     private let presenter = AddMemoPresenter()
     private let tagList: [Tag]
     private let tagColorList: [ColorAsset]
+    private let initTag: Tag
     private var memoList = [Memo]()
     private var selectedMemoIndexPath: IndexPath? = nil
-    private var selectedColor: ColorAsset = .sub
+    private var selectedColor: ColorAsset
 
     private var memo: Memo? {
         guard let text = memoTextField.text else { return nil }
@@ -26,7 +27,9 @@ final class AddMemoViewController: UIViewController {
         Tag(tagTextField?.text?.trimming ?? "", color: selectedColor, isChecked: false)
     }
     
-    public init(memoList: [Memo] = []) {
+    public init(memoList: [Memo] = [], tag: Tag = Tag("", color: .sub, isChecked: false)) {
+        self.initTag = tag
+        self.selectedColor = tag.color
         self.memoList = memoList
         self.tagList = presenter.tagList
         self.tagColorList = presenter.tagColorList
@@ -77,6 +80,8 @@ final class AddMemoViewController: UIViewController {
             tagCollectionView.isHidden = true
         }
         
+        tagTextField.text = initTag.value
+        applySelectedColor(initTag.color)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -201,11 +206,7 @@ extension AddMemoViewController: UICollectionViewDelegate {
         } else if collectionView == colorCollectionView {
             guard let text = tagTextField.text else { return }
             guard !text.isEmptyByTrimming else { return }
-            selectedColor = tagColorList[indexPath.row]
-            memoCollectionView.reloadData()
-            tagCollectionView.backgroundColor = tagColorList[indexPath.row].value
-            tagCollectionView.reloadData()
-            colorCollectionView.layer.borderColor = tagColorList[indexPath.row].value?.cgColor
+            applySelectedColor(tagColorList[indexPath.row])
         }
         
     }
@@ -251,5 +252,13 @@ private extension AddMemoViewController {
     func addMemoCell(memo: Memo) {
         hasAppendMemoList(memo: memo)
         memoCollectionView.insertItems(at: [IndexPath(row: memoList.count - 1, section: 0)])
+    }
+    
+    func applySelectedColor(_ color: ColorAsset) {
+        selectedColor = color
+        memoCollectionView.reloadData()
+        tagCollectionView.backgroundColor = selectedColor.value
+        tagCollectionView.reloadData()
+        colorCollectionView.layer.borderColor = selectedColor.value?.cgColor
     }
 }

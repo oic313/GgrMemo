@@ -19,13 +19,13 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkMark" translatesAutoresizingMaskIntoConstraints="NO" id="o3z-ys-uug">
-                        <rect key="frame" x="5" y="21.5" width="6.5" height="7"/>
+                        <rect key="frame" x="2" y="22.5" width="5" height="5"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="o3z-ys-uug" secondAttribute="height" multiplier="1:1" id="NRP-ou-jGV"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L9p-di-BmD">
-                        <rect key="frame" x="16.5" y="10" width="87.5" height="30"/>
+                        <rect key="frame" x="9" y="10" width="95" height="30"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" name="text"/>
                         <nil key="highlightedColor"/>
@@ -35,12 +35,12 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <color key="backgroundColor" name="sub"/>
             <constraints>
-                <constraint firstItem="L9p-di-BmD" firstAttribute="leading" secondItem="o3z-ys-uug" secondAttribute="trailing" constant="5" id="43K-hi-bQs"/>
-                <constraint firstItem="o3z-ys-uug" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="Lp1-m9-5Mi"/>
+                <constraint firstItem="L9p-di-BmD" firstAttribute="leading" secondItem="o3z-ys-uug" secondAttribute="trailing" constant="2" id="43K-hi-bQs"/>
+                <constraint firstItem="o3z-ys-uug" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="2" id="Lp1-m9-5Mi"/>
                 <constraint firstAttribute="bottom" secondItem="L9p-di-BmD" secondAttribute="bottom" constant="10" id="RuS-JY-rG2"/>
                 <constraint firstItem="L9p-di-BmD" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="abe-Zj-MhF"/>
                 <constraint firstItem="o3z-ys-uug" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="ehR-MU-alX"/>
-                <constraint firstItem="o3z-ys-uug" firstAttribute="width" secondItem="L9p-di-BmD" secondAttribute="width" multiplier="0.075" id="j0A-42-cZ4"/>
+                <constraint firstItem="o3z-ys-uug" firstAttribute="width" secondItem="L9p-di-BmD" secondAttribute="width" multiplier="0.05" id="j0A-42-cZ4"/>
                 <constraint firstAttribute="trailing" secondItem="L9p-di-BmD" secondAttribute="trailing" id="tnd-pZ-iax"/>
             </constraints>
             <size key="customSize" width="104" height="50"/>

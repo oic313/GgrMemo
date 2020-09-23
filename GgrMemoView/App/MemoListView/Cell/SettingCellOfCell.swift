@@ -8,7 +8,7 @@ final class SettingCellOfCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.layer.cornerRadius = 15
+        self.layer.cornerRadius = label.frame.height/3
         self.layer.masksToBounds = true
         self.layer.borderColor = ColorAsset.thin.value?.cgColor
         self.layer.borderWidth = 1

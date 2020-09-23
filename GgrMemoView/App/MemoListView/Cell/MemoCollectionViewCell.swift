@@ -9,12 +9,9 @@ final class MemoCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var checkMarkView: UIView!
 
     override func awakeFromNib() {
-        super.awakeFromNib()
-        
-//        self.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.size.width/2 - 30).isActive = true
-        
+        super.awakeFromNib() 
         self.layer.borderColor = ColorAsset.thin.value?.cgColor
-        self.layer.borderWidth = 1
+        self.layer.borderWidth = 0.5
         self.layer.cornerRadius = 5
         self.layer.masksToBounds = true
     }

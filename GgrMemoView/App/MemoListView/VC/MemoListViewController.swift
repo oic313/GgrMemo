@@ -209,7 +209,10 @@ extension MemoListViewController: UICollectionViewDelegate {
                 view.isUserInteractionEnabled = false
                 presenter.checkedTag(tag: tag, indexPath: indexPath)
             case .edit:
-                return
+                if case .memoList(let memoList) = self.displayList[indexPath.section + 1] {
+                    let addMemoViewController = AddMemoViewController(memoList: memoList.memos, tag: tag)
+                    present(addMemoViewController, animated: true, completion: nil)
+                }
             default:
                 return
             }

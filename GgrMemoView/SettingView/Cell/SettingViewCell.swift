@@ -7,7 +7,6 @@ final class SettingViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.widthAnchor.constraint(equalToConstant: 200).isActive = true
-
     }
     
     func setupCell(text: String) {
