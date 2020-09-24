@@ -82,6 +82,7 @@ final class AddMemoViewController: UIViewController {
         
         tagTextField.text = initTag.value
         applySelectedColor(initTag.color)
+        presenter.view = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -89,22 +90,24 @@ final class AddMemoViewController: UIViewController {
         memoTextField.becomeFirstResponder()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        if #available(iOS 13.0, *) {
-            presentingViewController?.beginAppearanceTransition(true, animated: animated)
-            presentingViewController?.endAppearanceTransition()
-        }
-
-    }
+//    override func viewWillDisappear(_ animated: Bool) {
+//        super.viewWillDisappear(animated)
+//        if #available(iOS 13.0, *) {
+//            presentingViewController?.beginAppearanceTransition(true, animated: animated)
+//            presentingViewController?.endAppearanceTransition()
+//        }
+//
+//    }
     
-    @IBAction func TapAddButton(_ sender: Any) {
+    @IBAction func tapAddButton(_ sender: Any) {
         guard !(memoTextField.text?.isEmptyByTrimming ?? true) || !memoList.isEmpty else { return }
         if let memo = memo { hasAppendMemoList(memo: memo) }
         presenter.addMemoData(addModel: AddMemoViewModel(tag: tag, memos: memoList))
-        self.dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func tapCancelButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
 }
 
 extension AddMemoViewController: UITextFieldDelegate {
@@ -218,6 +221,16 @@ extension AddMemoViewController: UICollectionViewDelegate {
         }
     }
 
+}
+
+extension AddMemoViewController: AddMemoView {
+    func dissmiss() {
+        if #available(iOS 13.0, *) {
+            presentingViewController?.beginAppearanceTransition(true, animated: true)
+            presentingViewController?.endAppearanceTransition()
+        }
+        self.dismiss(animated: true)
+    }
 }
 
 private extension AddMemoViewController {

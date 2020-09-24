@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -25,12 +26,16 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OWe-0v-003">
-                    <rect key="frame" x="376" y="54" width="18" height="22"/>
-                    <state key="normal" image="plus" catalog="system">
-                        <color key="titleColor" name="TextColor"/>
+                    <rect key="frame" x="371.5" y="54" width="22.5" height="22"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <color key="tintColor" name="sub"/>
+                    <state key="normal">
+                        <color key="titleColor" name="sub"/>
+                        <imageReference key="image" image="plus" catalog="system" symbolScale="large"/>
+                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="heavy"/>
                     </state>
                     <connections>
-                        <action selector="TapAddButton:" destination="-1" eventType="touchUpInside" id="OL9-RT-XYm"/>
+                        <action selector="tapAddButton:" destination="-1" eventType="touchUpInside" id="VVD-IT-RwA"/>
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="deV-oc-bYX">
@@ -158,6 +163,18 @@
                         <constraint firstAttribute="height" constant="1" id="T8k-X7-gap"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dcw-p5-sou">
+                    <rect key="frame" x="20" y="54" width="21" height="22"/>
+                    <color key="tintColor" name="sub"/>
+                    <state key="normal">
+                        <color key="titleColor" name="sub"/>
+                        <imageReference key="image" image="xmark.circle.fill" catalog="system" symbolScale="medium"/>
+                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="bold"/>
+                    </state>
+                    <connections>
+                        <action selector="tapCancelButton:" destination="-1" eventType="touchUpInside" id="fnv-3B-RRi"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" name="MainColor"/>
@@ -175,25 +192,28 @@
                 <constraint firstItem="BNt-Tp-lt6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="eOU-hH-8nT"/>
                 <constraint firstItem="JsO-MP-7QX" firstAttribute="top" secondItem="BNt-Tp-lt6" secondAttribute="bottom" id="g9w-PE-ZSg"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="JsO-MP-7QX" secondAttribute="trailing" id="k5m-Mx-JcL"/>
+                <constraint firstItem="Dcw-p5-sou" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="l5P-iX-HqU"/>
                 <constraint firstItem="BNt-Tp-lt6" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="oMr-Yx-igA"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="E1H-79-uU6" secondAttribute="trailing" id="tBl-wB-ikQ"/>
+                <constraint firstItem="Dcw-p5-sou" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="zpg-Ma-g8j"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="144.64285714285714"/>
         </view>
     </objects>
     <resources>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="xmark.circle.fill" catalog="system" width="128" height="121"/>
         <namedColor name="MainColor">
             <color red="1" green="0.97254901960784312" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="SubColor">
             <color red="1" green="0.90196078431372551" blue="0.58039215686274515" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="TextColor">
-            <color red="0.50196078431372548" green="0.48627450980392156" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="main">
             <color red="1" green="0.97254901960784312" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="sub">
+            <color red="1" green="0.90196078431372551" blue="0.58039215686274515" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="text">
             <color red="0.50196078431372548" green="0.48627450980392156" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
