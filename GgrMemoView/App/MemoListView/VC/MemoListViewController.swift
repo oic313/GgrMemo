@@ -189,18 +189,15 @@ extension MemoListViewController: UICollectionViewDelegate {
                 present(addMemoViewController, animated: true, completion: nil)
             case .search:
                 let str = "https://www.google.co.jp/search?q=\(memoList.memos[indexPath.row].value)"
-                guard let url = str.url else { return }
-                openUrl(mobileUrl: url, appUrl: url)
+                openUrl(mobileUrl: str.url, appUrl: str.url)
             case .searchOnYoutube:
                 let app = "youtube://results?search_query=\(memoList.memos[indexPath.row].value)"
                 let mobile = "https://m.youtube.com/results?search_query=\(memoList.memos[indexPath.row].value)"
-                guard let appUrl = app.url, let mobileUrl = mobile.url else { return }
-                openUrl(mobileUrl: mobileUrl, appUrl: appUrl)
+                openUrl(mobileUrl: mobile.url, appUrl: app.url)
             case .searchOnTwitter:
                 let app = "twitter://search?query=\(memoList.memos[indexPath.row].value)"
                 let mobile = "https://mobile.twitter.com/search?lang=ja&q=\(memoList.memos[indexPath.row].value)&src=typed_query"
-                guard let appUrl = app.url, let mobileUrl = mobile.url else { return }
-                openUrl(mobileUrl: mobileUrl, appUrl: appUrl)
+                openUrl(mobileUrl: mobile.url, appUrl: app.url)
             }
         } else if case .tag(let tag) = self.displayList[indexPath.section] {
             switch selectedTapAction {
@@ -221,7 +218,8 @@ extension MemoListViewController: UICollectionViewDelegate {
     }
     
     
-    func openUrl(mobileUrl: URL, appUrl: URL) {
+    func openUrl(mobileUrl: URL?, appUrl: URL?) {
+        guard let mobileUrl = mobileUrl, let appUrl = appUrl else { return }
         if selectedUseOfficialApp.isOn && UIApplication.shared.canOpenURL(appUrl) {
             UIApplication.shared.open(appUrl)
         } else {
