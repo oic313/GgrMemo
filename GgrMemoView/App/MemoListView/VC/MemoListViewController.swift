@@ -13,7 +13,8 @@ final public class MemoListViewController: UIViewController {
         model?.displayList ?? []
     }
     private var selectedTapAction: TapAction
-    
+    private var selectedUseOfficialApp: useOfficialAppFlagState
+
     private lazy var tagCellHelper: TagCollectionViewCell? = {
         UINib(nibName: TagCollectionViewCell.className, bundle: Bundle(for: TagCollectionViewCell.self)).instantiate(withOwner: nil).first as? TagCollectionViewCell
     }()
@@ -24,6 +25,7 @@ final public class MemoListViewController: UIViewController {
     
     public init(){
         selectedTapAction = .checked
+        selectedUseOfficialApp = .on
         super.init(nibName: nil, bundle: Bundle(for: Self.self))
     }
     
@@ -84,7 +86,7 @@ extension MemoListViewController: UICollectionViewDataSource {
         switch self.displayList[indexPath.section] {
         case .setting(let list):
             let cell: SettingCollectionViewCell = collectionView.dequeueReusableCell(cellClass: SettingCollectionViewCell.self, indexPath: indexPath)
-            cell.setCell(displayList: list, tapAction: selectedTapAction)
+            cell.setCell(displayList: list, tapAction: selectedTapAction, useOfficialApp: selectedUseOfficialApp)
             cell.delegate = self
             return cell
         case .tag(let tag):
@@ -186,22 +188,19 @@ extension MemoListViewController: UICollectionViewDelegate {
                 let addMemoViewController = AddMemoViewController(memoList: [memoList.memos[indexPath.row]])
                 present(addMemoViewController, animated: true, completion: nil)
             case .search:
-                let strUrl = "https://www.google.co.jp/search?q=\(memoList.memos[indexPath.row].value)"
-                guard let url = strUrl.url else { return }
-                present(WebViewController(url: url), animated: true, completion: nil)
-            case .searchOnSafari:
-                let strUrl = "https://www.google.co.jp/search?q=\(memoList.memos[indexPath.row].value)"
-                guard let url = strUrl.url else { return }
-                UIApplication.shared.open(url)
+                let str = "https://www.google.co.jp/search?q=\(memoList.memos[indexPath.row].value)"
+                guard let url = str.url else { return }
+                openUrl(mobileUrl: url, appUrl: url)
             case .searchOnYoutube:
-                let strUrl = "youtube://results?search_query=\(memoList.memos[indexPath.row].value)"
-                guard let url = strUrl.url else { return }
-                UIApplication.shared.open(url)
-
+                let app = "youtube://results?search_query=\(memoList.memos[indexPath.row].value)"
+                let mobile = "https://m.youtube.com/results?search_query=\(memoList.memos[indexPath.row].value)"
+                guard let appUrl = app.url, let mobileUrl = mobile.url else { return }
+                openUrl(mobileUrl: mobileUrl, appUrl: appUrl)
             case .searchOnTwitter:
-                let strUrl = "twitter://search?query=\(memoList.memos[indexPath.row].value)"
-                guard let url = strUrl.url else { return }
-                UIApplication.shared.open(url)
+                let app = "twitter://search?query=\(memoList.memos[indexPath.row].value)"
+                let mobile = "https://mobile.twitter.com/search?lang=ja&q=\(memoList.memos[indexPath.row].value)&src=typed_query"
+                guard let appUrl = app.url, let mobileUrl = mobile.url else { return }
+                openUrl(mobileUrl: mobileUrl, appUrl: appUrl)
             }
         } else if case .tag(let tag) = self.displayList[indexPath.section] {
             switch selectedTapAction {
@@ -221,6 +220,14 @@ extension MemoListViewController: UICollectionViewDelegate {
         return
     }
     
+    
+    func openUrl(mobileUrl: URL, appUrl: URL) {
+        if selectedUseOfficialApp.isOn && UIApplication.shared.canOpenURL(appUrl) {
+            UIApplication.shared.open(appUrl)
+        } else {
+            present(WebViewController(url: mobileUrl), animated: true, completion: nil)
+        }
+    }
 }
 
 
@@ -253,6 +260,10 @@ extension MemoListViewController: ParentView {
         
         settingViewController.delegate = self
         present(settingViewController, animated: true, completion: nil)
+    }
+    
+    public func setUseOfficialAppFlag(useOfficialAppFlag: useOfficialAppFlagState){
+        selectedUseOfficialApp = useOfficialAppFlag
     }
 }
 

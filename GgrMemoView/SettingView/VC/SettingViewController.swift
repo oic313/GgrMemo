@@ -43,6 +43,8 @@ extension SettingViewController: UICollectionViewDataSource {
             return list.count
         case .tapActionEdit(let list):
             return list.count
+        case .useOfficialAppFlag:
+            return 0
         }
     }
     
@@ -61,6 +63,8 @@ extension SettingViewController: UICollectionViewDataSource {
             cell.setupCell(text: list[indexPath.section].rawValue)
         case .tapActionEdit(let list):
             cell.setupCell(text: list[indexPath.section].rawValue)
+        case .useOfficialAppFlag:
+            return cell
         }
         return cell
         
@@ -114,6 +118,8 @@ extension SettingViewController: UICollectionViewDelegate {
         case .tapActionEdit(let list):
             delegate.tapedTapAction(action: list[indexPath.section])
             self.dismiss(animated: true, completion: nil)
+        case .useOfficialAppFlag:
+            return
         }
         return
     }

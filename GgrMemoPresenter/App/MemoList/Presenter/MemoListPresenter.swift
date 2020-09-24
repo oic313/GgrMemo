@@ -9,7 +9,11 @@ final public class MemoListPresenter {
     public weak var view: MemoListView?  // NOTE: これがdelegate
     
     private var settingList: [SettingViewCellType] {
-        [.edit(EditAction.allCases), .tapActionEdit(TapAction.allCases)]
+        [
+            .edit(EditAction.allCases),
+            .tapActionEdit(TapAction.allCases),
+            .useOfficialAppFlag
+        ]
     }
     
     private var tagAndMemoList: [CollectionViewCellType] {
@@ -96,16 +100,7 @@ public enum CollectionViewCellType {
 public enum SettingViewCellType {
     case edit([EditAction])
     case tapActionEdit([TapAction])
-    
-//    public var displayText: String {
-//        switch self {
-//        case .edit:
-//            return "編集"
-//        case .tapActionEdit(let tapAction):
-//            return tapAction.first?.rawValue ?? ""
-//        }
-//        
-//    }
+    case useOfficialAppFlag
 
 }
 
@@ -119,7 +114,27 @@ public enum TapAction: String, CaseIterable {
     case checked = "タップでチェック"
     case edit = "タップで編集"
     case search = "タップで検索"
-    case searchOnSafari = "タップでSafariで検索"
     case searchOnYoutube = "タップでYoutubeで検索"
     case searchOnTwitter = "タップでTwitterで検索"
+}
+
+public enum useOfficialAppFlagState: String {
+    case on = "公式アプリで検索"
+    case off = "アプリ内で検索"
+    public var isOn: Bool {
+        switch self {
+        case .on:
+            return true
+        case .off:
+            return false
+        }
+    }
+    public mutating func toggle() {
+        switch self {
+        case .on:
+            self = .off
+        case .off:
+            self = .on
+        }
+    }
 }

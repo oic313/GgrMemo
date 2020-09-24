@@ -21,7 +21,8 @@ final class WebViewController: UIViewController, WKNavigationDelegate {
         // WKWebViewの追加
         webView = WKWebView(frame:CGRect(x: 0, y: 0, width: view.bounds.size.width, height: view.bounds.size.height))
         view.addSubview(webView)
-        
+        self.setLayoutFullScreenWebView(webView: webView, view: view)
+
         webView.navigationDelegate = self
 
         
@@ -35,5 +36,16 @@ final class WebViewController: UIViewController, WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
         // ここに処理を書く！
     }
+    
+    func setLayoutFullScreenWebView(webView: WKWebView, view: UIView) {
+
+            // AutoLayout設定
+            webView.translatesAutoresizingMaskIntoConstraints = false
+
+            // webViewの幅をviewに合わせる
+            view.addConstraints([NSLayoutConstraint(item:webView, attribute:NSLayoutConstraint.Attribute.width, relatedBy:NSLayoutConstraint.Relation.equal, toItem:view, attribute:NSLayoutConstraint.Attribute.width, multiplier:1.0, constant:0)])
+            // webViewの高さをviewに合わせる
+            view.addConstraints([NSLayoutConstraint(item:webView, attribute:NSLayoutConstraint.Attribute.height, relatedBy:NSLayoutConstraint.Relation.equal, toItem:view, attribute:NSLayoutConstraint.Attribute.height, multiplier:1.0, constant:0)])
+        }
     
 }

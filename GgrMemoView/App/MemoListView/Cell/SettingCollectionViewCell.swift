@@ -3,6 +3,7 @@ import GgrMemoPresenter
 
 public protocol ParentView: AnyObject {
     func popupSettingView(cellType: SettingViewCellType, cell: UICollectionViewCell)
+    func setUseOfficialAppFlag(useOfficialAppFlag: useOfficialAppFlagState)
 }
 
 final class SettingCollectionViewCell: UICollectionViewCell {
@@ -11,6 +12,7 @@ final class SettingCollectionViewCell: UICollectionViewCell {
     public weak var delegate: ParentView?  // NOTE: これがdelegate
     private var displayList: [SettingViewCellType] = []
     private var tapAction: TapAction = .checked
+    private var useOfficialApp: useOfficialAppFlagState = .on
 
     private lazy var settingCellHelper: SettingCellOfCell? = {
         UINib(nibName: SettingCellOfCell.className, bundle: Bundle(for: SettingCellOfCell.self)).instantiate(withOwner: nil).first as? SettingCellOfCell
@@ -30,9 +32,10 @@ final class SettingCollectionViewCell: UICollectionViewCell {
         
     }
     
-    func setCell(displayList: [SettingViewCellType], tapAction: TapAction) {
+    func setCell(displayList: [SettingViewCellType], tapAction: TapAction, useOfficialApp: useOfficialAppFlagState) {
         self.displayList = displayList
         self.tapAction = tapAction
+        self.useOfficialApp = useOfficialApp
         settingCollectionView.reloadData()
     }
     
@@ -60,8 +63,9 @@ extension SettingCollectionViewCell: UICollectionViewDataSource {
             cell.setupCell(text: "編集")
         case .tapActionEdit(_):
             cell.setupCell(text: tapAction.rawValue)
+        case .useOfficialAppFlag:
+            cell.setupCell(text: useOfficialApp.rawValue)
         }
-        
         return cell
         
     }
@@ -77,10 +81,11 @@ extension SettingCollectionViewCell: UICollectionViewDelegateFlowLayout {
                 cell.setupCell(text: "編集")
             case .tapActionEdit(_):
                 cell.setupCell(text: tapAction.rawValue)
+            case .useOfficialAppFlag:
+                cell.setupCell(text: useOfficialApp.rawValue)
             }
             return cell.contentView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
         }
-        
         return .zero
     }
     
@@ -119,10 +124,19 @@ extension SettingCollectionViewCell: UICollectionViewDelegate {
     // Cell がタップで選択されたときに呼ばれる
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let view = delegate else { return }
-        
         guard let cell = collectionView.cellForItem(at: indexPath) else { return }
+        switch displayList[indexPath.row] {
         
-        view.popupSettingView(cellType: displayList[indexPath.row], cell: cell)
+        case .edit(_):
+            view.popupSettingView(cellType: displayList[indexPath.row], cell: cell)
+        case .tapActionEdit(_):
+            view.popupSettingView(cellType: displayList[indexPath.row], cell: cell)
+        case .useOfficialAppFlag:
+            useOfficialApp.toggle()
+            settingCollectionView.reloadData()
+            view.setUseOfficialAppFlag(useOfficialAppFlag: useOfficialApp)
+        }
+        
     }
     
 }
