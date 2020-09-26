@@ -8,7 +8,6 @@ final class AddMemoCollectionViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         self.layer.cornerRadius = 15
         self.layer.masksToBounds = true
         self.layer.borderColor = ColorAsset.thin.value?.cgColor

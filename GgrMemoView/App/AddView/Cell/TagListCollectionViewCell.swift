@@ -7,7 +7,6 @@ final class TagListCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
     }
     
     func setupCell(tag: Tag) {

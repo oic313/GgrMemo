@@ -45,10 +45,6 @@ final public class MemoListViewController: UIViewController {
         memoCollectionView.registerCell(cellClass: TagCollectionViewCell.self)
         memoCollectionView.registerCell(cellClass: SpaceCollectionViewCell.self)
         
-        //        if let flowLayout = memoCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-        //            flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-        //        }
-        
     }
     
     public override func viewWillAppear(_ animated: Bool) {

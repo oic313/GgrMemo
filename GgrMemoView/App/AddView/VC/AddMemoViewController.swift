@@ -18,6 +18,18 @@ final class AddMemoViewController: UIViewController {
     private var selectedMemoIndexPath: IndexPath? = nil
     private var selectedColor: ColorAsset
 
+    private lazy var addMemoCellHelper: AddMemoCollectionViewCell? = {
+        UINib(nibName: AddMemoCollectionViewCell.className, bundle: Bundle(for: AddMemoCollectionViewCell.self)).instantiate(withOwner: nil).first as? AddMemoCollectionViewCell
+    }()
+    
+    private lazy var tagListCellHelper: TagListCollectionViewCell? = {
+        UINib(nibName: TagListCollectionViewCell.className, bundle: Bundle(for: TagListCollectionViewCell.self)).instantiate(withOwner: nil).first as? TagListCollectionViewCell
+    }()
+    
+    private lazy var colorListCellHelper: ColorListCollectionViewCell? = {
+        UINib(nibName: ColorListCollectionViewCell.className, bundle: Bundle(for: ColorListCollectionViewCell.self)).instantiate(withOwner: nil).first as? ColorListCollectionViewCell
+    }()
+    
     private var memo: Memo? {
         guard let text = memoTextField.text else { return nil }
         guard !text.isEmptyByTrimming else { return nil }
@@ -43,29 +55,27 @@ final class AddMemoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // UICollectionViewDataSourceのあるクラスを示す
         memoCollectionView.dataSource = self
-        // UICollectionViewDelegateFlowLayoutのあるクラスを示す
         memoCollectionView.delegate = self
         memoCollectionView.registerCell(cellClass: AddMemoCollectionViewCell.self)
 
-        if let flowLayout = memoCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-        }
+//        if let flowLayout = memoCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+//            flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+//        }
         
         tagCollectionView.dataSource = self
         tagCollectionView.delegate = self
         tagCollectionView.registerCell(cellClass: TagListCollectionViewCell.self)
-        if let flowLayout = tagCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-        }
+//        if let flowLayout = tagCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+//            flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+//        }
         
         colorCollectionView.dataSource = self
         colorCollectionView.delegate = self
         colorCollectionView.registerCell(cellClass: ColorListCollectionViewCell.self)
-        if let flowLayout = colorCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-        }
+//        if let flowLayout = colorCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+//            flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+//        }
         
         memoTextField.delegate = self
 
@@ -169,9 +179,41 @@ extension AddMemoViewController: UICollectionViewDataSource {
 
 extension AddMemoViewController: UICollectionViewDelegateFlowLayout {
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if collectionView == memoCollectionView {
+            if let cell = addMemoCellHelper {
+                cell.setupCell(memo: memoList[indexPath.row], color: selectedColor)
+                return cell.contentView.systemLayoutSizeFitting(
+                    CGSize(width: 0, height: 0),
+                    withHorizontalFittingPriority: .fittingSizeLevel,
+                    verticalFittingPriority: .fittingSizeLevel
+                )
+            }
+        } else if collectionView == tagCollectionView {
+            if let cell = tagListCellHelper {
+                cell.setupCell(tag: tagList[indexPath.row])
+                return cell.contentView.systemLayoutSizeFitting(
+                    CGSize(width: 0, height: 0),
+                    withHorizontalFittingPriority: .fittingSizeLevel,
+                    verticalFittingPriority: .fittingSizeLevel
+                )
+            }
+        } else if collectionView == colorCollectionView {
+            if let cell = colorListCellHelper {
+                cell.setupCell(color: tagColorList[indexPath.row])
+                return cell.contentView.systemLayoutSizeFitting(
+                    CGSize(width: 0, height: 0),
+                    withHorizontalFittingPriority: .fittingSizeLevel,
+                    verticalFittingPriority: .fittingSizeLevel
+                )
+            }
+        }
+        return .zero
+    }
+    
     // cell達の周囲の余白
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        UIEdgeInsets(top: 0.0, left: 10.0, bottom: 0.0, right: 100.0)
+        UIEdgeInsets(top: 0.0, left: 10.0, bottom: 0.0, right: 10.0)
     }
     
     // cell単体の縦方向の間隔
