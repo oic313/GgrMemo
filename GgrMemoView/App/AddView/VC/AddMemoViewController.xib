@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddViewController" customModule="GgrMemoView" customModuleProvider="target">
             <connections>
+                <outlet property="bottomConstraint" destination="JUb-8f-eWE" id="GPe-g5-JPa"/>
                 <outlet property="colorCollectionView" destination="fBs-fi-0Hu" id="mTc-Ix-7hd"/>
                 <outlet property="memoCollectionView" destination="E1H-79-uU6" id="giq-91-sLi"/>
                 <outlet property="memoTextField" destination="vUb-NQ-gou" id="LPe-b4-VyO"/>

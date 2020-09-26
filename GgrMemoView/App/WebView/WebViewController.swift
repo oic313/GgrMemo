@@ -34,7 +34,7 @@ final class WebViewController: UIViewController, WKNavigationDelegate {
     
     /// WebView読み込み時にエラーが発生
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
-        let alert: UIAlertController = UIAlertController(title: "インターネットに接続できません", message: nil, preferredStyle:  UIAlertController.Style.alert)
+        let alert: UIAlertController = UIAlertController(title: "エラー", message: "インターネットに接続できません", preferredStyle:  UIAlertController.Style.alert)
         let defaultAction: UIAlertAction = UIAlertAction(title: "閉じる", style: UIAlertAction.Style.default, handler:{
             // ボタンが押された時の処理を書く（クロージャ実装）
             (action: UIAlertAction!) -> Void in

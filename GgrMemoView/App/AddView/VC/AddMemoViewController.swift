@@ -9,6 +9,7 @@ final class AddMemoViewController: UIViewController {
     @IBOutlet weak var colorCollectionView: UICollectionView!
     @IBOutlet weak var memoTextField: UITextField!
     @IBOutlet weak var tagTextField: UITextField!
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     private let presenter = AddMemoPresenter()
     private let tagList: [Tag]
     private let tagColorList: [ColorAsset]
@@ -72,7 +73,7 @@ final class AddMemoViewController: UIViewController {
         tagCollectionView.layer.masksToBounds = true
         
         colorCollectionView.layer.borderColor = ColorAsset.sub.value?.cgColor
-        colorCollectionView.layer.borderWidth = 1
+        colorCollectionView.layer.borderWidth = 2
         colorCollectionView.layer.cornerRadius = 5
         colorCollectionView.layer.masksToBounds = true
         
@@ -87,17 +88,20 @@ final class AddMemoViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        NotificationCenter.default.addObserver(self, selector:#selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         memoTextField.becomeFirstResponder()
     }
     
-//    override func viewWillDisappear(_ animated: Bool) {
-//        super.viewWillDisappear(animated)
-//        if #available(iOS 13.0, *) {
-//            presentingViewController?.beginAppearanceTransition(true, animated: animated)
-//            presentingViewController?.endAppearanceTransition()
-//        }
-//
-//    }
+    @objc func keyboardWillShow(_ notification: Notification) {
+      guard let userInfo = notification.userInfo else { return }
+      guard let duration = userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double else { return }
+      //キーボードの高さを取得
+      guard let rect = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
+        
+      UIView.animate(withDuration: duration , delay: 0.5, animations: {
+        self.bottomConstraint.constant = rect.height + 10
+      })
+    }
     
     @IBAction func tapAddButton(_ sender: Any) {
         guard !(memoTextField.text?.isEmptyByTrimming ?? true) || !memoList.isEmpty else { return }
@@ -122,7 +126,6 @@ extension AddMemoViewController: UITextFieldDelegate {
         }
         return true
     }
-    
 }
 
 extension AddMemoViewController: UICollectionViewDataSource {
@@ -168,9 +171,7 @@ extension AddMemoViewController: UICollectionViewDelegateFlowLayout {
     
     // cell達の周囲の余白
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        
         UIEdgeInsets(top: 0.0, left: 10.0, bottom: 0.0, right: 100.0)
-        
     }
     
     // cell単体の縦方向の間隔
@@ -182,7 +183,6 @@ extension AddMemoViewController: UICollectionViewDelegateFlowLayout {
 //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
 //        30
 //    }
-    
     
 }
 
@@ -199,7 +199,6 @@ extension AddMemoViewController: UICollectionViewDelegate {
         true
     }
 
-    
     // Cell がタップで選択されたときに呼ばれる
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == memoCollectionView {
@@ -211,7 +210,6 @@ extension AddMemoViewController: UICollectionViewDelegate {
             guard !text.isEmptyByTrimming else { return }
             applySelectedColor(tagColorList[indexPath.row])
         }
-        
     }
     
     // Cell がタップで選択解除されたときに呼ばれる
@@ -251,7 +249,6 @@ private extension AddMemoViewController {
              selectedMemoIndexPath = indexPath
             memoTextField.text = memoList[indexPath.row].value
          }
-
          cell.applySelectionState()
     }
     
@@ -265,6 +262,7 @@ private extension AddMemoViewController {
     func addMemoCell(memo: Memo) {
         hasAppendMemoList(memo: memo)
         memoCollectionView.insertItems(at: [IndexPath(row: memoList.count - 1, section: 0)])
+        memoCollectionView.scrollToItem(at: IndexPath(row: memoList.count - 1, section: 0), at: .right, animated: true)
     }
     
     func applySelectedColor(_ color: ColorAsset) {

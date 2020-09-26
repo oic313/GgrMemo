@@ -14,7 +14,7 @@ final public class MemoListViewController: UIViewController {
     }
     private var selectedTapAction: TapAction
     private var selectedUseOfficialApp: useOfficialAppFlagState
-
+    
     private lazy var tagCellHelper: TagCollectionViewCell? = {
         UINib(nibName: TagCollectionViewCell.className, bundle: Bundle(for: TagCollectionViewCell.self)).instantiate(withOwner: nil).first as? TagCollectionViewCell
     }()
@@ -111,7 +111,7 @@ extension MemoListViewController: UICollectionViewDelegateFlowLayout {
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         switch self.displayList[indexPath.section] {
         case .setting:
-            return .init(width: view.frame.width, height: 35)
+            return .init(width: view.frame.width, height: 40)
         case .tag(let tag):
             if let cell = tagCellHelper {
                 cell.setupCell(tag: tag)
@@ -143,6 +143,8 @@ extension MemoListViewController: UICollectionViewDelegateFlowLayout {
     // cell達の周囲の余白
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         switch self.displayList[section] {
+        case .tag:
+            return UIEdgeInsets(top: 30.0, left: 0.0, bottom: 0.0, right: 0.0)
         case .memoList:
             return UIEdgeInsets(top: 10.0, left: 30.0, bottom: 0.0, right: 30.0)
         default:
@@ -213,7 +215,6 @@ extension MemoListViewController: UICollectionViewDelegate {
                 return
             }
         }
-        
         return
     }
     
