@@ -17,7 +17,7 @@ final class AddMemoViewController: UIViewController {
     private var memoList = [Memo]()
     private var selectedMemoIndexPath: IndexPath? = nil
     private var selectedColor: ColorAsset
-
+    
     private lazy var addMemoCellHelper: AddMemoCollectionViewCell? = {
         UINib(nibName: AddMemoCollectionViewCell.className, bundle: Bundle(for: AddMemoCollectionViewCell.self)).instantiate(withOwner: nil).first as? AddMemoCollectionViewCell
     }()
@@ -59,38 +59,25 @@ final class AddMemoViewController: UIViewController {
         memoCollectionView.delegate = self
         memoCollectionView.registerCell(cellClass: AddMemoCollectionViewCell.self)
 
-//        if let flowLayout = memoCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-//            flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-//        }
-        
         tagCollectionView.dataSource = self
         tagCollectionView.delegate = self
         tagCollectionView.registerCell(cellClass: TagListCollectionViewCell.self)
-//        if let flowLayout = tagCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-//            flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-//        }
-        
-        colorCollectionView.dataSource = self
-        colorCollectionView.delegate = self
-        colorCollectionView.registerCell(cellClass: ColorListCollectionViewCell.self)
-//        if let flowLayout = colorCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-//            flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-//        }
-        
-        memoTextField.delegate = self
 
         tagCollectionView.layer.cornerRadius = 5
         tagCollectionView.layer.masksToBounds = true
         
+        colorCollectionView.dataSource = self
+        colorCollectionView.delegate = self
+        colorCollectionView.registerCell(cellClass: ColorListCollectionViewCell.self)
+
         colorCollectionView.layer.borderColor = ColorAsset.sub.value?.cgColor
         colorCollectionView.layer.borderWidth = 2
         colorCollectionView.layer.cornerRadius = 5
         colorCollectionView.layer.masksToBounds = true
         
-        if tagList.isEmpty {
-            tagCollectionView.isHidden = true
-        }
+        if tagList.isEmpty { tagCollectionView.isHidden = true }
         
+        memoTextField.delegate = self
         tagTextField.text = initTag.value
         applySelectedColor(initTag.color)
         presenter.view = self
@@ -103,14 +90,13 @@ final class AddMemoViewController: UIViewController {
     }
     
     @objc func keyboardWillShow(_ notification: Notification) {
-      guard let userInfo = notification.userInfo else { return }
-      guard let duration = userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double else { return }
-      //キーボードの高さを取得
-      guard let rect = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
-        
-      UIView.animate(withDuration: duration , delay: 0.5, animations: {
-        self.bottomConstraint.constant = rect.height + 10
-      })
+        guard let userInfo = notification.userInfo else { return }
+        guard let duration = userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double else { return }
+        //キーボードの高さを取得
+        guard let rect = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
+        UIView.animate(withDuration: duration , delay: 0.5, animations: {
+            self.bottomConstraint.constant = rect.height + 10
+        })
     }
     
     @IBAction func tapAddButton(_ sender: Any) {
@@ -128,7 +114,6 @@ extension AddMemoViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // MEMO: 既存セルの更新か新規追加
         guard let memo = memo else { return true }
-
         if let indexPath = selectedMemoIndexPath {
             updateMemoCell(memo: memo, indexPath: indexPath)
         } else {
@@ -181,32 +166,17 @@ extension AddMemoViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == memoCollectionView {
-            if let cell = addMemoCellHelper {
-                cell.setupCell(memo: memoList[indexPath.row], color: selectedColor)
-                return cell.contentView.systemLayoutSizeFitting(
-                    CGSize(width: 0, height: 0),
-                    withHorizontalFittingPriority: .fittingSizeLevel,
-                    verticalFittingPriority: .fittingSizeLevel
-                )
-            }
+            guard let cell = addMemoCellHelper else { return .zero }
+            cell.setupCell(memo: memoList[indexPath.row], color: selectedColor)
+            return cell.fitSize()
         } else if collectionView == tagCollectionView {
-            if let cell = tagListCellHelper {
-                cell.setupCell(tag: tagList[indexPath.row])
-                return cell.contentView.systemLayoutSizeFitting(
-                    CGSize(width: 0, height: 0),
-                    withHorizontalFittingPriority: .fittingSizeLevel,
-                    verticalFittingPriority: .fittingSizeLevel
-                )
-            }
+            guard let cell = tagListCellHelper else { return .zero }
+            cell.setupCell(tag: tagList[indexPath.row])
+            return cell.fitSize()
         } else if collectionView == colorCollectionView {
-            if let cell = colorListCellHelper {
-                cell.setupCell(color: tagColorList[indexPath.row])
-                return cell.contentView.systemLayoutSizeFitting(
-                    CGSize(width: 0, height: 0),
-                    withHorizontalFittingPriority: .fittingSizeLevel,
-                    verticalFittingPriority: .fittingSizeLevel
-                )
-            }
+            guard let cell = colorListCellHelper else { return .zero }
+            cell.setupCell(color: tagColorList[indexPath.row])
+            return cell.fitSize()
         }
         return .zero
     }
@@ -222,9 +192,9 @@ extension AddMemoViewController: UICollectionViewDelegateFlowLayout {
     }
     
     // cell単体の横方向の間隔
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-//        30
-//    }
+    //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+    //        30
+    //    }
     
 }
 
@@ -232,7 +202,7 @@ extension AddMemoViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
         true  // 変更
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, shouldDeselectItemAt indexPath: IndexPath) -> Bool {
         true  // 変更
     }
@@ -240,7 +210,7 @@ extension AddMemoViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
         true
     }
-
+    
     // Cell がタップで選択されたときに呼ばれる
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == memoCollectionView {
@@ -260,7 +230,7 @@ extension AddMemoViewController: UICollectionViewDelegate {
             togleMemoCellSelectionState(collectionView: collectionView, indexPath: indexPath)
         }
     }
-
+    
 }
 
 extension AddMemoViewController: AddMemoView {
@@ -282,16 +252,16 @@ private extension AddMemoViewController {
     
     func togleMemoCellSelectionState(collectionView: UICollectionView, indexPath: IndexPath) {
         guard let cell = collectionView.cellForItem(at: indexPath) as? AddMemoCollectionViewCell else { return }
-         // MEMO: もう一回同じcellがタップされた
-         if selectedMemoIndexPath == indexPath {
-             selectedMemoIndexPath = nil
-             memoTextField.text = nil
-             cell.isSelected = false
-         } else {
-             selectedMemoIndexPath = indexPath
+        // MEMO: もう一回同じcellがタップされた
+        if selectedMemoIndexPath == indexPath {
+            selectedMemoIndexPath = nil
+            memoTextField.text = nil
+            cell.isSelected = false
+        } else {
+            selectedMemoIndexPath = indexPath
             memoTextField.text = memoList[indexPath.row].value
-         }
-         cell.applySelectionState()
+        }
+        cell.applySelectionState()
     }
     
     func updateMemoCell(memo: Memo, indexPath: IndexPath) {

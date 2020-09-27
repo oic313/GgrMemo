@@ -1,8 +1,6 @@
 import UIKit
 import GgrMemoPresenter
-func hoge () {
-    
-}
+
 final public class MemoListViewController: UIViewController {
     
     @IBOutlet weak var memoCollectionView: UICollectionView!
@@ -109,31 +107,16 @@ extension MemoListViewController: UICollectionViewDelegateFlowLayout {
         case .setting:
             return .init(width: view.frame.width, height: 40)
         case .tag(let tag):
-            if let cell = tagCellHelper {
-                cell.setupCell(tag: tag)
-                let cellWidth = UIScreen.main.bounds.size.width - 30
-                
-                return cell.contentView.systemLayoutSizeFitting(
-                    CGSize(width: cellWidth, height: 0),
-                    withHorizontalFittingPriority: .required,
-                    verticalFittingPriority: .fittingSizeLevel
-                )
-            }
+            guard let cell = tagCellHelper else { return .zero }
+            cell.setupCell(tag: tag)            
+            return cell.fitSize(width: UIScreen.main.bounds.size.width - 30)
         case .memoList(let memoList):
-            if let cell = memoCellHelper {
-                cell.setupCell(memo: memoList.memos[indexPath.row], color: memoList.color)
-                let cellWidth = UIScreen.main.bounds.size.width/2 - 60/2 - 10/2
-                
-                return cell.contentView.systemLayoutSizeFitting(
-                    CGSize(width: cellWidth, height: 0),
-                    withHorizontalFittingPriority: .required,
-                    verticalFittingPriority: .fittingSizeLevel
-                )
-            }
+            guard let cell = memoCellHelper else { return .zero }
+            cell.setupCell(memo: memoList.memos[indexPath.row], color: memoList.color)
+            return cell.fitSize(width: UIScreen.main.bounds.size.width/2 - 60/2 - 10/2)
         case .space:
             return .init(width: view.frame.width, height: view.frame.height/4)
         }
-        return .zero
     }
     
     // cell達の周囲の余白
@@ -172,7 +155,6 @@ extension MemoListViewController: UICollectionViewDelegate {
     public func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
         true
     }
-    
     
     // Cell がタップで選択されたときに呼ばれる
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -223,6 +205,7 @@ extension MemoListViewController: UICollectionViewDelegate {
             present(WebViewController(url: mobileUrl), animated: true, completion: nil)
         }
     }
+    
 }
 
 
@@ -233,7 +216,6 @@ extension MemoListViewController: MemoListView {
         memoCollectionView.reloadData()
         view.isUserInteractionEnabled = true
     }
-    
 }
 
 extension MemoListViewController: ParentView {

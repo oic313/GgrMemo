@@ -21,12 +21,10 @@ final class TagCollectionViewCell: UICollectionViewCell {
     func applyCheckedState(isCecked: Bool, tagColor: ColorAsset){
         if isCecked {
             self.backgroundColor = ColorAsset.thin.value
-//            tagLabel.textColor = tagColor.value
         } else {
             self.backgroundColor = tagColor.value
-//            tagLabel.textColor = ColorAsset.text.value
         }
         checkMark.isHidden = !isCecked
-        tagLabel.hoge(isCecked)
+        tagLabel.strikethrough(isCecked)
     }
 }
