@@ -17,10 +17,10 @@ final public class MemoListPresenter {
     }
     
     private var tagAndMemoList: [CollectionViewCellType] {
-        FatLogic.searchIncludeSpaceTagList().flatMap {
+        TagBussinessLogic.searchIncludeSpaceTagList().flatMap {
             [
                 .tag($0),
-                .memoList(MemoListModel(memos: FatLogic.searchtMemoWithMatchTag(tag: $0), color: $0.color))
+                .memoList(MemoListModel(memos: MemoBussinessLogic.searchtMemoWithMatchTag(tag: $0), color: $0.color))
             ]
         }
     }
@@ -41,32 +41,32 @@ final public class MemoListPresenter {
     
     public func checkedMemo(memo: Memo, indexPath: IndexPath) {
         guard let view = view else { return }
-        FatLogic.togleMemoCheckedStatus(memo: memo)
+        MemoBussinessLogic.togleMemoCheckedStatus(memo: memo)
         view.redraw(model: MemoListViewModel(displayList: displayList))
     }
     
     public func checkedTag(tag: Tag, indexPath: IndexPath) {
         guard let view = view else { return }
-        FatLogic.togleTagCheckedStatus(tag: tag)
+        TagBussinessLogic.togleTagCheckedStatus(tag: tag)
         view.redraw(model: MemoListViewModel(displayList: displayList))
     }
     
     public func deleteCheckedMemos() {
         guard let view = view else { return }
-        FatLogic.deleteCheckedMemos()
+        MemoBussinessLogic.deleteCheckedMemos()
         view.redraw(model: MemoListViewModel(displayList: displayList))
     }
     
     public func deleteCheckedTags() {
         guard let view = view else { return }
-        FatLogic.deleteCheckedTags()
+        TagBussinessLogic.deleteCheckedTags()
         view.redraw(model: MemoListViewModel(displayList: displayList))
     }
     
     public func deselectionAll() {
         guard let view = view else { return }
-        FatLogic.deselectionAllMemo()
-        FatLogic.deselectionAllTag()
+        MemoBussinessLogic.deselectionAllMemo()
+        TagBussinessLogic.deselectionAllTag()
         view.redraw(model: MemoListViewModel(displayList: displayList))
     }
     

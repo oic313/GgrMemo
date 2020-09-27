@@ -13,7 +13,5 @@ final class MemoData: Object {
     var value: Memo { Memo(memo, isChecked: isChecked, id: id) }
     var togleCheckStatus: Bool { !isChecked }
     
-    override static func primaryKey() -> String? {
-        "id"
-    }
+    override static func primaryKey() -> String? { "id" }
 }
