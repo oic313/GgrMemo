@@ -27,7 +27,7 @@ class MemoCoreLogic {
     static func addNewMemo(memo: Memo, tag: Tag) {
         // Realmを初期化
         let realm = try! Realm()
-        print(Realm.Configuration.defaultConfiguration.fileURL!)
+//        print(Realm.Configuration.defaultConfiguration.fileURL!)
         let savedMemoData = MemoData()
         // Realmに書き込み
         try! realm.write {
@@ -41,7 +41,7 @@ class MemoCoreLogic {
     static func updateMemo(memo: Memo, tag: Tag, savedMemoDate: MemoData) {
         // Realmを初期化
         let realm = try! Realm()
-        print(Realm.Configuration.defaultConfiguration.fileURL!)
+//        print(Realm.Configuration.defaultConfiguration.fileURL!)
         let savedMemoData = savedMemoDate
         // Realmに書き込み
         try! realm.write {
