@@ -13,19 +13,28 @@ final class AddMemoCollectionViewCell: UICollectionViewCell {
         self.layer.borderColor = ColorAsset.thin.value?.cgColor
     }
     
+    // セル再生生時に呼ばれる
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.applySelectionState()
+    }
+    
     func setupCell(memo: Memo, color: ColorAsset) {
         memoLabel.text = memo.value
         self.backgroundColor = color.value
     }
     
-    func applySelectionState(color: ColorAsset) {
+    func applySelectionState() {
         if isSelected {
             self.layer.borderWidth = 1
             self.backgroundColor = ColorAsset.main.value
+
         } else {
             self.layer.borderWidth = 0
-            self.backgroundColor = color.value
+            self.backgroundColor = ColorAsset.sub.value
+
         }
+
     }
 
 }

@@ -291,7 +291,7 @@ private extension AddMemoViewController {
              selectedMemoIndexPath = indexPath
             memoTextField.text = memoList[indexPath.row].value
          }
-        cell.applySelectionState(color: selectedColor)
+         cell.applySelectionState()
     }
     
     func updateMemoCell(memo: Memo, indexPath: IndexPath) {
