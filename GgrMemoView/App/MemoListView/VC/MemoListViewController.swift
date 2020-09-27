@@ -13,7 +13,7 @@ final public class MemoListViewController: UIViewController {
         model?.displayList ?? []
     }
     private var selectedTapAction: TapAction
-    private var selectedUseOfficialApp: useOfficialAppFlagState
+    private var selectedUseOfficialApp: UseOfficialAppFlagState
     
     private lazy var tagCellHelper: TagCollectionViewCell? = {
         UINib(nibName: TagCollectionViewCell.className, bundle: Bundle(for: TagCollectionViewCell.self)).instantiate(withOwner: nil).first as? TagCollectionViewCell
@@ -257,7 +257,7 @@ extension MemoListViewController: ParentView {
         present(settingViewController, animated: true, completion: nil)
     }
     
-    public func setUseOfficialAppFlag(useOfficialAppFlag: useOfficialAppFlagState){
+    public func setUseOfficialAppFlag(useOfficialAppFlag: UseOfficialAppFlagState){
         selectedUseOfficialApp = useOfficialAppFlag
     }
 }
