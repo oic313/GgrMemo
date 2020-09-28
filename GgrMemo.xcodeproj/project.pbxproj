@@ -20,6 +20,19 @@
 		736A6CB225131F55004417AA /* SettingCellOfCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736A6CB025131F55004417AA /* SettingCellOfCell.swift */; };
 		736A6CB325131F55004417AA /* SettingCellOfCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 736A6CB125131F55004417AA /* SettingCellOfCell.xib */; };
 		73D6A32A251D04BC00544132 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73D6A329251D04BC00544132 /* Assets.xcassets */; };
+		73D6A3482520EAD000544132 /* TagData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D6A3472520EAD000544132 /* TagData.swift */; };
+		73D6A34C2520EF1300544132 /* TagBussinessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D6A34B2520EF1300544132 /* TagBussinessLogic.swift */; };
+		73D6A3522520EFC800544132 /* TagCoreLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D6A3512520EFC800544132 /* TagCoreLogic.swift */; };
+		73D6A3562520F4E100544132 /* MemoBussinessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D6A3552520F4E100544132 /* MemoBussinessLogic.swift */; };
+		73D6A3632520F93C00544132 /* AddMemoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D6A3622520F93C00544132 /* AddMemoViewModel.swift */; };
+		73D6A36C2520F97000544132 /* MemoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D6A36B2520F97000544132 /* MemoListViewModel.swift */; };
+		73D6A3742520FA1900544132 /* CollectionViewCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D6A3732520FA1900544132 /* CollectionViewCellType.swift */; };
+		73D6A37A2520FA5200544132 /* SettingViewCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D6A3792520FA5200544132 /* SettingViewCellType.swift */; };
+		73D6A37E2520FA6E00544132 /* EditAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D6A37D2520FA6E00544132 /* EditAction.swift */; };
+		73D6A3842520FA9100544132 /* TapAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D6A3832520FA9100544132 /* TapAction.swift */; };
+		73D6A3882520FAB000544132 /* UseOfficialAppFlagState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D6A3872520FAB000544132 /* UseOfficialAppFlagState.swift */; };
+		73D6A38C2520FBB900544132 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D6A38B2520FBB900544132 /* UILabel.swift */; };
+		73D6A3902520FE7200544132 /* UICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D6A38F2520FE7200544132 /* UICollectionViewCell.swift */; };
 		73E2E7AB2503649E006CDBC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E2E7AA2503649E006CDBC8 /* AppDelegate.swift */; };
 		73E2E7AD2503649E006CDBC8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E2E7AC2503649E006CDBC8 /* SceneDelegate.swift */; };
 		73E2E7B72503649F006CDBC8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73E2E7B52503649F006CDBC8 /* LaunchScreen.storyboard */; };
@@ -40,7 +53,7 @@
 		73E2E80D25036A42006CDBC8 /* MemoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73E2E80B25036A42006CDBC8 /* MemoCollectionViewCell.xib */; };
 		73E2E80E25036A42006CDBC8 /* MemoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E2E80C25036A42006CDBC8 /* MemoCollectionViewCell.swift */; };
 		73E2E81025036A4C006CDBC8 /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E2E80F25036A4B006CDBC8 /* UICollectionView.swift */; };
-		73E2E81825036B1F006CDBC8 /* FatLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E2E81725036B1F006CDBC8 /* FatLogic.swift */; };
+		73E2E81825036B1F006CDBC8 /* MemoCoreLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E2E81725036B1F006CDBC8 /* MemoCoreLogic.swift */; };
 		73E2E81A25036B2C006CDBC8 /* MemoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E2E81925036B2C006CDBC8 /* MemoData.swift */; };
 		73E2E81C25036B36006CDBC8 /* MemoListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E2E81B25036B36006CDBC8 /* MemoListPresenter.swift */; };
 		73E2E81E25036B3D006CDBC8 /* AddMemoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E2E81D25036B3D006CDBC8 /* AddMemoPresenter.swift */; };
@@ -60,10 +73,8 @@
 		73E2E858250E100C006CDBC8 /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73E2E857250E100C006CDBC8 /* Image.xcassets */; };
 		73E2E85A250E1028006CDBC8 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73E2E859250E1028006CDBC8 /* Color.xcassets */; };
 		73E2E85D250E265A006CDBC8 /* ColorAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E2E85C250E265A006CDBC8 /* ColorAsset.swift */; };
-		73E2E85F250E41DE006CDBC8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73E2E85E250E41DE006CDBC8 /* Main.storyboard */; };
 		73E2E866250E6D21006CDBC8 /* ColorListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E2E864250E6D21006CDBC8 /* ColorListCollectionViewCell.swift */; };
 		73E2E867250E6D21006CDBC8 /* ColorListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73E2E865250E6D21006CDBC8 /* ColorListCollectionViewCell.xib */; };
-		73E2E86F2510855D006CDBC8 /* ColorAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E2E86E2510855D006CDBC8 /* ColorAsset.swift */; };
 		73E2E89D2512932A006CDBC8 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E2E89C2512932A006CDBC8 /* File.swift */; };
 		73E2E8A02512B9A1006CDBC8 /* SettingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E2E89E2512B9A1006CDBC8 /* SettingCollectionViewCell.swift */; };
 		73E2E8A12512B9A1006CDBC8 /* SettingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73E2E89F2512B9A1006CDBC8 /* SettingCollectionViewCell.xib */; };
@@ -185,6 +196,19 @@
 		736A6CB025131F55004417AA /* SettingCellOfCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCellOfCell.swift; sourceTree = "<group>"; };
 		736A6CB125131F55004417AA /* SettingCellOfCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingCellOfCell.xib; sourceTree = "<group>"; };
 		73D6A329251D04BC00544132 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		73D6A3472520EAD000544132 /* TagData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagData.swift; sourceTree = "<group>"; };
+		73D6A34B2520EF1300544132 /* TagBussinessLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagBussinessLogic.swift; sourceTree = "<group>"; };
+		73D6A3512520EFC800544132 /* TagCoreLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCoreLogic.swift; sourceTree = "<group>"; };
+		73D6A3552520F4E100544132 /* MemoBussinessLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoBussinessLogic.swift; sourceTree = "<group>"; };
+		73D6A3622520F93C00544132 /* AddMemoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemoViewModel.swift; sourceTree = "<group>"; };
+		73D6A36B2520F97000544132 /* MemoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListViewModel.swift; sourceTree = "<group>"; };
+		73D6A3732520FA1900544132 /* CollectionViewCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCellType.swift; sourceTree = "<group>"; };
+		73D6A3792520FA5200544132 /* SettingViewCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewCellType.swift; sourceTree = "<group>"; };
+		73D6A37D2520FA6E00544132 /* EditAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAction.swift; sourceTree = "<group>"; };
+		73D6A3832520FA9100544132 /* TapAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapAction.swift; sourceTree = "<group>"; };
+		73D6A3872520FAB000544132 /* UseOfficialAppFlagState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseOfficialAppFlagState.swift; sourceTree = "<group>"; };
+		73D6A38B2520FBB900544132 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
+		73D6A38F2520FE7200544132 /* UICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewCell.swift; sourceTree = "<group>"; };
 		73E2E7A72503649E006CDBC8 /* GgrMemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GgrMemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73E2E7AA2503649E006CDBC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		73E2E7AC2503649E006CDBC8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -206,7 +230,7 @@
 		73E2E80B25036A42006CDBC8 /* MemoCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MemoCollectionViewCell.xib; sourceTree = "<group>"; };
 		73E2E80C25036A42006CDBC8 /* MemoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoCollectionViewCell.swift; sourceTree = "<group>"; };
 		73E2E80F25036A4B006CDBC8 /* UICollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
-		73E2E81725036B1F006CDBC8 /* FatLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FatLogic.swift; sourceTree = "<group>"; };
+		73E2E81725036B1F006CDBC8 /* MemoCoreLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoCoreLogic.swift; sourceTree = "<group>"; };
 		73E2E81925036B2C006CDBC8 /* MemoData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoData.swift; sourceTree = "<group>"; };
 		73E2E81B25036B36006CDBC8 /* MemoListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoListPresenter.swift; sourceTree = "<group>"; };
 		73E2E81D25036B3D006CDBC8 /* AddMemoPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMemoPresenter.swift; sourceTree = "<group>"; };
@@ -223,10 +247,8 @@
 		73E2E857250E100C006CDBC8 /* Image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Image.xcassets; sourceTree = "<group>"; };
 		73E2E859250E1028006CDBC8 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		73E2E85C250E265A006CDBC8 /* ColorAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorAsset.swift; sourceTree = "<group>"; };
-		73E2E85E250E41DE006CDBC8 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		73E2E864250E6D21006CDBC8 /* ColorListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorListCollectionViewCell.swift; sourceTree = "<group>"; };
 		73E2E865250E6D21006CDBC8 /* ColorListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorListCollectionViewCell.xib; sourceTree = "<group>"; };
-		73E2E86E2510855D006CDBC8 /* ColorAsset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorAsset.swift; sourceTree = "<group>"; };
 		73E2E89C2512932A006CDBC8 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		73E2E89E2512B9A1006CDBC8 /* SettingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCollectionViewCell.swift; sourceTree = "<group>"; };
 		73E2E89F2512B9A1006CDBC8 /* SettingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -317,6 +339,22 @@
 			path = WebView;
 			sourceTree = "<group>";
 		};
+		73D6A3612520F92D00544132 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				73D6A3622520F93C00544132 /* AddMemoViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		73D6A36A2520F96300544132 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				73D6A36B2520F97000544132 /* MemoListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		73E2E79E2503649E006CDBC8 = {
 			isa = PBXGroup;
 			children = (
@@ -348,7 +386,6 @@
 			children = (
 				73E2E7AA2503649E006CDBC8 /* AppDelegate.swift */,
 				73E2E7AC2503649E006CDBC8 /* SceneDelegate.swift */,
-				73E2E85E250E41DE006CDBC8 /* Main.storyboard */,
 				73D6A329251D04BC00544132 /* Assets.xcassets */,
 				73E2E7B52503649F006CDBC8 /* LaunchScreen.storyboard */,
 				73E2E7B82503649F006CDBC8 /* Info.plist */,
@@ -384,7 +421,10 @@
 			isa = PBXGroup;
 			children = (
 				73E2E81625036ABF006CDBC8 /* RealmObject */,
-				73E2E81725036B1F006CDBC8 /* FatLogic.swift */,
+				73E2E81725036B1F006CDBC8 /* MemoCoreLogic.swift */,
+				73D6A3552520F4E100544132 /* MemoBussinessLogic.swift */,
+				73D6A3512520EFC800544132 /* TagCoreLogic.swift */,
+				73D6A34B2520EF1300544132 /* TagBussinessLogic.swift */,
 				73E2E7E825036872006CDBC8 /* GgrMemoModel.h */,
 				73E2E7E925036872006CDBC8 /* Info.plist */,
 			);
@@ -406,6 +446,8 @@
 				73E2E80F25036A4B006CDBC8 /* UICollectionView.swift */,
 				73E2E85C250E265A006CDBC8 /* ColorAsset.swift */,
 				7349D6E8251A599500F38708 /* String.swift */,
+				73D6A38B2520FBB900544132 /* UILabel.swift */,
+				73D6A38F2520FE7200544132 /* UICollectionViewCell.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -467,6 +509,7 @@
 		73E2E81125036A7F006CDBC8 /* MemoList */ = {
 			isa = PBXGroup;
 			children = (
+				73D6A36A2520F96300544132 /* ViewModel */,
 				73E2E81525036AAB006CDBC8 /* Presenter */,
 			);
 			path = MemoList;
@@ -484,6 +527,7 @@
 		73E2E81325036A98006CDBC8 /* AddMemo */ = {
 			isa = PBXGroup;
 			children = (
+				73D6A3612520F92D00544132 /* ViewModel */,
 				73E2E81425036AA2006CDBC8 /* Presenter */,
 			);
 			path = AddMemo;
@@ -509,6 +553,7 @@
 			isa = PBXGroup;
 			children = (
 				73E2E81925036B2C006CDBC8 /* MemoData.swift */,
+				73D6A3472520EAD000544132 /* TagData.swift */,
 			);
 			path = RealmObject;
 			sourceTree = "<group>";
@@ -566,7 +611,11 @@
 		73E2E86A250FAA41006CDBC8 /* Enum */ = {
 			isa = PBXGroup;
 			children = (
-				73E2E86E2510855D006CDBC8 /* ColorAsset.swift */,
+				73D6A3732520FA1900544132 /* CollectionViewCellType.swift */,
+				73D6A3792520FA5200544132 /* SettingViewCellType.swift */,
+				73D6A37D2520FA6E00544132 /* EditAction.swift */,
+				73D6A3832520FA9100544132 /* TapAction.swift */,
+				73D6A3872520FAB000544132 /* UseOfficialAppFlagState.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -783,7 +832,6 @@
 			files = (
 				73E2E7B72503649F006CDBC8 /* LaunchScreen.storyboard in Resources */,
 				73D6A32A251D04BC00544132 /* Assets.xcassets in Resources */,
-				73E2E85F250E41DE006CDBC8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -910,6 +958,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73D6A38C2520FBB900544132 /* UILabel.swift in Sources */,
 				73E2E82D25044964006CDBC8 /* TagListCollectionViewCell.swift in Sources */,
 				73E2E8272503DF40006CDBC8 /* AddMemoCollectionViewCell.swift in Sources */,
 				73E2E80E25036A42006CDBC8 /* MemoCollectionViewCell.swift in Sources */,
@@ -923,6 +972,7 @@
 				73E2E80525036A2A006CDBC8 /* AddMemoViewController.swift in Sources */,
 				736A6CB225131F55004417AA /* SettingCellOfCell.swift in Sources */,
 				73E2E866250E6D21006CDBC8 /* ColorListCollectionViewCell.swift in Sources */,
+				73D6A3902520FE7200544132 /* UICollectionViewCell.swift in Sources */,
 				7349D6E425185AB400F38708 /* WebViewController.swift in Sources */,
 				7349D6E9251A599500F38708 /* String.swift in Sources */,
 				7349D6B2251361A800F38708 /* SettingViewController.swift in Sources */,
@@ -933,9 +983,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73D6A3882520FAB000544132 /* UseOfficialAppFlagState.swift in Sources */,
+				73D6A36C2520F97000544132 /* MemoListViewModel.swift in Sources */,
 				73E2E81E25036B3D006CDBC8 /* AddMemoPresenter.swift in Sources */,
-				73E2E86F2510855D006CDBC8 /* ColorAsset.swift in Sources */,
+				73D6A37E2520FA6E00544132 /* EditAction.swift in Sources */,
+				73D6A3632520F93C00544132 /* AddMemoViewModel.swift in Sources */,
+				73D6A3742520FA1900544132 /* CollectionViewCellType.swift in Sources */,
+				73D6A3842520FA9100544132 /* TapAction.swift in Sources */,
 				73E2E81C25036B36006CDBC8 /* MemoListPresenter.swift in Sources */,
+				73D6A37A2520FA5200544132 /* SettingViewCellType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -943,7 +999,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73E2E81825036B1F006CDBC8 /* FatLogic.swift in Sources */,
+				73D6A34C2520EF1300544132 /* TagBussinessLogic.swift in Sources */,
+				73E2E81825036B1F006CDBC8 /* MemoCoreLogic.swift in Sources */,
+				73D6A3562520F4E100544132 /* MemoBussinessLogic.swift in Sources */,
+				73D6A3482520EAD000544132 /* TagData.swift in Sources */,
+				73D6A3522520EFC800544132 /* TagCoreLogic.swift in Sources */,
 				73E2E81A25036B2C006CDBC8 /* MemoData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

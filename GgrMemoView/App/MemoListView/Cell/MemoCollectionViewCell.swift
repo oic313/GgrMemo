@@ -4,9 +4,9 @@ import GgrMemoPresenter
 
 final class MemoCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet weak var memoLabel: UILabel!
-    @IBOutlet weak var colorView: UIView!
-    @IBOutlet weak var checkMarkView: UIView!
+    @IBOutlet private weak var memoLabel: UILabel!
+    @IBOutlet private weak var colorView: UIView!
+    @IBOutlet private weak var checkMarkView: UIView!
 
     override func awakeFromNib() {
         super.awakeFromNib() 
@@ -16,11 +16,9 @@ final class MemoCollectionViewCell: UICollectionViewCell {
         self.layer.masksToBounds = true
     }
     
-
-    
     func setupCell(memo: Memo, color: ColorAsset) {
         memoLabel.text = memo.value
-        memoLabel.hoge(false)
+        memoLabel.strikethrough(false)
         colorView.backgroundColor = color.value
         self.applyCheckedState(isCecked: memo.isChecked)
     }
@@ -32,22 +30,8 @@ final class MemoCollectionViewCell: UICollectionViewCell {
             memoLabel.textColor = ColorAsset.text.value
         }
         checkMarkView.isHidden = !isCecked
-        memoLabel.hoge(isCecked)
+        memoLabel.strikethrough(isCecked)
     }
     
     
-}
-
-extension UILabel {
-    func hoge(_ b: Bool) {
-        let attributeString: NSMutableAttributedString =  NSMutableAttributedString(string: self.text ?? "")
-
-        if b {
-            attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 2, range: NSMakeRange(0, attributeString.length))
-
-        } else {
-            attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 0, range: NSMakeRange(0, attributeString.length))
-        }
-        self.attributedText = attributeString
-    }
 }

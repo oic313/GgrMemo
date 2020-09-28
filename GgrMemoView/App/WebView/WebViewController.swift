@@ -1,11 +1,11 @@
 import UIKit
 import WebKit
 
-final class WebViewController: UIViewController, WKNavigationDelegate {
-        
+final class WebViewController: UIViewController {
+    
     private var webView: WKWebView = WKWebView()
     private let url: URL
-
+    
     public init(url: URL) {
         self.url = url
         super.init(nibName: nil, bundle: Bundle(for: Self.self))
@@ -17,21 +17,12 @@ final class WebViewController: UIViewController, WKNavigationDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // WKWebViewの追加
-        webView = WKWebView(frame:CGRect(x: 0, y: 0, width: view.bounds.size.width, height: view.bounds.size.height))
-        view.addSubview(webView)
-        self.setLayoutFullScreenWebView(webView: webView, view: view)
-
-        webView.navigationDelegate = self
-
-        
-
-        
-        let request = URLRequest(url: url)
-        webView.load(request)
+        configure()
     }
     
+}
+
+extension WebViewController: WKNavigationDelegate {
     /// WebView読み込み時にエラーが発生
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
         let alert: UIAlertController = UIAlertController(title: "エラー", message: "インターネットに接続できません", preferredStyle:  UIAlertController.Style.alert)
@@ -41,19 +32,27 @@ final class WebViewController: UIViewController, WKNavigationDelegate {
             self.dismiss(animated: true, completion: nil)
         })
         alert.addAction(defaultAction)
-        
         present(alert, animated: true, completion: nil)
+    }
+}
+
+private extension WebViewController {
+    func configure() {
+        // WKWebViewの追加
+        webView = WKWebView(frame:CGRect(x: 0, y: 0, width: view.bounds.size.width, height: view.bounds.size.height))
+        view.addSubview(webView)
+        setLayoutFullScreenWebView(webView: webView, view: view)
+        webView.navigationDelegate = self
+        webView.load(URLRequest(url: url))
     }
     
     func setLayoutFullScreenWebView(webView: WKWebView, view: UIView) {
-
-            // AutoLayout設定
-            webView.translatesAutoresizingMaskIntoConstraints = false
-
-            // webViewの幅をviewに合わせる
-            view.addConstraints([NSLayoutConstraint(item:webView, attribute:NSLayoutConstraint.Attribute.width, relatedBy:NSLayoutConstraint.Relation.equal, toItem:view, attribute:NSLayoutConstraint.Attribute.width, multiplier:1.0, constant:0)])
-            // webViewの高さをviewに合わせる
-            view.addConstraints([NSLayoutConstraint(item:webView, attribute:NSLayoutConstraint.Attribute.height, relatedBy:NSLayoutConstraint.Relation.equal, toItem:view, attribute:NSLayoutConstraint.Attribute.height, multiplier:1.0, constant:0)])
-        }
+        // AutoLayout設定
+        webView.translatesAutoresizingMaskIntoConstraints = false
+        // webViewの幅をviewに合わせる
+        view.addConstraints([NSLayoutConstraint(item:webView, attribute:NSLayoutConstraint.Attribute.width, relatedBy:NSLayoutConstraint.Relation.equal, toItem:view, attribute:NSLayoutConstraint.Attribute.width, multiplier:1.0, constant:0)])
+        // webViewの高さをviewに合わせる
+        view.addConstraints([NSLayoutConstraint(item:webView, attribute:NSLayoutConstraint.Attribute.height, relatedBy:NSLayoutConstraint.Relation.equal, toItem:view, attribute:NSLayoutConstraint.Attribute.height, multiplier:1.0, constant:0)])
+    }
     
 }

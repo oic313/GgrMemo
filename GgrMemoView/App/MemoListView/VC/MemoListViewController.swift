@@ -1,11 +1,9 @@
 import UIKit
 import GgrMemoPresenter
-func hoge () {
-    
-}
+
 final public class MemoListViewController: UIViewController {
     
-    @IBOutlet weak var memoCollectionView: UICollectionView!
+    @IBOutlet private weak var memoCollectionView: UICollectionView!
     private let presenter = MemoListPresenter()
     
     private var model: MemoListViewModel?
@@ -13,7 +11,7 @@ final public class MemoListViewController: UIViewController {
         model?.displayList ?? []
     }
     private var selectedTapAction: TapAction
-    private var selectedUseOfficialApp: useOfficialAppFlagState
+    private var selectedUseOfficialApp: UseOfficialAppFlagState
     
     private lazy var tagCellHelper: TagCollectionViewCell? = {
         UINib(nibName: TagCollectionViewCell.className, bundle: Bundle(for: TagCollectionViewCell.self)).instantiate(withOwner: nil).first as? TagCollectionViewCell
@@ -35,16 +33,7 @@ final public class MemoListViewController: UIViewController {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
-        // UICollectionViewDataSourceのあるクラスを示す
-        memoCollectionView.dataSource = self
-        // UICollectionViewDelegateFlowLayoutのあるクラスを示す
-        memoCollectionView.delegate = self
-        
-        memoCollectionView.registerCell(cellClass: SettingCollectionViewCell.self)
-        memoCollectionView.registerCell(cellClass: MemoCollectionViewCell.self)
-        memoCollectionView.registerCell(cellClass: TagCollectionViewCell.self)
-        memoCollectionView.registerCell(cellClass: SpaceCollectionViewCell.self)
-        
+        configure()
     }
     
     public override func viewWillAppear(_ animated: Bool) {
@@ -66,7 +55,6 @@ extension MemoListViewController: UICollectionViewDataSource {
     public func numberOfSections(in collectionView: UICollectionView) -> Int {
         return self.displayList.count
     }
-    
     
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch self.displayList[section] {
@@ -97,7 +85,6 @@ extension MemoListViewController: UICollectionViewDataSource {
             let cell: SpaceCollectionViewCell = collectionView.dequeueReusableCell(cellClass: SpaceCollectionViewCell.self, indexPath: indexPath)
             return cell
         }
-        
     }
     
 }
@@ -109,31 +96,16 @@ extension MemoListViewController: UICollectionViewDelegateFlowLayout {
         case .setting:
             return .init(width: view.frame.width, height: 40)
         case .tag(let tag):
-            if let cell = tagCellHelper {
-                cell.setupCell(tag: tag)
-                let cellWidth = UIScreen.main.bounds.size.width - 30
-                
-                return cell.contentView.systemLayoutSizeFitting(
-                    CGSize(width: cellWidth, height: 0),
-                    withHorizontalFittingPriority: .required,
-                    verticalFittingPriority: .fittingSizeLevel
-                )
-            }
+            guard let cell = tagCellHelper else { return .zero }
+            cell.setupCell(tag: tag)            
+            return cell.fitSize(width: UIScreen.main.bounds.size.width - 30)
         case .memoList(let memoList):
-            if let cell = memoCellHelper {
-                cell.setupCell(memo: memoList.memos[indexPath.row], color: memoList.color)
-                let cellWidth = UIScreen.main.bounds.size.width/2 - 60/2 - 10/2
-                
-                return cell.contentView.systemLayoutSizeFitting(
-                    CGSize(width: cellWidth, height: 0),
-                    withHorizontalFittingPriority: .required,
-                    verticalFittingPriority: .fittingSizeLevel
-                )
-            }
+            guard let cell = memoCellHelper else { return .zero }
+            cell.setupCell(memo: memoList.memos[indexPath.row], color: memoList.color)
+            return cell.fitSize(width: UIScreen.main.bounds.size.width/2 - 60/2 - 10/2)
         case .space:
             return .init(width: view.frame.width, height: view.frame.height/4)
         }
-        return .zero
     }
     
     // cell達の周囲の余白
@@ -173,7 +145,7 @@ extension MemoListViewController: UICollectionViewDelegate {
         true
     }
     
-    
+    //TODO: いつかいい感じにする
     // Cell がタップで選択されたときに呼ばれる
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
@@ -214,15 +186,6 @@ extension MemoListViewController: UICollectionViewDelegate {
         return
     }
     
-    
-    func openUrl(mobileUrl: URL?, appUrl: URL?) {
-        guard let mobileUrl = mobileUrl, let appUrl = appUrl else { return }
-        if selectedUseOfficialApp.isOn && UIApplication.shared.canOpenURL(appUrl) {
-            UIApplication.shared.open(appUrl)
-        } else {
-            present(WebViewController(url: mobileUrl), animated: true, completion: nil)
-        }
-    }
 }
 
 
@@ -233,7 +196,6 @@ extension MemoListViewController: MemoListView {
         memoCollectionView.reloadData()
         view.isUserInteractionEnabled = true
     }
-    
 }
 
 extension MemoListViewController: ParentView {
@@ -252,12 +214,11 @@ extension MemoListViewController: ParentView {
         settingViewController.popoverPresentationController?.permittedArrowDirections = .any
         // デリゲートの設定
         settingViewController.popoverPresentationController?.delegate = self
-        
         settingViewController.delegate = self
         present(settingViewController, animated: true, completion: nil)
     }
     
-    public func setUseOfficialAppFlag(useOfficialAppFlag: useOfficialAppFlagState){
+    public func setUseOfficialAppFlag(useOfficialAppFlag: UseOfficialAppFlagState){
         selectedUseOfficialApp = useOfficialAppFlag
     }
 }
@@ -288,6 +249,29 @@ extension MemoListViewController: TransitionSourceView {
     public func tapedTapAction(action: TapAction) {
         selectedTapAction = action
         memoCollectionView.reloadData()
+    }
+    
+}
+
+private extension MemoListViewController {
+    func configure() {
+        // UICollectionViewDataSourceのあるクラスを示す
+        memoCollectionView.dataSource = self
+        // UICollectionViewDelegateFlowLayoutのあるクラスを示す
+        memoCollectionView.delegate = self
+        memoCollectionView.registerCell(cellClass: SettingCollectionViewCell.self)
+        memoCollectionView.registerCell(cellClass: MemoCollectionViewCell.self)
+        memoCollectionView.registerCell(cellClass: TagCollectionViewCell.self)
+        memoCollectionView.registerCell(cellClass: SpaceCollectionViewCell.self)
+    }
+    
+    func openUrl(mobileUrl: URL?, appUrl: URL?) {
+        guard let mobileUrl = mobileUrl, let appUrl = appUrl else { return }
+        if selectedUseOfficialApp.isOn && UIApplication.shared.canOpenURL(appUrl) {
+            UIApplication.shared.open(appUrl)
+        } else {
+            present(WebViewController(url: mobileUrl), animated: true, completion: nil)
+        }
     }
     
 }
