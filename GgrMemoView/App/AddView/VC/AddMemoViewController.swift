@@ -55,32 +55,7 @@ final class AddMemoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        memoCollectionView.dataSource = self
-        memoCollectionView.delegate = self
-        memoCollectionView.registerCell(cellClass: AddMemoCollectionViewCell.self)
-
-        tagCollectionView.dataSource = self
-        tagCollectionView.delegate = self
-        tagCollectionView.registerCell(cellClass: TagListCollectionViewCell.self)
-
-        tagCollectionView.layer.cornerRadius = 5
-        tagCollectionView.layer.masksToBounds = true
-        
-        colorCollectionView.dataSource = self
-        colorCollectionView.delegate = self
-        colorCollectionView.registerCell(cellClass: ColorListCollectionViewCell.self)
-
-        colorCollectionView.layer.borderColor = ColorAsset.sub.value?.cgColor
-        colorCollectionView.layer.borderWidth = 2
-        colorCollectionView.layer.cornerRadius = 5
-        colorCollectionView.layer.masksToBounds = true
-        
-        if tagList.isEmpty { tagCollectionView.isHidden = true }
-        
-        memoTextField.delegate = self
-        tagTextField.text = initTag.value
-        applySelectedColor(initTag.color)
-        presenter.view = self
+        configure()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -244,6 +219,40 @@ extension AddMemoViewController: AddMemoView {
 }
 
 private extension AddMemoViewController {
+    func configure() {
+        configureMemoCollectionView()
+        configureTagCollectionView()
+        configureColorCollectionView()
+        if tagList.isEmpty { tagCollectionView.isHidden = true }
+        memoTextField.delegate = self
+        tagTextField.text = initTag.value
+        applySelectedColor(initTag.color)
+        presenter.view = self
+    }
+    
+    func configureMemoCollectionView() {
+        memoCollectionView.dataSource = self
+        memoCollectionView.delegate = self
+        memoCollectionView.registerCell(cellClass: AddMemoCollectionViewCell.self)
+    }
+    
+    func configureTagCollectionView() {
+        tagCollectionView.dataSource = self
+        tagCollectionView.delegate = self
+        tagCollectionView.registerCell(cellClass: TagListCollectionViewCell.self)
+        tagCollectionView.layer.cornerRadius = 5
+        tagCollectionView.layer.masksToBounds = true
+    }
+    
+    func configureColorCollectionView() {
+        colorCollectionView.dataSource = self
+        colorCollectionView.delegate = self
+        colorCollectionView.registerCell(cellClass: ColorListCollectionViewCell.self)
+        colorCollectionView.layer.borderColor = ColorAsset.sub.value?.cgColor
+        colorCollectionView.layer.borderWidth = 2
+        colorCollectionView.layer.cornerRadius = 5
+        colorCollectionView.layer.masksToBounds = true
+    }
     
     func hasAppendMemoList(memo: Memo) {
         memoTextField.text = nil

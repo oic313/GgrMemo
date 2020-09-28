@@ -17,7 +17,6 @@ final public class AddMemoPresenter {
         TagBussinessLogic.addTag(tag: addModel.tag)
         addModel.memos.forEach {
             MemoBussinessLogic.addMemo(memo: $0, tag: addModel.tag)
-            
         }
         view.dissmiss()
     }

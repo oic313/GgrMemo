@@ -33,16 +33,7 @@ final public class MemoListViewController: UIViewController {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
-        // UICollectionViewDataSourceのあるクラスを示す
-        memoCollectionView.dataSource = self
-        // UICollectionViewDelegateFlowLayoutのあるクラスを示す
-        memoCollectionView.delegate = self
-        
-        memoCollectionView.registerCell(cellClass: SettingCollectionViewCell.self)
-        memoCollectionView.registerCell(cellClass: MemoCollectionViewCell.self)
-        memoCollectionView.registerCell(cellClass: TagCollectionViewCell.self)
-        memoCollectionView.registerCell(cellClass: SpaceCollectionViewCell.self)
-        
+        configure()
     }
     
     public override func viewWillAppear(_ animated: Bool) {
@@ -64,7 +55,6 @@ extension MemoListViewController: UICollectionViewDataSource {
     public func numberOfSections(in collectionView: UICollectionView) -> Int {
         return self.displayList.count
     }
-    
     
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch self.displayList[section] {
@@ -95,7 +85,6 @@ extension MemoListViewController: UICollectionViewDataSource {
             let cell: SpaceCollectionViewCell = collectionView.dequeueReusableCell(cellClass: SpaceCollectionViewCell.self, indexPath: indexPath)
             return cell
         }
-        
     }
     
 }
@@ -156,6 +145,7 @@ extension MemoListViewController: UICollectionViewDelegate {
         true
     }
     
+    //TODO: いつかいい感じにする
     // Cell がタップで選択されたときに呼ばれる
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
@@ -196,16 +186,6 @@ extension MemoListViewController: UICollectionViewDelegate {
         return
     }
     
-    
-    func openUrl(mobileUrl: URL?, appUrl: URL?) {
-        guard let mobileUrl = mobileUrl, let appUrl = appUrl else { return }
-        if selectedUseOfficialApp.isOn && UIApplication.shared.canOpenURL(appUrl) {
-            UIApplication.shared.open(appUrl)
-        } else {
-            present(WebViewController(url: mobileUrl), animated: true, completion: nil)
-        }
-    }
-    
 }
 
 
@@ -234,7 +214,6 @@ extension MemoListViewController: ParentView {
         settingViewController.popoverPresentationController?.permittedArrowDirections = .any
         // デリゲートの設定
         settingViewController.popoverPresentationController?.delegate = self
-        
         settingViewController.delegate = self
         present(settingViewController, animated: true, completion: nil)
     }
@@ -270,6 +249,29 @@ extension MemoListViewController: TransitionSourceView {
     public func tapedTapAction(action: TapAction) {
         selectedTapAction = action
         memoCollectionView.reloadData()
+    }
+    
+}
+
+private extension MemoListViewController {
+    func configure() {
+        // UICollectionViewDataSourceのあるクラスを示す
+        memoCollectionView.dataSource = self
+        // UICollectionViewDelegateFlowLayoutのあるクラスを示す
+        memoCollectionView.delegate = self
+        memoCollectionView.registerCell(cellClass: SettingCollectionViewCell.self)
+        memoCollectionView.registerCell(cellClass: MemoCollectionViewCell.self)
+        memoCollectionView.registerCell(cellClass: TagCollectionViewCell.self)
+        memoCollectionView.registerCell(cellClass: SpaceCollectionViewCell.self)
+    }
+    
+    func openUrl(mobileUrl: URL?, appUrl: URL?) {
+        guard let mobileUrl = mobileUrl, let appUrl = appUrl else { return }
+        if selectedUseOfficialApp.isOn && UIApplication.shared.canOpenURL(appUrl) {
+            UIApplication.shared.open(appUrl)
+        } else {
+            present(WebViewController(url: mobileUrl), animated: true, completion: nil)
+        }
     }
     
 }

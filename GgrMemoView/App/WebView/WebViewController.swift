@@ -1,7 +1,7 @@
 import UIKit
 import WebKit
 
-final class WebViewController: UIViewController, WKNavigationDelegate {
+final class WebViewController: UIViewController {
     
     private var webView: WKWebView = WKWebView()
     private let url: URL
@@ -17,14 +17,12 @@ final class WebViewController: UIViewController, WKNavigationDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // WKWebViewの追加
-        webView = WKWebView(frame:CGRect(x: 0, y: 0, width: view.bounds.size.width, height: view.bounds.size.height))
-        view.addSubview(webView)
-        setLayoutFullScreenWebView(webView: webView, view: view)
-        webView.navigationDelegate = self
-        webView.load(URLRequest(url: url))
+        configure()
     }
     
+}
+
+extension WebViewController: WKNavigationDelegate {
     /// WebView読み込み時にエラーが発生
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
         let alert: UIAlertController = UIAlertController(title: "エラー", message: "インターネットに接続できません", preferredStyle:  UIAlertController.Style.alert)
@@ -34,8 +32,18 @@ final class WebViewController: UIViewController, WKNavigationDelegate {
             self.dismiss(animated: true, completion: nil)
         })
         alert.addAction(defaultAction)
-        
         present(alert, animated: true, completion: nil)
+    }
+}
+
+private extension WebViewController {
+    func configure() {
+        // WKWebViewの追加
+        webView = WKWebView(frame:CGRect(x: 0, y: 0, width: view.bounds.size.width, height: view.bounds.size.height))
+        view.addSubview(webView)
+        setLayoutFullScreenWebView(webView: webView, view: view)
+        webView.navigationDelegate = self
+        webView.load(URLRequest(url: url))
     }
     
     func setLayoutFullScreenWebView(webView: WKWebView, view: UIView) {
