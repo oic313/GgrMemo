@@ -3,7 +3,7 @@ import GgrMemoPresenter
 
 final public class MemoListViewController: UIViewController {
     
-    @IBOutlet weak var memoCollectionView: UICollectionView!
+    @IBOutlet private weak var memoCollectionView: UICollectionView!
     private let presenter = MemoListPresenter()
     
     private var model: MemoListViewModel?

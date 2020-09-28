@@ -8,7 +8,7 @@ public protocol ParentView: AnyObject {
 
 final class SettingCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var settingCollectionView: UICollectionView!
+    @IBOutlet private weak var settingCollectionView: UICollectionView!
     public weak var delegate: ParentView?  // NOTE: これがdelegate
     private var displayList: [SettingViewCellType] = []
     private var tapAction: TapAction = .checked

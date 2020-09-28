@@ -8,7 +8,7 @@ public protocol TransitionSourceView: AnyObject {
 }
 
 final class SettingViewController: UIViewController {
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet private weak var collectionView: UICollectionView!
     private let displayType: SettingViewCellType
     weak var delegate: TransitionSourceView?  // NOTE: これがdelegate
 

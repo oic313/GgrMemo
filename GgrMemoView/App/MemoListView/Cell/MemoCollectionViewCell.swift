@@ -4,9 +4,9 @@ import GgrMemoPresenter
 
 final class MemoCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet weak var memoLabel: UILabel!
-    @IBOutlet weak var colorView: UIView!
-    @IBOutlet weak var checkMarkView: UIView!
+    @IBOutlet private weak var memoLabel: UILabel!
+    @IBOutlet private weak var colorView: UIView!
+    @IBOutlet private weak var checkMarkView: UIView!
 
     override func awakeFromNib() {
         super.awakeFromNib() 

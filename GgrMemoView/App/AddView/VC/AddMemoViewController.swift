@@ -4,12 +4,12 @@ import GgrMemoPresenter
 
 final class AddMemoViewController: UIViewController {
     
-    @IBOutlet weak var memoCollectionView: UICollectionView!
-    @IBOutlet weak var tagCollectionView: UICollectionView!
-    @IBOutlet weak var colorCollectionView: UICollectionView!
-    @IBOutlet weak var memoTextField: UITextField!
-    @IBOutlet weak var tagTextField: UITextField!
-    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var memoCollectionView: UICollectionView!
+    @IBOutlet private weak var tagCollectionView: UICollectionView!
+    @IBOutlet private weak var colorCollectionView: UICollectionView!
+    @IBOutlet private weak var memoTextField: UITextField!
+    @IBOutlet private weak var tagTextField: UITextField!
+    @IBOutlet private weak var bottomConstraint: NSLayoutConstraint!
     private let presenter = AddMemoPresenter()
     private let tagList: [Tag]
     private let tagColorList: [ColorAsset]

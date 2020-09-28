@@ -4,8 +4,8 @@ import GgrMemoPresenter
 
 final class TagCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet weak var tagLabel: UILabel!
-    @IBOutlet weak var checkMark: UIImageView!
+    @IBOutlet private weak var tagLabel: UILabel!
+    @IBOutlet private weak var checkMark: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
