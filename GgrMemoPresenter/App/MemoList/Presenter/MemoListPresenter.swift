@@ -43,7 +43,7 @@ public extension MemoListPresenter {
         view.redraw(model: MemoListViewModel(displayList: displayList))
     }
     
-    func checkedMemo(memo: Memo, indexPath: IndexPath) {
+    func checkedMemo(memo: Memo) {
         guard let view = view else { return }
         MemoBussinessLogic.togleMemoCheckedStatus(memo: memo)
         view.redraw(model: MemoListViewModel(displayList: displayList))

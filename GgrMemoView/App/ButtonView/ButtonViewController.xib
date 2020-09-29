@@ -40,6 +40,9 @@
                         <constraint firstAttribute="width" constant="50" id="cbV-Nu-BJV"/>
                     </constraints>
                     <state key="normal" title="Button" image="twitter"/>
+                    <connections>
+                        <action selector="tapSearchTwitter:" destination="-1" eventType="touchUpInside" id="zrT-9g-u0M"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zyx-rf-yoR">
                     <rect key="frame" x="197" y="493" width="50" height="50"/>
@@ -47,6 +50,9 @@
                         <constraint firstAttribute="width" constant="50" id="XTq-A2-Rnp"/>
                     </constraints>
                     <state key="normal" title="Button" image="youtube"/>
+                    <connections>
+                        <action selector="tapSearchYoutube:" destination="-1" eventType="touchUpInside" id="mWU-xv-sz3"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4eH-s7-1Jj">
                     <rect key="frame" x="197" y="353" width="50" height="50"/>
@@ -54,6 +60,9 @@
                         <constraint firstAttribute="width" constant="50" id="xrZ-u3-PXC"/>
                     </constraints>
                     <state key="normal" title="Button" image="checkButton"/>
+                    <connections>
+                        <action selector="tapCheck:" destination="-1" eventType="touchUpInside" id="Qsw-Tc-2TY"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Xo-7J-Xo1">
                     <rect key="frame" x="247" y="373" width="50" height="50"/>
@@ -62,6 +71,9 @@
                         <constraint firstAttribute="width" constant="50" id="d5C-bh-s7i"/>
                     </constraints>
                     <state key="normal" title="Button" image="edit"/>
+                    <connections>
+                        <action selector="tapEdit:" destination="-1" eventType="touchUpInside" id="Ozw-Hv-4Ab"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eZs-qr-1SU">
                     <rect key="frame" x="267" y="423" width="50" height="50"/>
@@ -70,6 +82,9 @@
                         <constraint firstAttribute="width" secondItem="eZs-qr-1SU" secondAttribute="height" multiplier="1:1" id="FdW-1Q-Jyk"/>
                     </constraints>
                     <state key="normal" title="Button" image="search"/>
+                    <connections>
+                        <action selector="tapSearch:" destination="-1" eventType="touchUpInside" id="1XJ-DR-6bp"/>
+                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
