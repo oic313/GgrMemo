@@ -1,4 +1,5 @@
 import UIKit
+import GgrMemoUtility
 import GgrMemoPresenter
 
 final public class MemoListViewController: UIViewController {
@@ -150,25 +151,7 @@ extension MemoListViewController: UICollectionViewDelegate {
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if case .memoList(let memoList) = self.displayList[indexPath.section] {
-            switch selectedTapAction {
-            case .checked:
-                view.isUserInteractionEnabled = false
-                presenter.checkedMemo(memo: memoList.memos[indexPath.row], indexPath: indexPath)
-            case .edit:
-                let addMemoViewController = AddMemoViewController(memoList: [memoList.memos[indexPath.row]])
-                present(addMemoViewController, animated: true, completion: nil)
-            case .search:
-                let str = "https://www.google.co.jp/search?q=\(memoList.memos[indexPath.row].value)"
-                openUrl(mobileUrl: str.url, appUrl: str.url)
-            case .searchOnYoutube:
-                let app = "youtube://results?search_query=\(memoList.memos[indexPath.row].value)"
-                let mobile = "https://m.youtube.com/results?search_query=\(memoList.memos[indexPath.row].value)"
-                openUrl(mobileUrl: mobile.url, appUrl: app.url)
-            case .searchOnTwitter:
-                let app = "twitter://search?query=\(memoList.memos[indexPath.row].value)"
-                let mobile = "https://mobile.twitter.com/search?lang=ja&q=\(memoList.memos[indexPath.row].value)&src=typed_query"
-                openUrl(mobileUrl: mobile.url, appUrl: app.url)
-            }
+            exeMemoTapAction(selectedTapAction: selectedTapAction, memo: memoList.memos[indexPath.row])
         } else if case .tag(let tag) = self.displayList[indexPath.section] {
             switch selectedTapAction {
             case .checked:
@@ -253,6 +236,19 @@ extension MemoListViewController: TransitionSourceView {
     
 }
 
+extension MemoListViewController: UIViewControllerTransitioningDelegate {
+    public func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        CustomPresentationController(presentedViewController: presented, presenting: presenting)
+    }
+}
+
+extension MemoListViewController: TapActionView {
+    func tapedAction(action: TapAction, memo: Memo) {
+        exeMemoTapAction(selectedTapAction: action, memo: memo)
+    }
+    
+}
+
 private extension MemoListViewController {
     func configure() {
         // UICollectionViewDataSourceのあるクラスを示す
@@ -263,6 +259,33 @@ private extension MemoListViewController {
         memoCollectionView.registerCell(cellClass: MemoCollectionViewCell.self)
         memoCollectionView.registerCell(cellClass: TagCollectionViewCell.self)
         memoCollectionView.registerCell(cellClass: SpaceCollectionViewCell.self)
+        memoCollectionView.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(cellLongPressed)))
+    }
+    
+    @objc func cellLongPressed(recognizer: UILongPressGestureRecognizer) {
+        // 押された位置でcellのPathを取得
+        let point = recognizer.location(in: memoCollectionView)
+        guard let indexPath = memoCollectionView.indexPathForItem(at: point) else { return }
+        guard let cell = memoCollectionView.cellForItem(at: indexPath) else { return }
+        
+        if recognizer.state == .began {
+            if case .memoList(let memoList) = self.displayList[indexPath.section] {
+                let direction: Direction
+                if indexPath.row % 2 == 0 {
+                    direction = .right
+                } else {
+                    direction = .left
+                }
+                
+                let buttonViewController = ButtonViewController(direction: direction, memo: memoList.memos[indexPath.row])
+                buttonViewController.delegate = self
+                buttonViewController.modalPresentationStyle = .custom
+                buttonViewController.transitioningDelegate = self
+                let customPresentationController = buttonViewController.presentationController as! CustomPresentationController
+                customPresentationController.rect = memoCollectionView.nowPosition(cell: cell)
+                present(buttonViewController, animated: false, completion: nil)
+            }
+        }
     }
     
     func openUrl(mobileUrl: URL?, appUrl: URL?) {
@@ -274,4 +297,26 @@ private extension MemoListViewController {
         }
     }
     
+    func exeMemoTapAction(selectedTapAction: TapAction, memo: Memo) {
+        switch selectedTapAction {
+        case .checked:
+            view.isUserInteractionEnabled = false
+            presenter.checkedMemo(memo: memo)
+        case .edit:
+            let addMemoViewController = AddMemoViewController(memoList: [memo])
+            present(addMemoViewController, animated: true, completion: nil)
+        case .search:
+            let str = "https://www.google.co.jp/search?q=\(memo.value)"
+            openUrl(mobileUrl: str.url, appUrl: str.url)
+        case .searchOnYoutube:
+            let app = "youtube://results?search_query=\(memo.value)"
+            let mobile = "https://m.youtube.com/results?search_query=\(memo.value)"
+            openUrl(mobileUrl: mobile.url, appUrl: app.url)
+        case .searchOnTwitter:
+            let app = "twitter://search?query=\(memo.value)"
+            let mobile = "https://mobile.twitter.com/search?lang=ja&q=\(memo.value)&src=typed_query"
+            openUrl(mobileUrl: mobile.url, appUrl: app.url)
+        }
+    }
 }
+
