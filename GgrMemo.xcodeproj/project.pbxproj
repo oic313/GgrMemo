@@ -739,6 +739,7 @@
 				73E2E7C025036843006CDBC8 /* Frameworks */,
 				73E2E7C125036843006CDBC8 /* Resources */,
 				73E2E7F72503692A006CDBC8 /* Embed Frameworks */,
+				73F922642523804D006FF358 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -760,6 +761,7 @@
 				73E2E7D225036860006CDBC8 /* Frameworks */,
 				73E2E7D325036860006CDBC8 /* Resources */,
 				73E2E7FC25036933006CDBC8 /* Embed Frameworks */,
+				73F9226525238064006FF358 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -781,6 +783,7 @@
 				73E2E7E325036872006CDBC8 /* Frameworks */,
 				73E2E7E425036872006CDBC8 /* Resources */,
 				73E2E84B2504F5E2006CDBC8 /* Embed Frameworks */,
+				73F922662523806F006FF358 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -935,6 +938,57 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GgrMemo/Pods-GgrMemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		73F922642523804D006FF358 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\ncd \"${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/\"\n if [[ -d \"Frameworks\" ]]; then \n     rm -fr Frameworks\n fi\n";
+		};
+		73F9226525238064006FF358 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\ncd \"${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/\"\n if [[ -d \"Frameworks\" ]]; then \n     rm -fr Frameworks\n fi\n";
+		};
+		73F922662523806F006FF358 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\ncd \"${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/\"\n if [[ -d \"Frameworks\" ]]; then \n     rm -fr Frameworks\n fi\n";
 		};
 		84CA6BB30883D4EC0F669804 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1235,7 +1289,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.1;
+				CURRENT_PROJECT_VERSION = 1.3;
 				DEVELOPMENT_TEAM = 53H47X4HXT;
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = GgrMemo/Info.plist;
@@ -1256,7 +1310,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.1;
+				CURRENT_PROJECT_VERSION = 1.3;
 				DEVELOPMENT_TEAM = 53H47X4HXT;
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = GgrMemo/Info.plist;
