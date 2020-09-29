@@ -22,13 +22,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VBv-G4-Yfz">
-                    <rect key="frame" x="182" y="423" width="50" height="50"/>
+                    <rect key="frame" x="187" y="428" width="40" height="40"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="50" id="Cyz-dp-b1Q"/>
+                        <constraint firstAttribute="width" constant="40" id="Cyz-dp-b1Q"/>
                         <constraint firstAttribute="width" secondItem="VBv-G4-Yfz" secondAttribute="height" multiplier="1:1" id="i5z-4m-2uZ"/>
                         <constraint firstAttribute="width" secondItem="VBv-G4-Yfz" secondAttribute="height" multiplier="1:1" id="xMs-YN-dDg"/>
                     </constraints>
-                    <state key="normal" title="Button" image="addImage"/>
+                    <state key="normal" title="Button" image="cancel3"/>
                     <connections>
                         <action selector="tapCancel:" destination="-1" eventType="touchUpInside" id="gdH-fP-pq8"/>
                     </connections>
@@ -39,21 +39,21 @@
                         <constraint firstAttribute="width" secondItem="zoo-HP-xEs" secondAttribute="height" multiplier="1:1" id="VBQ-az-CAJ"/>
                         <constraint firstAttribute="width" constant="50" id="cbV-Nu-BJV"/>
                     </constraints>
-                    <state key="normal" title="Button" image="search"/>
+                    <state key="normal" title="Button" image="twitter"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zyx-rf-yoR">
                     <rect key="frame" x="197" y="493" width="50" height="50"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="50" id="XTq-A2-Rnp"/>
                     </constraints>
-                    <state key="normal" title="Button" image="search"/>
+                    <state key="normal" title="Button" image="youtube"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4eH-s7-1Jj">
                     <rect key="frame" x="197" y="353" width="50" height="50"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="50" id="xrZ-u3-PXC"/>
                     </constraints>
-                    <state key="normal" title="Button" image="search"/>
+                    <state key="normal" title="Button" image="checkButton"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Xo-7J-Xo1">
                     <rect key="frame" x="247" y="373" width="50" height="50"/>
@@ -61,7 +61,7 @@
                         <constraint firstAttribute="width" secondItem="3Xo-7J-Xo1" secondAttribute="height" multiplier="1:1" id="CQU-4v-drc"/>
                         <constraint firstAttribute="width" constant="50" id="d5C-bh-s7i"/>
                     </constraints>
-                    <state key="normal" title="Button" image="search"/>
+                    <state key="normal" title="Button" image="edit"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eZs-qr-1SU">
                     <rect key="frame" x="267" y="423" width="50" height="50"/>
@@ -94,7 +94,11 @@
         </view>
     </objects>
     <resources>
-        <image name="addImage" width="256" height="256"/>
+        <image name="cancel3" width="256" height="256"/>
+        <image name="checkButton" width="256" height="256"/>
+        <image name="edit" width="256" height="256"/>
         <image name="search" width="256" height="256"/>
+        <image name="twitter" width="256" height="256"/>
+        <image name="youtube" width="256" height="256"/>
     </resources>
 </document>
