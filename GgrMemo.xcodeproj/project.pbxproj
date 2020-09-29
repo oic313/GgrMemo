@@ -70,7 +70,7 @@
 		73E2E85D250E265A006CDBC8 /* ColorAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E2E85C250E265A006CDBC8 /* ColorAsset.swift */; };
 		73E2E866250E6D21006CDBC8 /* ColorListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E2E864250E6D21006CDBC8 /* ColorListCollectionViewCell.swift */; };
 		73E2E867250E6D21006CDBC8 /* ColorListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73E2E865250E6D21006CDBC8 /* ColorListCollectionViewCell.xib */; };
-		73E2E89D2512932A006CDBC8 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E2E89C2512932A006CDBC8 /* File.swift */; };
+		73E2E89D2512932A006CDBC8 /* Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E2E89C2512932A006CDBC8 /* Memo.swift */; };
 		73E2E8A02512B9A1006CDBC8 /* SettingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E2E89E2512B9A1006CDBC8 /* SettingCollectionViewCell.swift */; };
 		73E2E8A12512B9A1006CDBC8 /* SettingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73E2E89F2512B9A1006CDBC8 /* SettingCollectionViewCell.xib */; };
 		73F9224325237954006FF358 /* GgrMemoPresenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73E2E7D525036860006CDBC8 /* GgrMemoPresenter.framework */; };
@@ -83,6 +83,9 @@
 		73F9224B25237959006FF358 /* Pods_GgrMemo.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4EC7A058E3D93AD4276DEC43 /* Pods_GgrMemo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		73F9224C2523795B006FF358 /* GgrMemoModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73E2E7E625036872006CDBC8 /* GgrMemoModel.framework */; };
 		73F9224D2523795B006FF358 /* GgrMemoModel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 73E2E7E625036872006CDBC8 /* GgrMemoModel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		73F9225125237A66006FF358 /* ColorAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F9225025237A66006FF358 /* ColorAsset.swift */; };
+		73F9225525237A73006FF358 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F9225425237A73006FF358 /* Tag.swift */; };
+		73F9225C25237ACD006FF358 /* ClassNameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F9225B25237ACD006FF358 /* ClassNameProtocol.swift */; };
 		94BA65DAE036F149A6AA77CC /* Pods_GgrMemo_GgrMemoModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB5EE67ADF754136A492BE4 /* Pods_GgrMemo_GgrMemoModel.framework */; };
 /* End PBXBuildFile section */
 
@@ -269,9 +272,12 @@
 		73E2E85C250E265A006CDBC8 /* ColorAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorAsset.swift; sourceTree = "<group>"; };
 		73E2E864250E6D21006CDBC8 /* ColorListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorListCollectionViewCell.swift; sourceTree = "<group>"; };
 		73E2E865250E6D21006CDBC8 /* ColorListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorListCollectionViewCell.xib; sourceTree = "<group>"; };
-		73E2E89C2512932A006CDBC8 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		73E2E89C2512932A006CDBC8 /* Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memo.swift; sourceTree = "<group>"; };
 		73E2E89E2512B9A1006CDBC8 /* SettingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCollectionViewCell.swift; sourceTree = "<group>"; };
 		73E2E89F2512B9A1006CDBC8 /* SettingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingCollectionViewCell.xib; sourceTree = "<group>"; };
+		73F9225025237A66006FF358 /* ColorAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorAsset.swift; sourceTree = "<group>"; };
+		73F9225425237A73006FF358 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
+		73F9225B25237ACD006FF358 /* ClassNameProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassNameProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -603,7 +609,7 @@
 		73E2E8352504F387006CDBC8 /* GgrMemoUtility */ = {
 			isa = PBXGroup;
 			children = (
-				73E2E89C2512932A006CDBC8 /* File.swift */,
+				73F9224F25237A58006FF358 /* Enum */,
 				73E2E8442504F419006CDBC8 /* Extension */,
 				73E2E8362504F387006CDBC8 /* GgrMemoUtility.h */,
 				73E2E8372504F387006CDBC8 /* Info.plist */,
@@ -615,6 +621,7 @@
 			isa = PBXGroup;
 			children = (
 				73E2E8452504F42C006CDBC8 /* String.swift */,
+				73F9225B25237ACD006FF358 /* ClassNameProtocol.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -636,6 +643,16 @@
 				73D6A37D2520FA6E00544132 /* EditAction.swift */,
 				73D6A3832520FA9100544132 /* TapAction.swift */,
 				73D6A3872520FAB000544132 /* UseOfficialAppFlagState.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		73F9224F25237A58006FF358 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				73F9225025237A66006FF358 /* ColorAsset.swift */,
+				73E2E89C2512932A006CDBC8 /* Memo.swift */,
+				73F9225425237A73006FF358 /* Tag.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -1033,8 +1050,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73F9225C25237ACD006FF358 /* ClassNameProtocol.swift in Sources */,
+				73F9225525237A73006FF358 /* Tag.swift in Sources */,
 				73E2E8462504F42C006CDBC8 /* String.swift in Sources */,
-				73E2E89D2512932A006CDBC8 /* File.swift in Sources */,
+				73F9225125237A66006FF358 /* ColorAsset.swift in Sources */,
+				73E2E89D2512932A006CDBC8 /* Memo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
