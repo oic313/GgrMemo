@@ -263,6 +263,30 @@ private extension MemoListViewController {
         memoCollectionView.registerCell(cellClass: MemoCollectionViewCell.self)
         memoCollectionView.registerCell(cellClass: TagCollectionViewCell.self)
         memoCollectionView.registerCell(cellClass: SpaceCollectionViewCell.self)
+        memoCollectionView.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(cellLongPressed)))
+    }
+    
+    @objc func cellLongPressed(recognizer: UILongPressGestureRecognizer) {
+        // 押された位置でcellのPathを取得
+        let point = recognizer.location(in: memoCollectionView)
+        guard let indexPath = memoCollectionView.indexPathForItem(at: point) else { return }
+        guard let cell = memoCollectionView.cellForItem(at: indexPath) else { return }
+        
+        if recognizer.state == .began {
+            if case .memoList = self.displayList[indexPath.section] {
+                let buttonViewController = ButtonViewController()
+                buttonViewController.modalPresentationStyle = .custom
+                buttonViewController.transitioningDelegate = self
+                
+                let hoge = buttonViewController.presentationController as! CustomPresentationController
+                hoge.hoge = memoCollectionView.nowPosition(cell: cell)
+                
+                present(buttonViewController, animated: false, completion: nil)
+            }
+            // 長押しされた場合の処理
+            print("長押しされたcellのSection:\(String(describing: indexPath.section))")
+            print("長押しされたcellのindexPath:\(String(describing: indexPath.row))")
+        }
     }
     
     func openUrl(mobileUrl: URL?, appUrl: URL?) {
@@ -274,4 +298,110 @@ private extension MemoListViewController {
         }
     }
     
+}
+
+extension MemoListViewController: UIViewControllerTransitioningDelegate {
+    public func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        CustomPresentationController(presentedViewController: presented, presenting: presenting)
+    }
+}
+
+final class CustomPresentationController: UIPresentationController {
+    
+    var hoge: CGRect = CGRect(x: 0, y: 0, width: 0, height: 0)
+    
+    override func size(forChildContentContainer container: UIContentContainer, withParentContainerSize parentSize: CGSize) -> CGSize {
+        CGSize(width: 300, height: 300)
+    }
+    
+    // 呼び出し先のView Controllerのframeを返す
+    override var frameOfPresentedViewInContainerView: CGRect {
+        var presentedViewFrame = CGRect()
+        let containerBounds = containerView!.bounds
+        let childContentSize = size(forChildContentContainer: presentedViewController, withParentContainerSize: containerBounds.size)
+        presentedViewFrame.size = childContentSize
+        presentedViewFrame.center.x = hoge.center.x
+        presentedViewFrame.center.y = hoge.center.y
+        return presentedViewFrame
+    }
+    
+}
+
+extension CGRect {
+    /** Creates a rectangle with the given center and dimensions
+     - parameter center: The center of the new rectangle
+     - parameter size: The dimensions of the new rectangle
+     */
+    init(center: CGPoint, size: CGSize) {
+        self.init(x: center.x - size.width / 2, y: center.y - size.height / 2, width: size.width, height: size.height)
+    }
+    
+    /** the coordinates of this rectangles center */
+    var center: CGPoint
+    {
+        get { return CGPoint(x: centerX, y: centerY) }
+        set { centerX = newValue.x; centerY = newValue.y }
+    }
+    
+    /** the x-coordinate of this rectangles center
+     - note: Acts as a settable midX
+     - returns: The x-coordinate of the center
+     */
+    var centerX: CGFloat {
+        get { return midX }
+        set { origin.x = newValue - width * 0.5 }
+    }
+    
+    /** the y-coordinate of this rectangles center
+     - note: Acts as a settable midY
+     - returns: The y-coordinate of the center
+     */
+    var centerY: CGFloat {
+        get { return midY }
+        set { origin.y = newValue - height * 0.5 }
+    }
+    
+    // MARK: - "with" convenience functions
+    
+    /** Same-sized rectangle with a new center
+     - parameter center: The new center, ignored if nil
+     - returns: A new rectangle with the same size and a new center
+     */
+    func with(center: CGPoint?) -> CGRect {
+        return CGRect(center: center ?? self.center, size: size)
+    }
+    
+    /** Same-sized rectangle with a new center-x
+     - parameter centerX: The new center-x, ignored if nil
+     - returns: A new rectangle with the same size and a new center
+     */
+    func with(centerX: CGFloat?) -> CGRect {
+        return CGRect(center: CGPoint(x: centerX ?? self.centerX, y: centerY), size: size)
+    }
+    
+    /** Same-sized rectangle with a new center-y
+     - parameter centerY: The new center-y, ignored if nil
+     - returns: A new rectangle with the same size and a new center
+     */
+    func with(centerY: CGFloat?) -> CGRect {
+        return CGRect(center: CGPoint(x: centerX, y: centerY ?? self.centerY), size: size)
+    }
+    
+    /** Same-sized rectangle with a new center-x and center-y
+     - parameter centerX: The new center-x, ignored if nil
+     - parameter centerY: The new center-y, ignored if nil
+     - returns: A new rectangle with the same size and a new center
+     */
+    func with(centerX: CGFloat?, centerY: CGFloat?) -> CGRect {
+        return CGRect(center: CGPoint(x: centerX ?? self.centerX, y: centerY ?? self.centerY), size: size)
+    }
+}
+
+
+extension UICollectionView {
+    func nowPosition(cell: UICollectionViewCell) -> CGRect {
+        let point = CGPoint(x: cell.frame.origin.x - self.contentOffset.x, y: cell.frame.origin.y - self.contentOffset.y)
+        let size = cell.bounds.size
+        return CGRect(x: point.x, y: point.y, width: size.width, height: size.height)
+    }
 }
