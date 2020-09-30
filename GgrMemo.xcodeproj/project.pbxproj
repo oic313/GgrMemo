@@ -84,7 +84,6 @@
 		73F9224825237957006FF358 /* GgrMemoView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73E2E7C325036843006CDBC8 /* GgrMemoView.framework */; };
 		73F9224925237957006FF358 /* GgrMemoView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 73E2E7C325036843006CDBC8 /* GgrMemoView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		73F9224A25237959006FF358 /* Pods_GgrMemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EC7A058E3D93AD4276DEC43 /* Pods_GgrMemo.framework */; };
-		73F9224B25237959006FF358 /* Pods_GgrMemo.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4EC7A058E3D93AD4276DEC43 /* Pods_GgrMemo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		73F9224C2523795B006FF358 /* GgrMemoModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73E2E7E625036872006CDBC8 /* GgrMemoModel.framework */; };
 		73F9224D2523795B006FF358 /* GgrMemoModel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 73E2E7E625036872006CDBC8 /* GgrMemoModel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		73F9225125237A66006FF358 /* ColorAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F9225025237A66006FF358 /* ColorAsset.swift */; };
@@ -194,7 +193,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				73F9224725237955006FF358 /* GgrMemoUtility.framework in Embed Frameworks */,
-				73F9224B25237959006FF358 /* Pods_GgrMemo.framework in Embed Frameworks */,
 				73F9224925237957006FF358 /* GgrMemoView.framework in Embed Frameworks */,
 				73F9224425237954006FF358 /* GgrMemoPresenter.framework in Embed Frameworks */,
 				73F9224D2523795B006FF358 /* GgrMemoModel.framework in Embed Frameworks */,
@@ -1321,6 +1319,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = GgrMemo.GgrMemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1342,6 +1341,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = GgrMemo.GgrMemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1368,7 +1368,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = GgrMemo.GgrMemoView;
+				PRODUCT_BUNDLE_IDENTIFIER = GgrMemo.GgrMemo.GgrMemoView;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
@@ -1399,7 +1399,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = GgrMemo.GgrMemoView;
+				PRODUCT_BUNDLE_IDENTIFIER = GgrMemo.GgrMemo.GgrMemoView;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
@@ -1429,7 +1429,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = GgrMemo.GgrMemoPresenter;
+				PRODUCT_BUNDLE_IDENTIFIER = GgrMemo.GgrMemo.GgrMemoPresenter;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
@@ -1460,7 +1460,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = GgrMemo.GgrMemoPresenter;
+				PRODUCT_BUNDLE_IDENTIFIER = GgrMemo.GgrMemo.GgrMemoPresenter;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
@@ -1491,7 +1491,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = GgrMemo.GgrMemoModel;
+				PRODUCT_BUNDLE_IDENTIFIER = GgrMemo.GgrMemo.GgrMemoModel;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
@@ -1523,7 +1523,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = GgrMemo.GgrMemoModel;
+				PRODUCT_BUNDLE_IDENTIFIER = GgrMemo.GgrMemo.GgrMemoModel;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
@@ -1553,7 +1553,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = GgrMemo.GgrMemoUtility;
+				PRODUCT_BUNDLE_IDENTIFIER = GgrMemo.GgrMemo.GgrMemoUtility;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
@@ -1584,7 +1584,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = GgrMemo.GgrMemoUtility;
+				PRODUCT_BUNDLE_IDENTIFIER = GgrMemo.GgrMemo.GgrMemoUtility;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
