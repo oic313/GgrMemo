@@ -56,6 +56,12 @@ final class AddMemoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
+        memoTextField.layer.borderWidth = 1
+        memoTextField.layer.cornerRadius = 5
+        memoTextField.layer.borderColor = ColorAsset.thin.value?.cgColor
+        tagTextField.layer.borderWidth = 1
+        tagTextField.layer.cornerRadius = 5
+        tagTextField.layer.borderColor = ColorAsset.thin.value?.cgColor
     }
     
     override func viewDidAppear(_ animated: Bool) {
