@@ -2,13 +2,13 @@ import UIKit
 import GgrMemoUtility
 import GgrMemoPresenter
 
-public protocol TransitionSourceView: AnyObject {
+protocol TransitionSourceView: AnyObject {
     func tapedEditAction(action: EditAction)
     func tapedTapAction(action: TapAction)
 }
 
 final class SettingViewController: UIViewController {
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet private weak var collectionView: UICollectionView!
     private let displayType: SettingViewCellType
     weak var delegate: TransitionSourceView?  // NOTE: これがdelegate
 
@@ -106,7 +106,6 @@ extension SettingViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
         true
     }
-    
     
     // Cell がタップで選択されたときに呼ばれる
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

@@ -17,10 +17,10 @@ final public class MemoListPresenter {
     }
     
     private var tagAndMemoList: [CollectionViewCellType] {
-        FatLogic.searchIncludeSpaceTagList().flatMap {
+        TagBussinessLogic.searchIncludeSpaceTagList().flatMap {
             [
                 .tag($0),
-                .memoList(MemoListModel(memos: FatLogic.searchtMemoWithMatchTag(tag: $0), color: $0.color))
+                .memoList(MemoListModel(memos: MemoBussinessLogic.searchtMemoWithMatchTag(tag: $0), color: $0.color))
             ]
         }
     }
@@ -33,110 +33,45 @@ final public class MemoListPresenter {
     }
     
     public init() {}
+
+}
+
+public extension MemoListPresenter {
     
-    public func showPage() {
+    func showPage() {
         guard let view = view else { return }
         view.redraw(model: MemoListViewModel(displayList: displayList))
     }
     
-    public func checkedMemo(memo: Memo, indexPath: IndexPath) {
+    func checkedMemo(memo: Memo) {
         guard let view = view else { return }
-        FatLogic.togleMemoCheckedStatus(memo: memo)
+        MemoBussinessLogic.togleMemoCheckedStatus(memo: memo)
         view.redraw(model: MemoListViewModel(displayList: displayList))
     }
     
-    public func checkedTag(tag: Tag, indexPath: IndexPath) {
+    func checkedTag(tag: Tag, indexPath: IndexPath) {
         guard let view = view else { return }
-        FatLogic.togleTagCheckedStatus(tag: tag)
+        TagBussinessLogic.togleTagCheckedStatus(tag: tag)
         view.redraw(model: MemoListViewModel(displayList: displayList))
     }
     
-    public func deleteCheckedMemos() {
+    func deleteCheckedMemos() {
         guard let view = view else { return }
-        FatLogic.deleteCheckedMemos()
+        MemoBussinessLogic.deleteCheckedMemos()
         view.redraw(model: MemoListViewModel(displayList: displayList))
     }
     
-    public func deleteCheckedTags() {
+    func deleteCheckedTags() {
         guard let view = view else { return }
-        FatLogic.deleteCheckedTags()
+        TagBussinessLogic.deleteCheckedTags()
         view.redraw(model: MemoListViewModel(displayList: displayList))
     }
     
-    public func deselectionAll() {
+    func deselectionAll() {
         guard let view = view else { return }
-        FatLogic.deselectionAllMemo()
-        FatLogic.deselectionAllTag()
+        MemoBussinessLogic.deselectionAllMemo()
+        TagBussinessLogic.deselectionAllTag()
         view.redraw(model: MemoListViewModel(displayList: displayList))
     }
     
-}
-
-public struct MemoListViewModel {
-    public let displayList: [CollectionViewCellType]
-    
-    public init(displayList: [CollectionViewCellType]){
-        self.displayList = displayList
-    }
-}
-
-public struct MemoListModel {
-    public let memos: [Memo]
-    public let color: ColorAsset
-    
-    public init(memos: [Memo], color: ColorAsset){
-        self.memos = memos
-        self.color = color
-    }
-}
-
-public enum CollectionViewCellType {
-    case setting([SettingViewCellType])
-    case tag(Tag)
-    case memoList(MemoListModel)
-    case space
-}
-
-public enum SettingViewCellType {
-    case edit([EditAction])
-    case tapActionEdit([TapAction])
-    case useOfficialAppFlag
-
-}
-
-public enum EditAction: String, CaseIterable {
-    case deleteMemo = "チェックしたメモを削除"
-    case deleteTag = "チェックしたタグを削除"
-    case cancelCecked = "すべてのチェックを解除"
-}
-
-public enum TapAction: String, CaseIterable {
-    case checked = "タップでチェック"
-    case edit = "タップで編集"
-    case search = "タップで検索"
-    case searchOnYoutube = "タップでYoutubeで検索"
-    case searchOnTwitter = "タップでTwitterで検索"
-}
-
-public enum useOfficialAppFlagState: String {
-    case on = "公式アプリで検索"
-    case off = "アプリ内で検索"
-    
-    public var isOn: Bool {
-        switch self {
-        case .on:
-            return true
-        case .off:
-            return false
-        }
-    }
-    
-    public mutating func toggle() {
-        switch self {
-        case .on:
-            self = .off
-        case .off:
-            self = .on
-        }
-    }
 }

@@ -3,16 +3,16 @@ import GgrMemoPresenter
 
 public protocol ParentView: AnyObject {
     func popupSettingView(cellType: SettingViewCellType, cell: UICollectionViewCell)
-    func setUseOfficialAppFlag(useOfficialAppFlag: useOfficialAppFlagState)
+    func setUseOfficialAppFlag(useOfficialAppFlag: UseOfficialAppFlagState)
 }
 
 final class SettingCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var settingCollectionView: UICollectionView!
+    @IBOutlet private weak var settingCollectionView: UICollectionView!
     public weak var delegate: ParentView?  // NOTE: これがdelegate
     private var displayList: [SettingViewCellType] = []
     private var tapAction: TapAction = .checked
-    private var useOfficialApp: useOfficialAppFlagState = .on
+    private var useOfficialApp: UseOfficialAppFlagState = .on
 
     private lazy var settingCellHelper: SettingCellOfCell? = {
         UINib(nibName: SettingCellOfCell.className, bundle: Bundle(for: SettingCellOfCell.self)).instantiate(withOwner: nil).first as? SettingCellOfCell
@@ -32,7 +32,7 @@ final class SettingCollectionViewCell: UICollectionViewCell {
         
     }
     
-    func setCell(displayList: [SettingViewCellType], tapAction: TapAction, useOfficialApp: useOfficialAppFlagState) {
+    func setCell(displayList: [SettingViewCellType], tapAction: TapAction, useOfficialApp: UseOfficialAppFlagState) {
         self.displayList = displayList
         self.tapAction = tapAction
         self.useOfficialApp = useOfficialApp

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ButtonViewController" customModule="GgrMemoView" customModuleProvider="target">
+            <connections>
+                <outlet property="lXConstraint" destination="6hW-tm-Vrt" id="GIW-ah-Ddg"/>
+                <outlet property="mXConstraint" destination="APA-7z-UZK" id="hwU-bl-brc"/>
+                <outlet property="sXConstraint" destination="YNy-3O-olu" id="knS-Ox-HaV"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VBv-G4-Yfz">
+                    <rect key="frame" x="187" y="428" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="Cyz-dp-b1Q"/>
+                        <constraint firstAttribute="width" secondItem="VBv-G4-Yfz" secondAttribute="height" multiplier="1:1" id="i5z-4m-2uZ"/>
+                        <constraint firstAttribute="width" secondItem="VBv-G4-Yfz" secondAttribute="height" multiplier="1:1" id="xMs-YN-dDg"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="cancel3"/>
+                    <connections>
+                        <action selector="tapCancel:" destination="-1" eventType="touchUpInside" id="gdH-fP-pq8"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zoo-HP-xEs">
+                    <rect key="frame" x="247" y="473" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="zoo-HP-xEs" secondAttribute="height" multiplier="1:1" id="VBQ-az-CAJ"/>
+                        <constraint firstAttribute="width" constant="50" id="cbV-Nu-BJV"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="twitter"/>
+                    <connections>
+                        <action selector="tapSearchTwitter:" destination="-1" eventType="touchUpInside" id="zrT-9g-u0M"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zyx-rf-yoR">
+                    <rect key="frame" x="197" y="493" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="XTq-A2-Rnp"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="youtube"/>
+                    <connections>
+                        <action selector="tapSearchYoutube:" destination="-1" eventType="touchUpInside" id="mWU-xv-sz3"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4eH-s7-1Jj">
+                    <rect key="frame" x="197" y="353" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="xrZ-u3-PXC"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="checkButton"/>
+                    <connections>
+                        <action selector="tapCheck:" destination="-1" eventType="touchUpInside" id="Qsw-Tc-2TY"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Xo-7J-Xo1">
+                    <rect key="frame" x="247" y="373" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="3Xo-7J-Xo1" secondAttribute="height" multiplier="1:1" id="CQU-4v-drc"/>
+                        <constraint firstAttribute="width" constant="50" id="d5C-bh-s7i"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="edit"/>
+                    <connections>
+                        <action selector="tapEdit:" destination="-1" eventType="touchUpInside" id="Ozw-Hv-4Ab"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eZs-qr-1SU">
+                    <rect key="frame" x="267" y="423" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="6bs-on-Ex9"/>
+                        <constraint firstAttribute="width" secondItem="eZs-qr-1SU" secondAttribute="height" multiplier="1:1" id="FdW-1Q-Jyk"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="search"/>
+                    <connections>
+                        <action selector="tapSearch:" destination="-1" eventType="touchUpInside" id="1XJ-DR-6bp"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <constraints>
+                <constraint firstItem="VBv-G4-Yfz" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="0Ea-wd-hS9"/>
+                <constraint firstItem="3Xo-7J-Xo1" firstAttribute="centerY" secondItem="VBv-G4-Yfz" secondAttribute="centerY" constant="-50" id="22J-Wu-S6c"/>
+                <constraint firstItem="VBv-G4-Yfz" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="4rd-MK-nhk"/>
+                <constraint firstItem="eZs-qr-1SU" firstAttribute="centerX" secondItem="VBv-G4-Yfz" secondAttribute="centerX" constant="85" id="6hW-tm-Vrt"/>
+                <constraint firstItem="3Xo-7J-Xo1" firstAttribute="centerX" secondItem="VBv-G4-Yfz" secondAttribute="centerX" constant="65" id="APA-7z-UZK"/>
+                <constraint firstItem="zoo-HP-xEs" firstAttribute="centerY" secondItem="VBv-G4-Yfz" secondAttribute="centerY" constant="50" id="Hjb-m3-zM4"/>
+                <constraint firstItem="4eH-s7-1Jj" firstAttribute="centerY" secondItem="VBv-G4-Yfz" secondAttribute="centerY" constant="-70" id="M4h-eg-PyE"/>
+                <constraint firstItem="Zyx-rf-yoR" firstAttribute="centerY" secondItem="VBv-G4-Yfz" secondAttribute="centerY" constant="70" id="N2b-BM-Y42"/>
+                <constraint firstItem="4eH-s7-1Jj" firstAttribute="width" secondItem="4eH-s7-1Jj" secondAttribute="height" multiplier="1:1" id="NaD-OR-q7f"/>
+                <constraint firstItem="VBv-G4-Yfz" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="OqC-eC-0Dk"/>
+                <constraint firstItem="Zyx-rf-yoR" firstAttribute="centerX" secondItem="4eH-s7-1Jj" secondAttribute="centerX" id="SxN-4f-bQm"/>
+                <constraint firstItem="4eH-s7-1Jj" firstAttribute="centerX" secondItem="VBv-G4-Yfz" secondAttribute="centerX" constant="15" id="YNy-3O-olu"/>
+                <constraint firstItem="eZs-qr-1SU" firstAttribute="centerY" secondItem="VBv-G4-Yfz" secondAttribute="centerY" id="Zxi-Tf-XZm"/>
+                <constraint firstItem="Zyx-rf-yoR" firstAttribute="width" secondItem="Zyx-rf-yoR" secondAttribute="height" multiplier="1:1" id="kMb-ic-67V"/>
+                <constraint firstItem="zoo-HP-xEs" firstAttribute="centerX" secondItem="3Xo-7J-Xo1" secondAttribute="centerX" id="phI-c3-YN3"/>
+            </constraints>
+            <point key="canvasLocation" x="111.59420289855073" y="103.79464285714285"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="cancel3" width="256" height="256"/>
+        <image name="checkButton" width="256" height="256"/>
+        <image name="edit" width="256" height="256"/>
+        <image name="search" width="256" height="256"/>
+        <image name="twitter" width="256" height="256"/>
+        <image name="youtube" width="256" height="256"/>
+    </resources>
+</document>

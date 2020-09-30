@@ -1,11 +1,10 @@
 import UIKit
+import GgrMemoUtility
 import GgrMemoPresenter
-func hoge () {
-    
-}
+
 final public class MemoListViewController: UIViewController {
     
-    @IBOutlet weak var memoCollectionView: UICollectionView!
+    @IBOutlet private weak var memoCollectionView: UICollectionView!
     private let presenter = MemoListPresenter()
     
     private var model: MemoListViewModel?
@@ -13,7 +12,7 @@ final public class MemoListViewController: UIViewController {
         model?.displayList ?? []
     }
     private var selectedTapAction: TapAction
-    private var selectedUseOfficialApp: useOfficialAppFlagState
+    private var selectedUseOfficialApp: UseOfficialAppFlagState
     
     private lazy var tagCellHelper: TagCollectionViewCell? = {
         UINib(nibName: TagCollectionViewCell.className, bundle: Bundle(for: TagCollectionViewCell.self)).instantiate(withOwner: nil).first as? TagCollectionViewCell
@@ -35,16 +34,7 @@ final public class MemoListViewController: UIViewController {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
-        // UICollectionViewDataSourceのあるクラスを示す
-        memoCollectionView.dataSource = self
-        // UICollectionViewDelegateFlowLayoutのあるクラスを示す
-        memoCollectionView.delegate = self
-        
-        memoCollectionView.registerCell(cellClass: SettingCollectionViewCell.self)
-        memoCollectionView.registerCell(cellClass: MemoCollectionViewCell.self)
-        memoCollectionView.registerCell(cellClass: TagCollectionViewCell.self)
-        memoCollectionView.registerCell(cellClass: SpaceCollectionViewCell.self)
-        
+        configure()
     }
     
     public override func viewWillAppear(_ animated: Bool) {
@@ -66,7 +56,6 @@ extension MemoListViewController: UICollectionViewDataSource {
     public func numberOfSections(in collectionView: UICollectionView) -> Int {
         return self.displayList.count
     }
-    
     
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch self.displayList[section] {
@@ -97,7 +86,6 @@ extension MemoListViewController: UICollectionViewDataSource {
             let cell: SpaceCollectionViewCell = collectionView.dequeueReusableCell(cellClass: SpaceCollectionViewCell.self, indexPath: indexPath)
             return cell
         }
-        
     }
     
 }
@@ -109,31 +97,16 @@ extension MemoListViewController: UICollectionViewDelegateFlowLayout {
         case .setting:
             return .init(width: view.frame.width, height: 40)
         case .tag(let tag):
-            if let cell = tagCellHelper {
-                cell.setupCell(tag: tag)
-                let cellWidth = UIScreen.main.bounds.size.width - 30
-                
-                return cell.contentView.systemLayoutSizeFitting(
-                    CGSize(width: cellWidth, height: 0),
-                    withHorizontalFittingPriority: .required,
-                    verticalFittingPriority: .fittingSizeLevel
-                )
-            }
+            guard let cell = tagCellHelper else { return .zero }
+            cell.setupCell(tag: tag)            
+            return cell.fitSize(width: UIScreen.main.bounds.size.width - 30)
         case .memoList(let memoList):
-            if let cell = memoCellHelper {
-                cell.setupCell(memo: memoList.memos[indexPath.row], color: memoList.color)
-                let cellWidth = UIScreen.main.bounds.size.width/2 - 60/2 - 10/2
-                
-                return cell.contentView.systemLayoutSizeFitting(
-                    CGSize(width: cellWidth, height: 0),
-                    withHorizontalFittingPriority: .required,
-                    verticalFittingPriority: .fittingSizeLevel
-                )
-            }
+            guard let cell = memoCellHelper else { return .zero }
+            cell.setupCell(memo: memoList.memos[indexPath.row], color: memoList.color)
+            return cell.fitSize(width: UIScreen.main.bounds.size.width/2 - 60/2 - 10/2)
         case .space:
             return .init(width: view.frame.width, height: view.frame.height/4)
         }
-        return .zero
     }
     
     // cell達の周囲の余白
@@ -173,30 +146,12 @@ extension MemoListViewController: UICollectionViewDelegate {
         true
     }
     
-    
+    //TODO: いつかいい感じにする
     // Cell がタップで選択されたときに呼ばれる
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if case .memoList(let memoList) = self.displayList[indexPath.section] {
-            switch selectedTapAction {
-            case .checked:
-                view.isUserInteractionEnabled = false
-                presenter.checkedMemo(memo: memoList.memos[indexPath.row], indexPath: indexPath)
-            case .edit:
-                let addMemoViewController = AddMemoViewController(memoList: [memoList.memos[indexPath.row]])
-                present(addMemoViewController, animated: true, completion: nil)
-            case .search:
-                let str = "https://www.google.co.jp/search?q=\(memoList.memos[indexPath.row].value)"
-                openUrl(mobileUrl: str.url, appUrl: str.url)
-            case .searchOnYoutube:
-                let app = "youtube://results?search_query=\(memoList.memos[indexPath.row].value)"
-                let mobile = "https://m.youtube.com/results?search_query=\(memoList.memos[indexPath.row].value)"
-                openUrl(mobileUrl: mobile.url, appUrl: app.url)
-            case .searchOnTwitter:
-                let app = "twitter://search?query=\(memoList.memos[indexPath.row].value)"
-                let mobile = "https://mobile.twitter.com/search?lang=ja&q=\(memoList.memos[indexPath.row].value)&src=typed_query"
-                openUrl(mobileUrl: mobile.url, appUrl: app.url)
-            }
+            exeMemoTapAction(selectedTapAction: selectedTapAction, memo: memoList.memos[indexPath.row])
         } else if case .tag(let tag) = self.displayList[indexPath.section] {
             switch selectedTapAction {
             case .checked:
@@ -214,15 +169,6 @@ extension MemoListViewController: UICollectionViewDelegate {
         return
     }
     
-    
-    func openUrl(mobileUrl: URL?, appUrl: URL?) {
-        guard let mobileUrl = mobileUrl, let appUrl = appUrl else { return }
-        if selectedUseOfficialApp.isOn && UIApplication.shared.canOpenURL(appUrl) {
-            UIApplication.shared.open(appUrl)
-        } else {
-            present(WebViewController(url: mobileUrl), animated: true, completion: nil)
-        }
-    }
 }
 
 
@@ -233,7 +179,6 @@ extension MemoListViewController: MemoListView {
         memoCollectionView.reloadData()
         view.isUserInteractionEnabled = true
     }
-    
 }
 
 extension MemoListViewController: ParentView {
@@ -252,12 +197,11 @@ extension MemoListViewController: ParentView {
         settingViewController.popoverPresentationController?.permittedArrowDirections = .any
         // デリゲートの設定
         settingViewController.popoverPresentationController?.delegate = self
-        
         settingViewController.delegate = self
         present(settingViewController, animated: true, completion: nil)
     }
     
-    public func setUseOfficialAppFlag(useOfficialAppFlag: useOfficialAppFlagState){
+    public func setUseOfficialAppFlag(useOfficialAppFlag: UseOfficialAppFlagState){
         selectedUseOfficialApp = useOfficialAppFlag
     }
 }
@@ -291,3 +235,88 @@ extension MemoListViewController: TransitionSourceView {
     }
     
 }
+
+extension MemoListViewController: UIViewControllerTransitioningDelegate {
+    public func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        CustomPresentationController(presentedViewController: presented, presenting: presenting)
+    }
+}
+
+extension MemoListViewController: TapActionView {
+    func tapedAction(action: TapAction, memo: Memo) {
+        exeMemoTapAction(selectedTapAction: action, memo: memo)
+    }
+    
+}
+
+private extension MemoListViewController {
+    func configure() {
+        // UICollectionViewDataSourceのあるクラスを示す
+        memoCollectionView.dataSource = self
+        // UICollectionViewDelegateFlowLayoutのあるクラスを示す
+        memoCollectionView.delegate = self
+        memoCollectionView.registerCell(cellClass: SettingCollectionViewCell.self)
+        memoCollectionView.registerCell(cellClass: MemoCollectionViewCell.self)
+        memoCollectionView.registerCell(cellClass: TagCollectionViewCell.self)
+        memoCollectionView.registerCell(cellClass: SpaceCollectionViewCell.self)
+        memoCollectionView.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(cellLongPressed)))
+    }
+    
+    @objc func cellLongPressed(recognizer: UILongPressGestureRecognizer) {
+        // 押された位置でcellのPathを取得
+        let point = recognizer.location(in: memoCollectionView)
+        guard let indexPath = memoCollectionView.indexPathForItem(at: point) else { return }
+        guard let cell = memoCollectionView.cellForItem(at: indexPath) else { return }
+        
+        if recognizer.state == .began {
+            if case .memoList(let memoList) = self.displayList[indexPath.section] {
+                let direction: Direction
+                if indexPath.row % 2 == 0 {
+                    direction = .right
+                } else {
+                    direction = .left
+                }
+                
+                let buttonViewController = ButtonViewController(direction: direction, memo: memoList.memos[indexPath.row])
+                buttonViewController.delegate = self
+                buttonViewController.modalPresentationStyle = .custom
+                buttonViewController.transitioningDelegate = self
+                let customPresentationController = buttonViewController.presentationController as! CustomPresentationController
+                customPresentationController.rect = memoCollectionView.nowPosition(cell: cell)
+                present(buttonViewController, animated: false, completion: nil)
+            }
+        }
+    }
+    
+    func openUrl(mobileUrl: URL?, appUrl: URL?) {
+        guard let mobileUrl = mobileUrl, let appUrl = appUrl else { return }
+        if selectedUseOfficialApp.isOn && UIApplication.shared.canOpenURL(appUrl) {
+            UIApplication.shared.open(appUrl)
+        } else {
+            present(WebViewController(url: mobileUrl), animated: true, completion: nil)
+        }
+    }
+    
+    func exeMemoTapAction(selectedTapAction: TapAction, memo: Memo) {
+        switch selectedTapAction {
+        case .checked:
+            view.isUserInteractionEnabled = false
+            presenter.checkedMemo(memo: memo)
+        case .edit:
+            let addMemoViewController = AddMemoViewController(memoList: [memo])
+            present(addMemoViewController, animated: true, completion: nil)
+        case .search:
+            let str = "https://www.google.co.jp/search?q=\(memo.value)"
+            openUrl(mobileUrl: str.url, appUrl: str.url)
+        case .searchOnYoutube:
+            let app = "youtube://results?search_query=\(memo.value)"
+            let mobile = "https://m.youtube.com/results?search_query=\(memo.value)"
+            openUrl(mobileUrl: mobile.url, appUrl: app.url)
+        case .searchOnTwitter:
+            let app = "twitter://search?query=\(memo.value)"
+            let mobile = "https://mobile.twitter.com/search?lang=ja&q=\(memo.value)&src=typed_query"
+            openUrl(mobileUrl: mobile.url, appUrl: app.url)
+        }
+    }
+}
+

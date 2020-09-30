@@ -3,7 +3,7 @@ import GgrMemoUtility
 
 final class TagListCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet weak var tagLabel: UILabel!
+    @IBOutlet private weak var tagLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

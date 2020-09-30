@@ -4,8 +4,8 @@ import GgrMemoPresenter
 
 final class TagCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet weak var tagLabel: UILabel!
-    @IBOutlet weak var checkMark: UIImageView!
+    @IBOutlet private weak var tagLabel: UILabel!
+    @IBOutlet private weak var checkMark: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,12 +21,10 @@ final class TagCollectionViewCell: UICollectionViewCell {
     func applyCheckedState(isCecked: Bool, tagColor: ColorAsset){
         if isCecked {
             self.backgroundColor = ColorAsset.thin.value
-//            tagLabel.textColor = tagColor.value
         } else {
             self.backgroundColor = tagColor.value
-//            tagLabel.textColor = ColorAsset.text.value
         }
         checkMark.isHidden = !isCecked
-        tagLabel.hoge(isCecked)
+        tagLabel.strikethrough(isCecked)
     }
 }
