@@ -43,11 +43,13 @@
 		73CBA0C52528ECC40096547D /* GgrMemoInfra.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 73CBA05C2528DFFA0096547D /* GgrMemoInfra.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		73CBA0D82528EEF50096547D /* RepositoryResolverHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CBA0D72528EEF50096547D /* RepositoryResolverHolder.swift */; };
 		73CBA0DD2528EF0D0096547D /* RepositoryResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CBA0DC2528EF0D0096547D /* RepositoryResolver.swift */; };
-		73CBA0E42528F0570096547D /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CBA0E32528F0570096547D /* File.swift */; };
+		73CBA0E42528F0570096547D /* RepositoryResolverImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CBA0E32528F0570096547D /* RepositoryResolverImpl.swift */; };
+		73CBA0F32528FB820096547D /* TagUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CBA0F22528FB820096547D /* TagUseCaseProtocol.swift */; };
+		73CBA0F82528FBE00096547D /* TagUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CBA0F72528FBE00096547D /* TagUseCase.swift */; };
+		73CBA0FC2528FBFE0096547D /* TagData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CBA0FB2528FBFE0096547D /* TagData.swift */; };
+		73CBA1002528FC200096547D /* TagRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CBA0FF2528FC200096547D /* TagRepositoryImpl.swift */; };
+		73CBA1042528FED80096547D /* TagRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CBA1032528FED80096547D /* TagRepository.swift */; };
 		73D6A32A251D04BC00544132 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73D6A329251D04BC00544132 /* Assets.xcassets */; };
-		73D6A3482520EAD000544132 /* TagData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D6A3472520EAD000544132 /* TagData.swift */; };
-		73D6A34C2520EF1300544132 /* TagBussinessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D6A34B2520EF1300544132 /* TagBussinessLogic.swift */; };
-		73D6A3522520EFC800544132 /* TagCoreLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D6A3512520EFC800544132 /* TagCoreLogic.swift */; };
 		73D6A3632520F93C00544132 /* AddMemoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D6A3622520F93C00544132 /* AddMemoViewModel.swift */; };
 		73D6A36C2520F97000544132 /* MemoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D6A36B2520F97000544132 /* MemoListViewModel.swift */; };
 		73D6A3742520FA1900544132 /* CollectionViewCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D6A3732520FA1900544132 /* CollectionViewCellType.swift */; };
@@ -326,11 +328,13 @@
 		73CBA0A12528E7BF0096547D /* MemoUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoUseCaseProtocol.swift; sourceTree = "<group>"; };
 		73CBA0D72528EEF50096547D /* RepositoryResolverHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryResolverHolder.swift; sourceTree = "<group>"; };
 		73CBA0DC2528EF0D0096547D /* RepositoryResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryResolver.swift; sourceTree = "<group>"; };
-		73CBA0E32528F0570096547D /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		73CBA0E32528F0570096547D /* RepositoryResolverImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryResolverImpl.swift; sourceTree = "<group>"; };
+		73CBA0F22528FB820096547D /* TagUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagUseCaseProtocol.swift; sourceTree = "<group>"; };
+		73CBA0F72528FBE00096547D /* TagUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagUseCase.swift; sourceTree = "<group>"; };
+		73CBA0FB2528FBFE0096547D /* TagData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagData.swift; sourceTree = "<group>"; };
+		73CBA0FF2528FC200096547D /* TagRepositoryImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagRepositoryImpl.swift; sourceTree = "<group>"; };
+		73CBA1032528FED80096547D /* TagRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagRepository.swift; sourceTree = "<group>"; };
 		73D6A329251D04BC00544132 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		73D6A3472520EAD000544132 /* TagData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagData.swift; sourceTree = "<group>"; };
-		73D6A34B2520EF1300544132 /* TagBussinessLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagBussinessLogic.swift; sourceTree = "<group>"; };
-		73D6A3512520EFC800544132 /* TagCoreLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCoreLogic.swift; sourceTree = "<group>"; };
 		73D6A3622520F93C00544132 /* AddMemoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemoViewModel.swift; sourceTree = "<group>"; };
 		73D6A36B2520F97000544132 /* MemoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListViewModel.swift; sourceTree = "<group>"; };
 		73D6A3732520FA1900544132 /* CollectionViewCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCellType.swift; sourceTree = "<group>"; };
@@ -519,6 +523,7 @@
 			isa = PBXGroup;
 			children = (
 				73CBA0522528DF2D0096547D /* Memo */,
+				73CBA0F12528FB320096547D /* Tag */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -536,6 +541,7 @@
 			isa = PBXGroup;
 			children = (
 				73CBA0802528E0B00096547D /* DiaryRepositoryImpl.swift */,
+				73CBA0FF2528FC200096547D /* TagRepositoryImpl.swift */,
 				73CBA06B2528E0030096547D /* RealmObject */,
 				73CBA05E2528DFFA0096547D /* GgrMemoInfra.h */,
 				73CBA05F2528DFFA0096547D /* Info.plist */,
@@ -547,6 +553,7 @@
 			isa = PBXGroup;
 			children = (
 				73CBA07B2528E0930096547D /* MemoData.swift */,
+				73CBA0FB2528FBFE0096547D /* TagData.swift */,
 			);
 			path = RealmObject;
 			sourceTree = "<group>";
@@ -555,6 +562,7 @@
 			isa = PBXGroup;
 			children = (
 				73CBA0892528E1050096547D /* MemoRepository.swift */,
+				73CBA1032528FED80096547D /* TagRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -571,9 +579,18 @@
 		73CBA0E22528F0480096547D /* DI */ = {
 			isa = PBXGroup;
 			children = (
-				73CBA0E32528F0570096547D /* File.swift */,
+				73CBA0E32528F0570096547D /* RepositoryResolverImpl.swift */,
 			);
 			path = DI;
+			sourceTree = "<group>";
+		};
+		73CBA0F12528FB320096547D /* Tag */ = {
+			isa = PBXGroup;
+			children = (
+				73CBA0F72528FBE00096547D /* TagUseCase.swift */,
+				73CBA0F22528FB820096547D /* TagUseCaseProtocol.swift */,
+			);
+			path = Tag;
 			sourceTree = "<group>";
 		};
 		73D6A3612520F92D00544132 /* ViewModel */ = {
@@ -664,8 +681,6 @@
 			isa = PBXGroup;
 			children = (
 				73E2E81625036ABF006CDBC8 /* RealmObject */,
-				73D6A3512520EFC800544132 /* TagCoreLogic.swift */,
-				73D6A34B2520EF1300544132 /* TagBussinessLogic.swift */,
 				73E2E7E825036872006CDBC8 /* GgrMemoModel.h */,
 				73E2E7E925036872006CDBC8 /* Info.plist */,
 			);
@@ -796,7 +811,6 @@
 		73E2E81625036ABF006CDBC8 /* RealmObject */ = {
 			isa = PBXGroup;
 			children = (
-				73D6A3472520EAD000544132 /* TagData.swift */,
 			);
 			path = RealmObject;
 			sourceTree = "<group>";
@@ -1369,8 +1383,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				73CBA0742528E07F0096547D /* MemoUseCase.swift in Sources */,
+				73CBA1042528FED80096547D /* TagRepository.swift in Sources */,
+				73CBA0F32528FB820096547D /* TagUseCaseProtocol.swift in Sources */,
 				73CBA0A22528E7BF0096547D /* MemoUseCaseProtocol.swift in Sources */,
 				73CBA08A2528E1050096547D /* MemoRepository.swift in Sources */,
+				73CBA0F82528FBE00096547D /* TagUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1378,7 +1395,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73CBA1002528FC200096547D /* TagRepositoryImpl.swift in Sources */,
 				73CBA07C2528E0930096547D /* MemoData.swift in Sources */,
+				73CBA0FC2528FBFE0096547D /* TagData.swift in Sources */,
 				73CBA0812528E0B00096547D /* DiaryRepositoryImpl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1388,7 +1407,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				73E2E7AB2503649E006CDBC8 /* AppDelegate.swift in Sources */,
-				73CBA0E42528F0570096547D /* File.swift in Sources */,
+				73CBA0E42528F0570096547D /* RepositoryResolverImpl.swift in Sources */,
 				73E2E7AD2503649E006CDBC8 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1443,9 +1462,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73D6A34C2520EF1300544132 /* TagBussinessLogic.swift in Sources */,
-				73D6A3482520EAD000544132 /* TagData.swift in Sources */,
-				73D6A3522520EFC800544132 /* TagCoreLogic.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

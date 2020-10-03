@@ -8,6 +8,7 @@ public protocol MemoListView: AnyObject {
 
 final public class MemoListPresenter {
     private let memoUseCase: MemoUseCaseProtocol = RepositoryResolverHolder.shared.resolver.resolveMemoUseCase()
+    private let tagUseCase: TagUseCaseProtocol = RepositoryResolverHolder.shared.resolver.resolveTagUseCase()
     public weak var view: MemoListView?  // NOTE: これがdelegate
     
     private var settingList: [SettingViewCellType] {
@@ -19,7 +20,7 @@ final public class MemoListPresenter {
     }
     
     private var tagAndMemoList: [CollectionViewCellType] {
-        TagBussinessLogic.searchIncludeSpaceTagList().flatMap {
+        tagUseCase.searchIncludeSpaceTagList().flatMap {
             [
                 .tag($0),
                 .memoList(MemoListModel(memos: memoUseCase.searchtMemoWithMatchTag(tag: $0), color: $0.color))
@@ -53,7 +54,7 @@ public extension MemoListPresenter {
     
     func checkedTag(tag: Tag, indexPath: IndexPath) {
         guard let view = view else { return }
-        TagBussinessLogic.togleTagCheckedStatus(tag: tag)
+        tagUseCase.togleTagCheckedStatus(tag: tag)
         view.redraw(model: MemoListViewModel(displayList: displayList))
     }
     
@@ -65,14 +66,14 @@ public extension MemoListPresenter {
     
     func deleteCheckedTags() {
         guard let view = view else { return }
-        TagBussinessLogic.deleteCheckedTags()
+        tagUseCase.deleteCheckedTags()
         view.redraw(model: MemoListViewModel(displayList: displayList))
     }
     
     func deselectionAll() {
         guard let view = view else { return }
         memoUseCase.deselectionAllMemo()
-        TagBussinessLogic.deselectionAllTag()
+        tagUseCase.deselectionAllTag()
         view.redraw(model: MemoListViewModel(displayList: displayList))
     }
     

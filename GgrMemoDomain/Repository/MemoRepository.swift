@@ -1,4 +1,5 @@
 import  GgrMemoUtility
+
 public protocol MemoRepository {
     //MemoData -> Memo
     func searchMemo(memo: Memo) -> Memo?
