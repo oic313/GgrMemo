@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_GgrMemo_GgrMemoModelVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_GgrMemo_GgrMemoModelVersionString[];
+FOUNDATION_EXPORT double Pods_GgrMemo_GgrMemoInfraVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_GgrMemo_GgrMemoInfraVersionString[];
 

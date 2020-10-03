@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -22,11 +22,36 @@
 		73CB9FF6252387D70096547D /* ButtonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73CB9FF4252387D70096547D /* ButtonViewController.xib */; };
 		73CB9FF92523A4440096547D /* CustomPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CB9FF82523A4440096547D /* CustomPresentationController.swift */; };
 		73CB9FFD2523A4AF0096547D /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CB9FFC2523A4AF0096547D /* CGRect.swift */; };
+		73CBA0452528DE160096547D /* GgrMemoDomain.h in Headers */ = {isa = PBXBuildFile; fileRef = 73CBA0432528DE160096547D /* GgrMemoDomain.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		73CBA0482528DE160096547D /* GgrMemoDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73CBA0412528DE160096547D /* GgrMemoDomain.framework */; };
+		73CBA0492528DE160096547D /* GgrMemoDomain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 73CBA0412528DE160096547D /* GgrMemoDomain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		73CBA0602528DFFA0096547D /* GgrMemoInfra.h in Headers */ = {isa = PBXBuildFile; fileRef = 73CBA05E2528DFFA0096547D /* GgrMemoInfra.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		73CBA0632528DFFA0096547D /* GgrMemoInfra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73CBA05C2528DFFA0096547D /* GgrMemoInfra.framework */; };
+		73CBA0642528DFFA0096547D /* GgrMemoInfra.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 73CBA05C2528DFFA0096547D /* GgrMemoInfra.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		73CBA0742528E07F0096547D /* MemoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CBA0732528E07F0096547D /* MemoUseCase.swift */; };
+		73CBA07C2528E0930096547D /* MemoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CBA07B2528E0930096547D /* MemoData.swift */; };
+		73CBA0812528E0B00096547D /* MemoRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CBA0802528E0B00096547D /* MemoRepositoryImpl.swift */; };
+		73CBA08A2528E1050096547D /* MemoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CBA0892528E1050096547D /* MemoRepository.swift */; };
+		73CBA0A22528E7BF0096547D /* MemoUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CBA0A12528E7BF0096547D /* MemoUseCaseProtocol.swift */; };
+		73CBA0AC2528EB8F0096547D /* GgrMemoDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73CBA0412528DE160096547D /* GgrMemoDomain.framework */; };
+		73CBA0AD2528EB8F0096547D /* GgrMemoDomain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 73CBA0412528DE160096547D /* GgrMemoDomain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		73CBA0B32528EB9D0096547D /* GgrMemoUtility.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73E2E8342504F387006CDBC8 /* GgrMemoUtility.framework */; platformFilter = ios; };
+		73CBA0B42528EB9D0096547D /* GgrMemoUtility.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 73E2E8342504F387006CDBC8 /* GgrMemoUtility.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		73CBA0B92528EBA20096547D /* GgrMemoUtility.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73E2E8342504F387006CDBC8 /* GgrMemoUtility.framework */; platformFilter = ios; };
+		73CBA0BA2528EBA20096547D /* GgrMemoUtility.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 73E2E8342504F387006CDBC8 /* GgrMemoUtility.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		73CBA0D82528EEF50096547D /* RepositoryResolverHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CBA0D72528EEF50096547D /* RepositoryResolverHolder.swift */; };
+		73CBA0DD2528EF0D0096547D /* RepositoryResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CBA0DC2528EF0D0096547D /* RepositoryResolver.swift */; };
+		73CBA0E42528F0570096547D /* RepositoryResolverImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CBA0E32528F0570096547D /* RepositoryResolverImpl.swift */; };
+		73CBA0F32528FB820096547D /* TagUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CBA0F22528FB820096547D /* TagUseCaseProtocol.swift */; };
+		73CBA0F82528FBE00096547D /* TagUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CBA0F72528FBE00096547D /* TagUseCase.swift */; };
+		73CBA0FC2528FBFE0096547D /* TagData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CBA0FB2528FBFE0096547D /* TagData.swift */; };
+		73CBA1002528FC200096547D /* TagRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CBA0FF2528FC200096547D /* TagRepositoryImpl.swift */; };
+		73CBA1042528FED80096547D /* TagRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CBA1032528FED80096547D /* TagRepository.swift */; };
+		73CBA1262529153E0096547D /* GgrMemoDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73CBA0412528DE160096547D /* GgrMemoDomain.framework */; };
+		73CBA1272529153E0096547D /* GgrMemoDomain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 73CBA0412528DE160096547D /* GgrMemoDomain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		73CBA12B2529155A0096547D /* GgrMemoUtility.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73E2E8342504F387006CDBC8 /* GgrMemoUtility.framework */; };
+		73CBA12C2529155A0096547D /* GgrMemoUtility.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 73E2E8342504F387006CDBC8 /* GgrMemoUtility.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		73D6A32A251D04BC00544132 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73D6A329251D04BC00544132 /* Assets.xcassets */; };
-		73D6A3482520EAD000544132 /* TagData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D6A3472520EAD000544132 /* TagData.swift */; };
-		73D6A34C2520EF1300544132 /* TagBussinessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D6A34B2520EF1300544132 /* TagBussinessLogic.swift */; };
-		73D6A3522520EFC800544132 /* TagCoreLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D6A3512520EFC800544132 /* TagCoreLogic.swift */; };
-		73D6A3562520F4E100544132 /* MemoBussinessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D6A3552520F4E100544132 /* MemoBussinessLogic.swift */; };
 		73D6A3632520F93C00544132 /* AddMemoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D6A3622520F93C00544132 /* AddMemoViewModel.swift */; };
 		73D6A36C2520F97000544132 /* MemoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D6A36B2520F97000544132 /* MemoListViewModel.swift */; };
 		73D6A3742520FA1900544132 /* CollectionViewCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D6A3732520FA1900544132 /* CollectionViewCellType.swift */; };
@@ -41,11 +66,8 @@
 		73E2E7B72503649F006CDBC8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73E2E7B52503649F006CDBC8 /* LaunchScreen.storyboard */; };
 		73E2E7C725036843006CDBC8 /* GgrMemoView.h in Headers */ = {isa = PBXBuildFile; fileRef = 73E2E7C525036843006CDBC8 /* GgrMemoView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		73E2E7D925036860006CDBC8 /* GgrMemoPresenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 73E2E7D725036860006CDBC8 /* GgrMemoPresenter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		73E2E7EA25036872006CDBC8 /* GgrMemoModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 73E2E7E825036872006CDBC8 /* GgrMemoModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		73E2E7F32503692A006CDBC8 /* GgrMemoPresenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73E2E7D525036860006CDBC8 /* GgrMemoPresenter.framework */; };
 		73E2E7F42503692A006CDBC8 /* GgrMemoPresenter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 73E2E7D525036860006CDBC8 /* GgrMemoPresenter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		73E2E7F825036933006CDBC8 /* GgrMemoModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73E2E7E625036872006CDBC8 /* GgrMemoModel.framework */; };
-		73E2E7F925036933006CDBC8 /* GgrMemoModel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 73E2E7E625036872006CDBC8 /* GgrMemoModel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		73E2E80525036A2A006CDBC8 /* AddMemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E2E80325036A2A006CDBC8 /* AddMemoViewController.swift */; };
 		73E2E80625036A2A006CDBC8 /* AddMemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73E2E80425036A2A006CDBC8 /* AddMemoViewController.xib */; };
 		73E2E80925036A39006CDBC8 /* MemoListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73E2E80725036A39006CDBC8 /* MemoListViewController.xib */; };
@@ -53,8 +75,6 @@
 		73E2E80D25036A42006CDBC8 /* MemoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73E2E80B25036A42006CDBC8 /* MemoCollectionViewCell.xib */; };
 		73E2E80E25036A42006CDBC8 /* MemoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E2E80C25036A42006CDBC8 /* MemoCollectionViewCell.swift */; };
 		73E2E81025036A4C006CDBC8 /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E2E80F25036A4B006CDBC8 /* UICollectionView.swift */; };
-		73E2E81825036B1F006CDBC8 /* MemoCoreLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E2E81725036B1F006CDBC8 /* MemoCoreLogic.swift */; };
-		73E2E81A25036B2C006CDBC8 /* MemoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E2E81925036B2C006CDBC8 /* MemoData.swift */; };
 		73E2E81C25036B36006CDBC8 /* MemoListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E2E81B25036B36006CDBC8 /* MemoListPresenter.swift */; };
 		73E2E81E25036B3D006CDBC8 /* AddMemoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E2E81D25036B3D006CDBC8 /* AddMemoPresenter.swift */; };
 		73E2E8212503A63F006CDBC8 /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E2E81F2503A63F006CDBC8 /* TagCollectionViewCell.swift */; };
@@ -67,8 +87,6 @@
 		73E2E8402504F3D5006CDBC8 /* GgrMemoUtility.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73E2E8342504F387006CDBC8 /* GgrMemoUtility.framework */; };
 		73E2E8412504F3D5006CDBC8 /* GgrMemoUtility.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 73E2E8342504F387006CDBC8 /* GgrMemoUtility.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		73E2E8462504F42C006CDBC8 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E2E8452504F42C006CDBC8 /* String.swift */; };
-		73E2E8472504F5E2006CDBC8 /* GgrMemoUtility.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73E2E8342504F387006CDBC8 /* GgrMemoUtility.framework */; };
-		73E2E8482504F5E2006CDBC8 /* GgrMemoUtility.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 73E2E8342504F387006CDBC8 /* GgrMemoUtility.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		73E2E858250E100C006CDBC8 /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73E2E857250E100C006CDBC8 /* Image.xcassets */; };
 		73E2E85A250E1028006CDBC8 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73E2E859250E1028006CDBC8 /* Color.xcassets */; };
 		73E2E85D250E265A006CDBC8 /* ColorAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E2E85C250E265A006CDBC8 /* ColorAsset.swift */; };
@@ -84,15 +102,62 @@
 		73F9224825237957006FF358 /* GgrMemoView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73E2E7C325036843006CDBC8 /* GgrMemoView.framework */; };
 		73F9224925237957006FF358 /* GgrMemoView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 73E2E7C325036843006CDBC8 /* GgrMemoView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		73F9224A25237959006FF358 /* Pods_GgrMemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EC7A058E3D93AD4276DEC43 /* Pods_GgrMemo.framework */; };
-		73F9224C2523795B006FF358 /* GgrMemoModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73E2E7E625036872006CDBC8 /* GgrMemoModel.framework */; };
-		73F9224D2523795B006FF358 /* GgrMemoModel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 73E2E7E625036872006CDBC8 /* GgrMemoModel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		73F9225125237A66006FF358 /* ColorAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F9225025237A66006FF358 /* ColorAsset.swift */; };
 		73F9225525237A73006FF358 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F9225425237A73006FF358 /* Tag.swift */; };
 		73F9225C25237ACD006FF358 /* ClassNameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F9225B25237ACD006FF358 /* ClassNameProtocol.swift */; };
-		94BA65DAE036F149A6AA77CC /* Pods_GgrMemo_GgrMemoModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB5EE67ADF754136A492BE4 /* Pods_GgrMemo_GgrMemoModel.framework */; };
+		ED672ED6B3D7D99E23DC3DD4 /* Pods_GgrMemo_GgrMemoInfra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CC75317B9C158607B05872A /* Pods_GgrMemo_GgrMemoInfra.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		73CBA0462528DE160096547D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 73E2E79F2503649E006CDBC8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 73CBA0402528DE160096547D;
+			remoteInfo = GgrMemoDomain;
+		};
+		73CBA0612528DFFA0096547D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 73E2E79F2503649E006CDBC8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 73CBA05B2528DFFA0096547D;
+			remoteInfo = GgrMemoInfra;
+		};
+		73CBA0AE2528EB8F0096547D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 73E2E79F2503649E006CDBC8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 73CBA0402528DE160096547D;
+			remoteInfo = GgrMemoDomain;
+		};
+		73CBA0B52528EB9D0096547D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 73E2E79F2503649E006CDBC8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 73E2E8332504F387006CDBC8;
+			remoteInfo = GgrMemoUtility;
+		};
+		73CBA0BB2528EBA20096547D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 73E2E79F2503649E006CDBC8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 73E2E8332504F387006CDBC8;
+			remoteInfo = GgrMemoUtility;
+		};
+		73CBA1282529153E0096547D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 73E2E79F2503649E006CDBC8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 73CBA0402528DE160096547D;
+			remoteInfo = GgrMemoDomain;
+		};
+		73CBA12D2529155A0096547D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 73E2E79F2503649E006CDBC8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 73E2E8332504F387006CDBC8;
+			remoteInfo = GgrMemoUtility;
+		};
 		73E2E7C825036843006CDBC8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 73E2E79F2503649E006CDBC8 /* Project object */;
@@ -107,26 +172,12 @@
 			remoteGlobalIDString = 73E2E7D425036860006CDBC8;
 			remoteInfo = GgrMemoPresenter;
 		};
-		73E2E7EB25036872006CDBC8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 73E2E79F2503649E006CDBC8 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 73E2E7E525036872006CDBC8;
-			remoteInfo = GgrMemoModel;
-		};
 		73E2E7F52503692A006CDBC8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 73E2E79F2503649E006CDBC8 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 73E2E7D425036860006CDBC8;
 			remoteInfo = GgrMemoPresenter;
-		};
-		73E2E7FA25036933006CDBC8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 73E2E79F2503649E006CDBC8 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 73E2E7E525036872006CDBC8;
-			remoteInfo = GgrMemoModel;
 		};
 		73E2E8392504F387006CDBC8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -142,16 +193,32 @@
 			remoteGlobalIDString = 73E2E8332504F387006CDBC8;
 			remoteInfo = GgrMemoUtility;
 		};
-		73E2E8492504F5E2006CDBC8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 73E2E79F2503649E006CDBC8 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 73E2E8332504F387006CDBC8;
-			remoteInfo = GgrMemoUtility;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		73CBA0B02528EB8F0096547D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				73CBA0BA2528EBA20096547D /* GgrMemoUtility.framework in Embed Frameworks */,
+				73CBA0AD2528EB8F0096547D /* GgrMemoDomain.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73CBA0B72528EB9D0096547D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				73CBA0B42528EB9D0096547D /* GgrMemoUtility.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		73E2E7F72503692A006CDBC8 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -170,18 +237,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				73E2E7F925036933006CDBC8 /* GgrMemoModel.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		73E2E84B2504F5E2006CDBC8 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				73E2E8482504F5E2006CDBC8 /* GgrMemoUtility.framework in Embed Frameworks */,
+				73CBA12C2529155A0096547D /* GgrMemoUtility.framework in Embed Frameworks */,
+				73CBA1272529153E0096547D /* GgrMemoDomain.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -194,8 +251,9 @@
 			files = (
 				73F9224725237955006FF358 /* GgrMemoUtility.framework in Embed Frameworks */,
 				73F9224925237957006FF358 /* GgrMemoView.framework in Embed Frameworks */,
+				73CBA0642528DFFA0096547D /* GgrMemoInfra.framework in Embed Frameworks */,
 				73F9224425237954006FF358 /* GgrMemoPresenter.framework in Embed Frameworks */,
-				73F9224D2523795B006FF358 /* GgrMemoModel.framework in Embed Frameworks */,
+				73CBA0492528DE160096547D /* GgrMemoDomain.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -206,6 +264,7 @@
 		118DD9EF7A7B556BE8EC5201 /* Pods-GgrMemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GgrMemo.debug.xcconfig"; path = "Target Support Files/Pods-GgrMemo/Pods-GgrMemo.debug.xcconfig"; sourceTree = "<group>"; };
 		1198736F4311AF99D9DD1652 /* Pods-GgrMemo-GgrMemoModel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GgrMemo-GgrMemoModel.debug.xcconfig"; path = "Target Support Files/Pods-GgrMemo-GgrMemoModel/Pods-GgrMemo-GgrMemoModel.debug.xcconfig"; sourceTree = "<group>"; };
 		171C86FFD3BB0E3E89C030A4 /* Pods-GgrMemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GgrMemo.release.xcconfig"; path = "Target Support Files/Pods-GgrMemo/Pods-GgrMemo.release.xcconfig"; sourceTree = "<group>"; };
+		3CC75317B9C158607B05872A /* Pods_GgrMemo_GgrMemoInfra.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GgrMemo_GgrMemoInfra.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EB5EE67ADF754136A492BE4 /* Pods_GgrMemo_GgrMemoModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GgrMemo_GgrMemoModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E20A082DB76C59666FBC0CA /* Pods-GgrMemo-GgrMemoModel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GgrMemo-GgrMemoModel.release.xcconfig"; path = "Target Support Files/Pods-GgrMemo-GgrMemoModel/Pods-GgrMemo-GgrMemoModel.release.xcconfig"; sourceTree = "<group>"; };
 		4EC7A058E3D93AD4276DEC43 /* Pods_GgrMemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GgrMemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -224,11 +283,26 @@
 		73CB9FF4252387D70096547D /* ButtonViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonViewController.xib; sourceTree = "<group>"; };
 		73CB9FF82523A4440096547D /* CustomPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPresentationController.swift; sourceTree = "<group>"; };
 		73CB9FFC2523A4AF0096547D /* CGRect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGRect.swift; sourceTree = "<group>"; };
+		73CBA0412528DE160096547D /* GgrMemoDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GgrMemoDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		73CBA0432528DE160096547D /* GgrMemoDomain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GgrMemoDomain.h; sourceTree = "<group>"; };
+		73CBA0442528DE160096547D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		73CBA05C2528DFFA0096547D /* GgrMemoInfra.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GgrMemoInfra.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		73CBA05E2528DFFA0096547D /* GgrMemoInfra.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GgrMemoInfra.h; sourceTree = "<group>"; };
+		73CBA05F2528DFFA0096547D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		73CBA0732528E07F0096547D /* MemoUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoUseCase.swift; sourceTree = "<group>"; };
+		73CBA07B2528E0930096547D /* MemoData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoData.swift; sourceTree = "<group>"; };
+		73CBA0802528E0B00096547D /* MemoRepositoryImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoRepositoryImpl.swift; sourceTree = "<group>"; };
+		73CBA0892528E1050096547D /* MemoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoRepository.swift; sourceTree = "<group>"; };
+		73CBA0A12528E7BF0096547D /* MemoUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoUseCaseProtocol.swift; sourceTree = "<group>"; };
+		73CBA0D72528EEF50096547D /* RepositoryResolverHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryResolverHolder.swift; sourceTree = "<group>"; };
+		73CBA0DC2528EF0D0096547D /* RepositoryResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryResolver.swift; sourceTree = "<group>"; };
+		73CBA0E32528F0570096547D /* RepositoryResolverImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryResolverImpl.swift; sourceTree = "<group>"; };
+		73CBA0F22528FB820096547D /* TagUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagUseCaseProtocol.swift; sourceTree = "<group>"; };
+		73CBA0F72528FBE00096547D /* TagUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagUseCase.swift; sourceTree = "<group>"; };
+		73CBA0FB2528FBFE0096547D /* TagData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagData.swift; sourceTree = "<group>"; };
+		73CBA0FF2528FC200096547D /* TagRepositoryImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagRepositoryImpl.swift; sourceTree = "<group>"; };
+		73CBA1032528FED80096547D /* TagRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagRepository.swift; sourceTree = "<group>"; };
 		73D6A329251D04BC00544132 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		73D6A3472520EAD000544132 /* TagData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagData.swift; sourceTree = "<group>"; };
-		73D6A34B2520EF1300544132 /* TagBussinessLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagBussinessLogic.swift; sourceTree = "<group>"; };
-		73D6A3512520EFC800544132 /* TagCoreLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCoreLogic.swift; sourceTree = "<group>"; };
-		73D6A3552520F4E100544132 /* MemoBussinessLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoBussinessLogic.swift; sourceTree = "<group>"; };
 		73D6A3622520F93C00544132 /* AddMemoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemoViewModel.swift; sourceTree = "<group>"; };
 		73D6A36B2520F97000544132 /* MemoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListViewModel.swift; sourceTree = "<group>"; };
 		73D6A3732520FA1900544132 /* CollectionViewCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCellType.swift; sourceTree = "<group>"; };
@@ -249,9 +323,6 @@
 		73E2E7D525036860006CDBC8 /* GgrMemoPresenter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GgrMemoPresenter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73E2E7D725036860006CDBC8 /* GgrMemoPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GgrMemoPresenter.h; sourceTree = "<group>"; };
 		73E2E7D825036860006CDBC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		73E2E7E625036872006CDBC8 /* GgrMemoModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GgrMemoModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		73E2E7E825036872006CDBC8 /* GgrMemoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GgrMemoModel.h; sourceTree = "<group>"; };
-		73E2E7E925036872006CDBC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73E2E80325036A2A006CDBC8 /* AddMemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMemoViewController.swift; sourceTree = "<group>"; };
 		73E2E80425036A2A006CDBC8 /* AddMemoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddMemoViewController.xib; sourceTree = "<group>"; };
 		73E2E80725036A39006CDBC8 /* MemoListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MemoListViewController.xib; sourceTree = "<group>"; };
@@ -259,8 +330,6 @@
 		73E2E80B25036A42006CDBC8 /* MemoCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MemoCollectionViewCell.xib; sourceTree = "<group>"; };
 		73E2E80C25036A42006CDBC8 /* MemoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoCollectionViewCell.swift; sourceTree = "<group>"; };
 		73E2E80F25036A4B006CDBC8 /* UICollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
-		73E2E81725036B1F006CDBC8 /* MemoCoreLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoCoreLogic.swift; sourceTree = "<group>"; };
-		73E2E81925036B2C006CDBC8 /* MemoData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoData.swift; sourceTree = "<group>"; };
 		73E2E81B25036B36006CDBC8 /* MemoListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoListPresenter.swift; sourceTree = "<group>"; };
 		73E2E81D25036B3D006CDBC8 /* AddMemoPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMemoPresenter.swift; sourceTree = "<group>"; };
 		73E2E81F2503A63F006CDBC8 /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -284,18 +353,39 @@
 		73F9225025237A66006FF358 /* ColorAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorAsset.swift; sourceTree = "<group>"; };
 		73F9225425237A73006FF358 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		73F9225B25237ACD006FF358 /* ClassNameProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassNameProtocol.swift; sourceTree = "<group>"; };
+		76724EC30C02A8C492E3FC85 /* Pods-GgrMemo-GgrMemoInfra.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GgrMemo-GgrMemoInfra.release.xcconfig"; path = "Target Support Files/Pods-GgrMemo-GgrMemoInfra/Pods-GgrMemo-GgrMemoInfra.release.xcconfig"; sourceTree = "<group>"; };
+		D78AA544E1F56A4AB18A105D /* Pods-GgrMemo-GgrMemoInfra.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GgrMemo-GgrMemoInfra.debug.xcconfig"; path = "Target Support Files/Pods-GgrMemo-GgrMemoInfra/Pods-GgrMemo-GgrMemoInfra.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		73CBA03E2528DE160096547D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73CBA0B32528EB9D0096547D /* GgrMemoUtility.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73CBA0592528DFFA0096547D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73CBA0B92528EBA20096547D /* GgrMemoUtility.framework in Frameworks */,
+				ED672ED6B3D7D99E23DC3DD4 /* Pods_GgrMemo_GgrMemoInfra.framework in Frameworks */,
+				73CBA0AC2528EB8F0096547D /* GgrMemoDomain.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		73E2E7A42503649E006CDBC8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				73F9224A25237959006FF358 /* Pods_GgrMemo.framework in Frameworks */,
+				73CBA0482528DE160096547D /* GgrMemoDomain.framework in Frameworks */,
+				73CBA0632528DFFA0096547D /* GgrMemoInfra.framework in Frameworks */,
 				73F9224825237957006FF358 /* GgrMemoView.framework in Frameworks */,
 				73F9224625237955006FF358 /* GgrMemoUtility.framework in Frameworks */,
 				73F9224325237954006FF358 /* GgrMemoPresenter.framework in Frameworks */,
-				73F9224C2523795B006FF358 /* GgrMemoModel.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,16 +402,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73E2E7F825036933006CDBC8 /* GgrMemoModel.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		73E2E7E325036872006CDBC8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				73E2E8472504F5E2006CDBC8 /* GgrMemoUtility.framework in Frameworks */,
-				94BA65DAE036F149A6AA77CC /* Pods_GgrMemo_GgrMemoModel.framework in Frameworks */,
+				73CBA12B2529155A0096547D /* GgrMemoUtility.framework in Frameworks */,
+				73CBA1262529153E0096547D /* GgrMemoDomain.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,6 +463,91 @@
 			path = ButtonView;
 			sourceTree = "<group>";
 		};
+		73CBA0422528DE160096547D /* GgrMemoDomain */ = {
+			isa = PBXGroup;
+			children = (
+				73CBA0882528E0EF0096547D /* Repository */,
+				73CBA0512528DF1E0096547D /* UseCase */,
+				73CBA0432528DE160096547D /* GgrMemoDomain.h */,
+				73CBA0442528DE160096547D /* Info.plist */,
+			);
+			path = GgrMemoDomain;
+			sourceTree = "<group>";
+		};
+		73CBA0512528DF1E0096547D /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				73CBA0522528DF2D0096547D /* Memo */,
+				73CBA0F12528FB320096547D /* Tag */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		73CBA0522528DF2D0096547D /* Memo */ = {
+			isa = PBXGroup;
+			children = (
+				73CBA0732528E07F0096547D /* MemoUseCase.swift */,
+				73CBA0A12528E7BF0096547D /* MemoUseCaseProtocol.swift */,
+			);
+			path = Memo;
+			sourceTree = "<group>";
+		};
+		73CBA05D2528DFFA0096547D /* GgrMemoInfra */ = {
+			isa = PBXGroup;
+			children = (
+				73CBA0802528E0B00096547D /* MemoRepositoryImpl.swift */,
+				73CBA0FF2528FC200096547D /* TagRepositoryImpl.swift */,
+				73CBA06B2528E0030096547D /* RealmObject */,
+				73CBA05E2528DFFA0096547D /* GgrMemoInfra.h */,
+				73CBA05F2528DFFA0096547D /* Info.plist */,
+			);
+			path = GgrMemoInfra;
+			sourceTree = "<group>";
+		};
+		73CBA06B2528E0030096547D /* RealmObject */ = {
+			isa = PBXGroup;
+			children = (
+				73CBA07B2528E0930096547D /* MemoData.swift */,
+				73CBA0FB2528FBFE0096547D /* TagData.swift */,
+			);
+			path = RealmObject;
+			sourceTree = "<group>";
+		};
+		73CBA0882528E0EF0096547D /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				73CBA0892528E1050096547D /* MemoRepository.swift */,
+				73CBA1032528FED80096547D /* TagRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		73CBA0D62528EEE70096547D /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				73CBA0D72528EEF50096547D /* RepositoryResolverHolder.swift */,
+				73CBA0DC2528EF0D0096547D /* RepositoryResolver.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		73CBA0E22528F0480096547D /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				73CBA0E32528F0570096547D /* RepositoryResolverImpl.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		73CBA0F12528FB320096547D /* Tag */ = {
+			isa = PBXGroup;
+			children = (
+				73CBA0F72528FBE00096547D /* TagUseCase.swift */,
+				73CBA0F22528FB820096547D /* TagUseCaseProtocol.swift */,
+			);
+			path = Tag;
+			sourceTree = "<group>";
+		};
 		73D6A3612520F92D00544132 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -404,7 +571,8 @@
 				73E2E8352504F387006CDBC8 /* GgrMemoUtility */,
 				73E2E7C425036843006CDBC8 /* GgrMemoView */,
 				73E2E7D625036860006CDBC8 /* GgrMemoPresenter */,
-				73E2E7E725036872006CDBC8 /* GgrMemoModel */,
+				73CBA0422528DE160096547D /* GgrMemoDomain */,
+				73CBA05D2528DFFA0096547D /* GgrMemoInfra */,
 				73E2E7A82503649E006CDBC8 /* Products */,
 				73E2E7F22503692A006CDBC8 /* Frameworks */,
 				CAD2A66583F019C125F1492C /* Pods */,
@@ -417,8 +585,9 @@
 				73E2E7A72503649E006CDBC8 /* GgrMemo.app */,
 				73E2E7C325036843006CDBC8 /* GgrMemoView.framework */,
 				73E2E7D525036860006CDBC8 /* GgrMemoPresenter.framework */,
-				73E2E7E625036872006CDBC8 /* GgrMemoModel.framework */,
 				73E2E8342504F387006CDBC8 /* GgrMemoUtility.framework */,
+				73CBA0412528DE160096547D /* GgrMemoDomain.framework */,
+				73CBA05C2528DFFA0096547D /* GgrMemoInfra.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -426,6 +595,7 @@
 		73E2E7A92503649E006CDBC8 /* GgrMemo */ = {
 			isa = PBXGroup;
 			children = (
+				73CBA0E22528F0480096547D /* DI */,
 				73E2E7AA2503649E006CDBC8 /* AppDelegate.swift */,
 				73E2E7AC2503649E006CDBC8 /* SceneDelegate.swift */,
 				73D6A329251D04BC00544132 /* Assets.xcassets */,
@@ -451,6 +621,7 @@
 		73E2E7D625036860006CDBC8 /* GgrMemoPresenter */ = {
 			isa = PBXGroup;
 			children = (
+				73CBA0D62528EEE70096547D /* DI */,
 				73E2E86A250FAA41006CDBC8 /* Enum */,
 				73E2E81225036A91006CDBC8 /* App */,
 				73E2E7D725036860006CDBC8 /* GgrMemoPresenter.h */,
@@ -459,25 +630,12 @@
 			path = GgrMemoPresenter;
 			sourceTree = "<group>";
 		};
-		73E2E7E725036872006CDBC8 /* GgrMemoModel */ = {
-			isa = PBXGroup;
-			children = (
-				73E2E81625036ABF006CDBC8 /* RealmObject */,
-				73E2E81725036B1F006CDBC8 /* MemoCoreLogic.swift */,
-				73D6A3552520F4E100544132 /* MemoBussinessLogic.swift */,
-				73D6A3512520EFC800544132 /* TagCoreLogic.swift */,
-				73D6A34B2520EF1300544132 /* TagBussinessLogic.swift */,
-				73E2E7E825036872006CDBC8 /* GgrMemoModel.h */,
-				73E2E7E925036872006CDBC8 /* Info.plist */,
-			);
-			path = GgrMemoModel;
-			sourceTree = "<group>";
-		};
 		73E2E7F22503692A006CDBC8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				4EC7A058E3D93AD4276DEC43 /* Pods_GgrMemo.framework */,
 				3EB5EE67ADF754136A492BE4 /* Pods_GgrMemo_GgrMemoModel.framework */,
+				3CC75317B9C158607B05872A /* Pods_GgrMemo_GgrMemoInfra.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -593,15 +751,6 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
-		73E2E81625036ABF006CDBC8 /* RealmObject */ = {
-			isa = PBXGroup;
-			children = (
-				73E2E81925036B2C006CDBC8 /* MemoData.swift */,
-				73D6A3472520EAD000544132 /* TagData.swift */,
-			);
-			path = RealmObject;
-			sourceTree = "<group>";
-		};
 		73E2E8232503DED4006CDBC8 /* VC */ = {
 			isa = PBXGroup;
 			children = (
@@ -682,6 +831,8 @@
 				171C86FFD3BB0E3E89C030A4 /* Pods-GgrMemo.release.xcconfig */,
 				1198736F4311AF99D9DD1652 /* Pods-GgrMemo-GgrMemoModel.debug.xcconfig */,
 				4E20A082DB76C59666FBC0CA /* Pods-GgrMemo-GgrMemoModel.release.xcconfig */,
+				D78AA544E1F56A4AB18A105D /* Pods-GgrMemo-GgrMemoInfra.debug.xcconfig */,
+				76724EC30C02A8C492E3FC85 /* Pods-GgrMemo-GgrMemoInfra.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -689,6 +840,22 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		73CBA03C2528DE160096547D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73CBA0452528DE160096547D /* GgrMemoDomain.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73CBA0572528DFFA0096547D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73CBA0602528DFFA0096547D /* GgrMemoInfra.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		73E2E7BE25036843006CDBC8 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -705,14 +872,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		73E2E7E125036872006CDBC8 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				73E2E7EA25036872006CDBC8 /* GgrMemoModel.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		73E2E82F2504F387006CDBC8 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -724,6 +883,49 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		73CBA0402528DE160096547D /* GgrMemoDomain */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 73CBA04C2528DE160096547D /* Build configuration list for PBXNativeTarget "GgrMemoDomain" */;
+			buildPhases = (
+				73CBA03C2528DE160096547D /* Headers */,
+				73CBA03D2528DE160096547D /* Sources */,
+				73CBA03E2528DE160096547D /* Frameworks */,
+				73CBA03F2528DE160096547D /* Resources */,
+				73CBA0B72528EB9D0096547D /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				73CBA0B62528EB9D0096547D /* PBXTargetDependency */,
+			);
+			name = GgrMemoDomain;
+			productName = GgrMemoDomain;
+			productReference = 73CBA0412528DE160096547D /* GgrMemoDomain.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		73CBA05B2528DFFA0096547D /* GgrMemoInfra */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 73CBA0652528DFFA0096547D /* Build configuration list for PBXNativeTarget "GgrMemoInfra" */;
+			buildPhases = (
+				AE3EB48081E3ED7E8BC01766 /* [CP] Check Pods Manifest.lock */,
+				73CBA0572528DFFA0096547D /* Headers */,
+				73CBA0582528DFFA0096547D /* Sources */,
+				73CBA0592528DFFA0096547D /* Frameworks */,
+				73CBA05A2528DFFA0096547D /* Resources */,
+				73CBA0B02528EB8F0096547D /* Embed Frameworks */,
+				73CBA124252915030096547D /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				73CBA0AF2528EB8F0096547D /* PBXTargetDependency */,
+				73CBA0BC2528EBA20096547D /* PBXTargetDependency */,
+			);
+			name = GgrMemoInfra;
+			productName = GgrMemoInfra;
+			productReference = 73CBA05C2528DFFA0096547D /* GgrMemoInfra.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		73E2E7A62503649E006CDBC8 /* GgrMemo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 73E2E7BB2503649F006CDBC8 /* Build configuration list for PBXNativeTarget "GgrMemo" */;
@@ -740,8 +942,9 @@
 			dependencies = (
 				73E2E7C925036843006CDBC8 /* PBXTargetDependency */,
 				73E2E7DB25036860006CDBC8 /* PBXTargetDependency */,
-				73E2E7EC25036872006CDBC8 /* PBXTargetDependency */,
 				73E2E83A2504F387006CDBC8 /* PBXTargetDependency */,
+				73CBA0472528DE160096547D /* PBXTargetDependency */,
+				73CBA0622528DFFA0096547D /* PBXTargetDependency */,
 			);
 			name = GgrMemo;
 			productName = GgrMemo;
@@ -784,33 +987,12 @@
 			buildRules = (
 			);
 			dependencies = (
-				73E2E7FB25036933006CDBC8 /* PBXTargetDependency */,
+				73CBA1292529153E0096547D /* PBXTargetDependency */,
+				73CBA12E2529155A0096547D /* PBXTargetDependency */,
 			);
 			name = GgrMemoPresenter;
 			productName = GgrMemoPresenter;
 			productReference = 73E2E7D525036860006CDBC8 /* GgrMemoPresenter.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		73E2E7E525036872006CDBC8 /* GgrMemoModel */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 73E2E7EF25036872006CDBC8 /* Build configuration list for PBXNativeTarget "GgrMemoModel" */;
-			buildPhases = (
-				84CA6BB30883D4EC0F669804 /* [CP] Check Pods Manifest.lock */,
-				73E2E7E125036872006CDBC8 /* Headers */,
-				73E2E7E225036872006CDBC8 /* Sources */,
-				73E2E7E325036872006CDBC8 /* Frameworks */,
-				73E2E7E425036872006CDBC8 /* Resources */,
-				73E2E84B2504F5E2006CDBC8 /* Embed Frameworks */,
-				73F922662523806F006FF358 /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				73E2E84A2504F5E2006CDBC8 /* PBXTargetDependency */,
-			);
-			name = GgrMemoModel;
-			productName = GgrMemoModel;
-			productReference = 73E2E7E625036872006CDBC8 /* GgrMemoModel.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		73E2E8332504F387006CDBC8 /* GgrMemoUtility */ = {
@@ -841,6 +1023,14 @@
 				LastUpgradeCheck = 1170;
 				ORGANIZATIONNAME = NK;
 				TargetAttributes = {
+					73CBA0402528DE160096547D = {
+						CreatedOnToolsVersion = 12.0;
+						LastSwiftMigration = 1200;
+					};
+					73CBA05B2528DFFA0096547D = {
+						CreatedOnToolsVersion = 12.0;
+						LastSwiftMigration = 1200;
+					};
 					73E2E7A62503649E006CDBC8 = {
 						CreatedOnToolsVersion = 11.7;
 					};
@@ -849,10 +1039,6 @@
 						LastSwiftMigration = 1170;
 					};
 					73E2E7D425036860006CDBC8 = {
-						CreatedOnToolsVersion = 11.7;
-						LastSwiftMigration = 1170;
-					};
-					73E2E7E525036872006CDBC8 = {
 						CreatedOnToolsVersion = 11.7;
 						LastSwiftMigration = 1170;
 					};
@@ -879,12 +1065,27 @@
 				73E2E8332504F387006CDBC8 /* GgrMemoUtility */,
 				73E2E7C225036843006CDBC8 /* GgrMemoView */,
 				73E2E7D425036860006CDBC8 /* GgrMemoPresenter */,
-				73E2E7E525036872006CDBC8 /* GgrMemoModel */,
+				73CBA0402528DE160096547D /* GgrMemoDomain */,
+				73CBA05B2528DFFA0096547D /* GgrMemoInfra */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		73CBA03F2528DE160096547D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73CBA05A2528DFFA0096547D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		73E2E7A52503649E006CDBC8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -924,13 +1125,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		73E2E7E425036872006CDBC8 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		73E2E8322504F387006CDBC8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -957,6 +1151,23 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GgrMemo/Pods-GgrMemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		73CBA124252915030096547D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\ncd \"${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/\"\n if [[ -d \"Frameworks\" ]]; then \n     rm -fr Frameworks\n fi\n";
 		};
 		73F922642523804D006FF358 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -992,45 +1203,6 @@
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\ncd \"${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/\"\n if [[ -d \"Frameworks\" ]]; then \n     rm -fr Frameworks\n fi\n";
 		};
-		73F922662523806F006FF358 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\ncd \"${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/\"\n if [[ -d \"Frameworks\" ]]; then \n     rm -fr Frameworks\n fi\n";
-		};
-		84CA6BB30883D4EC0F669804 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-GgrMemo-GgrMemoModel-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		A3D9EE2BE3FA4AE0454216FB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1053,14 +1225,61 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		AE3EB48081E3ED7E8BC01766 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GgrMemo-GgrMemoInfra-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		73CBA03D2528DE160096547D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73CBA0742528E07F0096547D /* MemoUseCase.swift in Sources */,
+				73CBA1042528FED80096547D /* TagRepository.swift in Sources */,
+				73CBA0F32528FB820096547D /* TagUseCaseProtocol.swift in Sources */,
+				73CBA0A22528E7BF0096547D /* MemoUseCaseProtocol.swift in Sources */,
+				73CBA08A2528E1050096547D /* MemoRepository.swift in Sources */,
+				73CBA0F82528FBE00096547D /* TagUseCase.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73CBA0582528DFFA0096547D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73CBA1002528FC200096547D /* TagRepositoryImpl.swift in Sources */,
+				73CBA07C2528E0930096547D /* MemoData.swift in Sources */,
+				73CBA0FC2528FBFE0096547D /* TagData.swift in Sources */,
+				73CBA0812528E0B00096547D /* MemoRepositoryImpl.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		73E2E7A32503649E006CDBC8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				73E2E7AB2503649E006CDBC8 /* AppDelegate.swift in Sources */,
+				73CBA0E42528F0570096547D /* RepositoryResolverImpl.swift in Sources */,
 				73E2E7AD2503649E006CDBC8 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1102,23 +1321,12 @@
 				73E2E81E25036B3D006CDBC8 /* AddMemoPresenter.swift in Sources */,
 				73D6A37E2520FA6E00544132 /* EditAction.swift in Sources */,
 				73D6A3632520F93C00544132 /* AddMemoViewModel.swift in Sources */,
+				73CBA0D82528EEF50096547D /* RepositoryResolverHolder.swift in Sources */,
 				73D6A3742520FA1900544132 /* CollectionViewCellType.swift in Sources */,
 				73D6A3842520FA9100544132 /* TapAction.swift in Sources */,
 				73E2E81C25036B36006CDBC8 /* MemoListPresenter.swift in Sources */,
+				73CBA0DD2528EF0D0096547D /* RepositoryResolver.swift in Sources */,
 				73D6A37A2520FA5200544132 /* SettingViewCellType.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		73E2E7E225036872006CDBC8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				73D6A34C2520EF1300544132 /* TagBussinessLogic.swift in Sources */,
-				73E2E81825036B1F006CDBC8 /* MemoCoreLogic.swift in Sources */,
-				73D6A3562520F4E100544132 /* MemoBussinessLogic.swift in Sources */,
-				73D6A3482520EAD000544132 /* TagData.swift in Sources */,
-				73D6A3522520EFC800544132 /* TagCoreLogic.swift in Sources */,
-				73E2E81A25036B2C006CDBC8 /* MemoData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1137,6 +1345,43 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		73CBA0472528DE160096547D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 73CBA0402528DE160096547D /* GgrMemoDomain */;
+			targetProxy = 73CBA0462528DE160096547D /* PBXContainerItemProxy */;
+		};
+		73CBA0622528DFFA0096547D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 73CBA05B2528DFFA0096547D /* GgrMemoInfra */;
+			targetProxy = 73CBA0612528DFFA0096547D /* PBXContainerItemProxy */;
+		};
+		73CBA0AF2528EB8F0096547D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 73CBA0402528DE160096547D /* GgrMemoDomain */;
+			targetProxy = 73CBA0AE2528EB8F0096547D /* PBXContainerItemProxy */;
+		};
+		73CBA0B62528EB9D0096547D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			platformFilter = ios;
+			target = 73E2E8332504F387006CDBC8 /* GgrMemoUtility */;
+			targetProxy = 73CBA0B52528EB9D0096547D /* PBXContainerItemProxy */;
+		};
+		73CBA0BC2528EBA20096547D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			platformFilter = ios;
+			target = 73E2E8332504F387006CDBC8 /* GgrMemoUtility */;
+			targetProxy = 73CBA0BB2528EBA20096547D /* PBXContainerItemProxy */;
+		};
+		73CBA1292529153E0096547D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 73CBA0402528DE160096547D /* GgrMemoDomain */;
+			targetProxy = 73CBA1282529153E0096547D /* PBXContainerItemProxy */;
+		};
+		73CBA12E2529155A0096547D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 73E2E8332504F387006CDBC8 /* GgrMemoUtility */;
+			targetProxy = 73CBA12D2529155A0096547D /* PBXContainerItemProxy */;
+		};
 		73E2E7C925036843006CDBC8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 73E2E7C225036843006CDBC8 /* GgrMemoView */;
@@ -1147,20 +1392,10 @@
 			target = 73E2E7D425036860006CDBC8 /* GgrMemoPresenter */;
 			targetProxy = 73E2E7DA25036860006CDBC8 /* PBXContainerItemProxy */;
 		};
-		73E2E7EC25036872006CDBC8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 73E2E7E525036872006CDBC8 /* GgrMemoModel */;
-			targetProxy = 73E2E7EB25036872006CDBC8 /* PBXContainerItemProxy */;
-		};
 		73E2E7F62503692A006CDBC8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 73E2E7D425036860006CDBC8 /* GgrMemoPresenter */;
 			targetProxy = 73E2E7F52503692A006CDBC8 /* PBXContainerItemProxy */;
-		};
-		73E2E7FB25036933006CDBC8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 73E2E7E525036872006CDBC8 /* GgrMemoModel */;
-			targetProxy = 73E2E7FA25036933006CDBC8 /* PBXContainerItemProxy */;
 		};
 		73E2E83A2504F387006CDBC8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1171,11 +1406,6 @@
 			isa = PBXTargetDependency;
 			target = 73E2E8332504F387006CDBC8 /* GgrMemoUtility */;
 			targetProxy = 73E2E8422504F3D5006CDBC8 /* PBXContainerItemProxy */;
-		};
-		73E2E84A2504F5E2006CDBC8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 73E2E8332504F387006CDBC8 /* GgrMemoUtility */;
-			targetProxy = 73E2E8492504F5E2006CDBC8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1191,6 +1421,130 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		73CBA04A2528DE160096547D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 53H47X4HXT;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = GgrMemoDomain/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = GgrMemo.GgrMemoDomain;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		73CBA04B2528DE160096547D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 53H47X4HXT;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = GgrMemoDomain/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = GgrMemo.GgrMemoDomain;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		73CBA0662528DFFA0096547D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D78AA544E1F56A4AB18A105D /* Pods-GgrMemo-GgrMemoInfra.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 53H47X4HXT;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = GgrMemoInfra/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = GgrMemo.GgrMemoInfra;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		73CBA0672528DFFA0096547D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76724EC30C02A8C492E3FC85 /* Pods-GgrMemo-GgrMemoInfra.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 53H47X4HXT;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = GgrMemoInfra/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = GgrMemo.GgrMemoInfra;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		73E2E7B92503649F006CDBC8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1241,7 +1595,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1295,7 +1649,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1309,12 +1663,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 118DD9EF7A7B556BE8EC5201 /* Pods-GgrMemo.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 53H47X4HXT;
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = GgrMemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1331,12 +1687,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 171C86FFD3BB0E3E89C030A4 /* Pods-GgrMemo.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 53H47X4HXT;
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = GgrMemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1363,6 +1721,7 @@
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = GgrMemoView/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1394,6 +1753,7 @@
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = GgrMemoView/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1424,6 +1784,7 @@
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = GgrMemoPresenter/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1455,75 +1816,13 @@
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = GgrMemoPresenter/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = GgrMemo.GgrMemo.GgrMemoPresenter;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		73E2E7F025036872006CDBC8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1198736F4311AF99D9DD1652 /* Pods-GgrMemo-GgrMemoModel.debug.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 53H47X4HXT;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 5;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_BITCODE = YES;
-				INFOPLIST_FILE = GgrMemoModel/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = GgrMemo.GgrMemo.GgrMemoModel;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		73E2E7F125036872006CDBC8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4E20A082DB76C59666FBC0CA /* Pods-GgrMemo-GgrMemoModel.release.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 53H47X4HXT;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 5;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_BITCODE = YES;
-				INFOPLIST_FILE = GgrMemoModel/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = GgrMemo.GgrMemo.GgrMemoModel;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
@@ -1548,6 +1847,7 @@
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = GgrMemoUtility/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1579,6 +1879,7 @@
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = GgrMemoUtility/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1598,6 +1899,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		73CBA04C2528DE160096547D /* Build configuration list for PBXNativeTarget "GgrMemoDomain" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				73CBA04A2528DE160096547D /* Debug */,
+				73CBA04B2528DE160096547D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		73CBA0652528DFFA0096547D /* Build configuration list for PBXNativeTarget "GgrMemoInfra" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				73CBA0662528DFFA0096547D /* Debug */,
+				73CBA0672528DFFA0096547D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		73E2E7A22503649E006CDBC8 /* Build configuration list for PBXProject "GgrMemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1630,15 +1949,6 @@
 			buildConfigurations = (
 				73E2E7DF25036860006CDBC8 /* Debug */,
 				73E2E7E025036860006CDBC8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		73E2E7EF25036872006CDBC8 /* Build configuration list for PBXNativeTarget "GgrMemoModel" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				73E2E7F025036872006CDBC8 /* Debug */,
-				73E2E7F125036872006CDBC8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -3,6 +3,8 @@ public struct Tag {
     public let color: ColorAsset
     public var isChecked: Bool
 
+    public var togleCheckStatus: Bool { !isChecked }
+
     public var displayValue: String {
         if value == "" {
             return "メモ"
