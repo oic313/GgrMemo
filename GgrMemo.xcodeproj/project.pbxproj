@@ -30,7 +30,7 @@
 		73CBA0642528DFFA0096547D /* GgrMemoInfra.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 73CBA05C2528DFFA0096547D /* GgrMemoInfra.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		73CBA0742528E07F0096547D /* MemoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CBA0732528E07F0096547D /* MemoUseCase.swift */; };
 		73CBA07C2528E0930096547D /* MemoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CBA07B2528E0930096547D /* MemoData.swift */; };
-		73CBA0812528E0B00096547D /* DiaryRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CBA0802528E0B00096547D /* DiaryRepositoryImpl.swift */; };
+		73CBA0812528E0B00096547D /* MemoRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CBA0802528E0B00096547D /* MemoRepositoryImpl.swift */; };
 		73CBA08A2528E1050096547D /* MemoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CBA0892528E1050096547D /* MemoRepository.swift */; };
 		73CBA0A22528E7BF0096547D /* MemoUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CBA0A12528E7BF0096547D /* MemoUseCaseProtocol.swift */; };
 		73CBA0AC2528EB8F0096547D /* GgrMemoDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73CBA0412528DE160096547D /* GgrMemoDomain.framework */; };
@@ -323,7 +323,7 @@
 		73CBA05F2528DFFA0096547D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73CBA0732528E07F0096547D /* MemoUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoUseCase.swift; sourceTree = "<group>"; };
 		73CBA07B2528E0930096547D /* MemoData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoData.swift; sourceTree = "<group>"; };
-		73CBA0802528E0B00096547D /* DiaryRepositoryImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryRepositoryImpl.swift; sourceTree = "<group>"; };
+		73CBA0802528E0B00096547D /* MemoRepositoryImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoRepositoryImpl.swift; sourceTree = "<group>"; };
 		73CBA0892528E1050096547D /* MemoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoRepository.swift; sourceTree = "<group>"; };
 		73CBA0A12528E7BF0096547D /* MemoUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoUseCaseProtocol.swift; sourceTree = "<group>"; };
 		73CBA0D72528EEF50096547D /* RepositoryResolverHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryResolverHolder.swift; sourceTree = "<group>"; };
@@ -540,7 +540,7 @@
 		73CBA05D2528DFFA0096547D /* GgrMemoInfra */ = {
 			isa = PBXGroup;
 			children = (
-				73CBA0802528E0B00096547D /* DiaryRepositoryImpl.swift */,
+				73CBA0802528E0B00096547D /* MemoRepositoryImpl.swift */,
 				73CBA0FF2528FC200096547D /* TagRepositoryImpl.swift */,
 				73CBA06B2528E0030096547D /* RealmObject */,
 				73CBA05E2528DFFA0096547D /* GgrMemoInfra.h */,
@@ -1398,7 +1398,7 @@
 				73CBA1002528FC200096547D /* TagRepositoryImpl.swift in Sources */,
 				73CBA07C2528E0930096547D /* MemoData.swift in Sources */,
 				73CBA0FC2528FBFE0096547D /* TagData.swift in Sources */,
-				73CBA0812528E0B00096547D /* DiaryRepositoryImpl.swift in Sources */,
+				73CBA0812528E0B00096547D /* MemoRepositoryImpl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

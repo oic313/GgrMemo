@@ -19,7 +19,8 @@ extension RepositoryResolver {
 extension RepositoryResolver {
     func resolveTagUseCase() -> TagUseCase {
         let tagRepository = resolveTagRepository()
-        return TagUseCase(repository: tagRepository)
+        let memoRepository = resolveMemoRepository()
+        return TagUseCase(tagRepository: tagRepository, memoRepository: memoRepository)
     }
     
     func resolveTagRepository() -> TagRepository {

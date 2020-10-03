@@ -9,7 +9,8 @@ public protocol MemoUseCaseProtocol {
     
     func searchAllMemoData() -> [Memo]
     
-    func searchtMemoWithMatchTag(tag: Tag) -> [Memo]
+    func searchMemoWithMatchTag(tag: Tag) -> [Memo]
     
     func deselectionAllMemo()
+    
 }

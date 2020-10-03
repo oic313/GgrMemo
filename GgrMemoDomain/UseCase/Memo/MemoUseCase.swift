@@ -11,16 +11,16 @@ final public class MemoUseCase: MemoUseCaseProtocol {
     public func addMemo(memo: Memo, tag: Tag){
         guard !memo.value.isEmptyByTrimming else { return }
         
-        if let savedMemoData = repository.searchMemo(memo: memo) {
-            repository.updateMemo(memo: memo, tag: tag, savedMemoDate: savedMemoData)
+        if (repository.searchMemo(memo: memo)) != nil {
+            repository.updateMemo(memo: memo, tag: tag)
         } else {
             repository.addNewMemo(memo: memo, tag: tag)
         }
     }
     
     public func togleMemoCheckedStatus(memo: Memo) {
-        guard let savedMemoData = repository.searchMemo(memo: memo) else { return }
-        repository.updateMemoCheckedStatus(savedMemoDate: savedMemoData, bool: savedMemoData.togleCheckStatus)
+        guard let savedMemo = repository.searchMemo(memo: memo) else { return }
+        repository.updateMemoCheckedStatus(savedMemo: savedMemo, bool: savedMemo.togleCheckStatus)
     }
     
     public func deleteCheckedMemos() {
@@ -31,11 +31,13 @@ final public class MemoUseCase: MemoUseCaseProtocol {
         repository.searchAllMemoData()
     }
     
-    public func searchtMemoWithMatchTag(tag: Tag) -> [Memo] {
-        repository.searchtMemoWithMatchTag(tag: tag)
+    public func searchMemoWithMatchTag(tag: Tag) -> [Memo] {
+        repository.searchMemoWithMatchTag(tag: tag)
     }
     
     public func deselectionAllMemo() {
-        repository.searchCheckedMemos(isChecked: true).forEach {         repository.updateMemoCheckedStatus(savedMemoDate: repository.searchMemo(memo: $0)!, bool: false) }
+        repository.searchCheckedMemos(isChecked: true).forEach {
+            repository.updateMemoCheckedStatus(savedMemo: $0, bool: false)
+        }
     }
 }

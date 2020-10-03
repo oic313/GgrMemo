@@ -2,18 +2,20 @@ import GgrMemoUtility
 
 final public class TagUseCase: TagUseCaseProtocol {
     
-    private let repository: TagRepository
-
-    public init(repository: TagRepository) {
-      self.repository = repository
+    private let tagRepository: TagRepository
+    private let memoRepository: MemoRepository
+    
+    public init(tagRepository: TagRepository, memoRepository: MemoRepository) {
+        self.tagRepository = tagRepository
+        self.memoRepository = memoRepository
     }
     
     public func addTag(tag: Tag){
         guard !tag.value.isEmptyByTrimming else { return }
-        if let savedTagData = repository.searchTag(tag: tag) {
-            repository.updateTag(tag: tag, savedTagDate: savedTagData)
+        if (tagRepository.searchTag(tag: tag)) != nil {
+            tagRepository.updateTag(tag: tag)
         } else {
-            repository.addNewTag(tag: tag)
+            tagRepository.addNewTag(tag: tag)
         }
     }
     
@@ -24,23 +26,25 @@ final public class TagUseCase: TagUseCaseProtocol {
     }
     
     public func searchAllTag() -> [Tag] {
-        repository.searchAllTag()
+        tagRepository.searchAllTag()
     }
     
     public func deleteCheckedTags() {
-//        repository.searchCheckedTags(isChecked: true).forEach {
-//            MemoCoreLogic.searchtMemoWithMatchTag(tag: $0).forEach { MemoCoreLogic.deleteMemo(memo: $0) }
-//            repository.deleteTag(tag: $0)
-//        }
+        tagRepository.searchCheckedTags(isChecked: true).forEach {
+            memoRepository.searchMemoWithMatchTag(tag: $0).forEach { memoRepository.deleteMemo(memo: $0) }
+            tagRepository.deleteTag(tag: $0)
+        }
     }
-
+    
     public func togleTagCheckedStatus(tag: Tag) {
-        guard let savedTagData = repository.searchTag(tag: tag) else { return }
-        repository.updateTagCheckedStatus(savedTagDate: savedTagData, bool: savedTagData.togleCheckStatus)
+        guard let savedTag = tagRepository.searchTag(tag: tag) else { return }
+        tagRepository.updateTagCheckedStatus(savedTag: savedTag, bool: savedTag.togleCheckStatus)
     }
     
     public func deselectionAllTag() {
-        repository.searchCheckedTags(isChecked: true).forEach {         repository.updateTagCheckedStatus(savedTagDate: repository.searchTag(tag: $0)!, bool: false) }
+        tagRepository.searchCheckedTags(isChecked: true).forEach {
+            tagRepository.updateTagCheckedStatus(savedTag: $0, bool: false)
+        }
     }
     
 }

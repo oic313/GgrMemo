@@ -6,11 +6,8 @@ public class TagRepositoryImpl: TagRepository {
     
     public init(){}
     
-    //
     public func searchTag(tag: Tag) -> Tag? {
-        let realm = try! Realm()
-        let savedTagData = realm.objects(TagData.self).filter("tag == %@" , tag.value).sorted(byKeyPath: "updateDate", ascending: false).first
-        return savedTagData?.value
+        searchTagData(tag: tag)?.value
     }
     
     public func addNewTag(tag: Tag) {
@@ -27,18 +24,17 @@ public class TagRepositoryImpl: TagRepository {
         }
     }
     
-    //
-    public func updateTag(tag: Tag, savedTagDate: Tag) {
-//        let realm = try! Realm()
-//        print(Realm.Configuration.defaultConfiguration.fileURL!)
-//        // Realmに書き込み
-//        let savedTagData = savedTagDate
-//        try! realm.write {
-//            savedTagData.updateDate = NSDate()
-//            savedTagData.color = tag.color.rawValue
-//            savedTagData.isChecked = false
-//            realm.add(savedTagData)
-//        }
+    public func updateTag(tag: Tag) {
+        let realm = try! Realm()
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
+        // Realmに書き込み
+        guard let savedTagData = searchTagData(tag: tag) else { return }
+        try! realm.write {
+            savedTagData.updateDate = NSDate()
+            savedTagData.color = tag.color.rawValue
+            savedTagData.isChecked = false
+            realm.add(savedTagData)
+        }
     }
     
     public func searchCheckedTags(isChecked: Bool) -> [Tag] {
@@ -56,14 +52,14 @@ public class TagRepositoryImpl: TagRepository {
         }
     }
     
-    //
-    public func updateTagCheckedStatus(savedTagDate: Tag, bool: Bool) {
-//        // Realmを初期化
-//        let realm = try! Realm()
-//        // Realmに書き込み
-//        try! realm.write {
-//            savedTagDate.isChecked = bool
-//        }
+    public func updateTagCheckedStatus(savedTag: Tag, bool: Bool) {
+        // Realmを初期化
+        let realm = try! Realm()
+        guard let savedTagData = searchTagData(tag: savedTag) else { return }
+        // Realmに書き込み
+        try! realm.write {
+            savedTagData.isChecked = bool
+        }
     }
     
     public func searchAllTag() -> [Tag] {
@@ -73,4 +69,12 @@ public class TagRepositoryImpl: TagRepository {
         return tags
     }
     
+}
+
+private extension TagRepositoryImpl {
+    func searchTagData(tag: Tag) -> TagData? {
+        let realm = try! Realm()
+        let savedTagData = realm.objects(TagData.self).filter("tag == %@" , tag.value).sorted(byKeyPath: "updateDate", ascending: false).first
+        return savedTagData
+    }
 }

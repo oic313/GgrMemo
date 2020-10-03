@@ -23,7 +23,7 @@ final public class MemoListPresenter {
         tagUseCase.searchIncludeSpaceTagList().flatMap {
             [
                 .tag($0),
-                .memoList(MemoListModel(memos: memoUseCase.searchtMemoWithMatchTag(tag: $0), color: $0.color))
+                .memoList(MemoListModel(memos: memoUseCase.searchMemoWithMatchTag(tag: $0), color: $0.color))
             ]
         }
     }
