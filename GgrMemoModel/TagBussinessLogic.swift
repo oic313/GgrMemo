@@ -1,4 +1,5 @@
 import GgrMemoUtility
+import GgrMemoInfra
 
 public class TagBussinessLogic {}
 
@@ -23,10 +24,10 @@ public extension TagBussinessLogic {
     }
     
     static func deleteCheckedTags() {
-        TagCoreLogic.searchCheckedTags(isChecked: true).forEach {
-            MemoCoreLogic.searchtMemoWithMatchTag(tag: $0).forEach { MemoCoreLogic.deleteMemo(memo: $0) }
-            TagCoreLogic.deleteTag(tag: $0)
-        }
+//        TagCoreLogic.searchCheckedTags(isChecked: true).forEach {
+//            MemoCoreLogic.searchtMemoWithMatchTag(tag: $0).forEach { MemoCoreLogic.deleteMemo(memo: $0) }
+//            TagCoreLogic.deleteTag(tag: $0)
+//        }
     }
 
     static func togleTagCheckedStatus(tag: Tag) {

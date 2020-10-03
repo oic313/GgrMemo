@@ -8,4 +8,9 @@ target 'GgrMemo' do
   target 'GgrMemoModel' do
     pod 'RealmSwift'
   end
+
+  target 'GgrMemoInfra' do
+    pod 'RealmSwift'
+  end
+
 end

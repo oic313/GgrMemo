@@ -1,11 +1,13 @@
 import GgrMemoUtility
 import GgrMemoModel
+import GgrMemoDomain
 
 public protocol MemoListView: AnyObject {
     func redraw(model: MemoListViewModel)
 }
 
 final public class MemoListPresenter {
+    private let memoUseCase: MemoUseCaseProtocol = RepositoryResolverHolder.shared.resolver.resolveMemoUseCase()
     public weak var view: MemoListView?  // NOTE: これがdelegate
     
     private var settingList: [SettingViewCellType] {
@@ -20,7 +22,7 @@ final public class MemoListPresenter {
         TagBussinessLogic.searchIncludeSpaceTagList().flatMap {
             [
                 .tag($0),
-                .memoList(MemoListModel(memos: MemoBussinessLogic.searchtMemoWithMatchTag(tag: $0), color: $0.color))
+                .memoList(MemoListModel(memos: memoUseCase.searchtMemoWithMatchTag(tag: $0), color: $0.color))
             ]
         }
     }
@@ -45,7 +47,7 @@ public extension MemoListPresenter {
     
     func checkedMemo(memo: Memo) {
         guard let view = view else { return }
-        MemoBussinessLogic.togleMemoCheckedStatus(memo: memo)
+        memoUseCase.togleMemoCheckedStatus(memo: memo)
         view.redraw(model: MemoListViewModel(displayList: displayList))
     }
     
@@ -57,7 +59,7 @@ public extension MemoListPresenter {
     
     func deleteCheckedMemos() {
         guard let view = view else { return }
-        MemoBussinessLogic.deleteCheckedMemos()
+        memoUseCase.deleteCheckedMemos()
         view.redraw(model: MemoListViewModel(displayList: displayList))
     }
     
@@ -69,7 +71,7 @@ public extension MemoListPresenter {
     
     func deselectionAll() {
         guard let view = view else { return }
-        MemoBussinessLogic.deselectionAllMemo()
+        memoUseCase.deselectionAllMemo()
         TagBussinessLogic.deselectionAllTag()
         view.redraw(model: MemoListViewModel(displayList: displayList))
     }
