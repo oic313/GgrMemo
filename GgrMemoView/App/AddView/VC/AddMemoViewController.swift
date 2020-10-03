@@ -33,7 +33,7 @@ final class AddMemoViewController: UIViewController {
     private var memo: Memo? {
         guard let text = memoTextField.text else { return nil }
         guard !text.isEmptyByTrimming else { return nil }
-        return Memo(text, isChecked: true)
+        return Memo(text, isChecked: false)
     }
     
     private var tag: Tag {
@@ -82,7 +82,7 @@ final class AddMemoViewController: UIViewController {
     
     @IBAction func tapAddButton(_ sender: Any) {
         guard !(memoTextField.text?.isEmptyByTrimming ?? true) || !memoList.isEmpty else { return }
-        if let memo = memo { hasAppendMemoList(memo: memo) }
+        adaptMemo()
         presenter.addMemoData(addModel: AddMemoViewModel(tag: tag, memos: memoList))
     }
     
@@ -93,13 +93,7 @@ final class AddMemoViewController: UIViewController {
 
 extension AddMemoViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        // MEMO: 既存セルの更新か新規追加
-        guard let memo = memo else { return true }
-        if let indexPath = selectedMemoIndexPath {
-            updateMemoCell(memo: memo, indexPath: indexPath)
-        } else {
-            addMemoCell(memo: memo)
-        }
+        adaptMemo()
         return true
     }
 }
@@ -260,11 +254,6 @@ private extension AddMemoViewController {
         colorCollectionView.layer.masksToBounds = true
     }
     
-    func hasAppendMemoList(memo: Memo) {
-        memoTextField.text = nil
-        memoList.append(contentsOf: [memo])
-    }
-    
     func togleMemoCellSelectionState(collectionView: UICollectionView, indexPath: IndexPath) {
         guard let cell = collectionView.cellForItem(at: indexPath) as? AddMemoCollectionViewCell else { return }
         // MEMO: もう一回同じcellがタップされた
@@ -279,15 +268,33 @@ private extension AddMemoViewController {
          cell.applySelectionState()
     }
     
-    func updateMemoCell(memo: Memo, indexPath: IndexPath) {
-        memoList[indexPath.row] = memo
-        memoCollectionView.reloadItems(at: [indexPath])
-        // MEMO: togleCellSelectionState内でもう一回タップした時にmemoTextField.textを""にしてるから、先にmemoTextFieldを更新している
-        togleMemoCellSelectionState(collectionView: memoCollectionView, indexPath: indexPath)
+    func adaptMemo() {
+        // MEMO: 既存セルの更新か新規追加
+        if selectedMemoIndexPath != nil {
+            updateMemoCell()
+        } else {
+            guard let memo = memo else { return }
+            addMemoCell(memo: memo)
+        }
+    }
+    
+    func updateMemoCell() {
+        guard let text = memoTextField.text else { return }
+        guard let indexPath = selectedMemoIndexPath else { return }
+        if text.isEmptyByTrimming {
+            memoList.remove(at: indexPath.row)
+            memoCollectionView.deleteItems(at: [indexPath])
+            selectedMemoIndexPath = nil
+        } else {
+            memoList[indexPath.row] = Memo(text, isChecked: false, id: memoList[indexPath.row].id)
+            memoCollectionView.reloadItems(at: [indexPath])
+            togleMemoCellSelectionState(collectionView: memoCollectionView, indexPath: indexPath)
+        }
     }
     
     func addMemoCell(memo: Memo) {
-        hasAppendMemoList(memo: memo)
+        memoTextField.text = nil
+        memoList.append(contentsOf: [memo])
         memoCollectionView.insertItems(at: [IndexPath(row: memoList.count - 1, section: 0)])
         memoCollectionView.scrollToItem(at: IndexPath(row: memoList.count - 1, section: 0), at: .right, animated: true)
     }

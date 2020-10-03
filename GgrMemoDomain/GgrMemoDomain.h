@@ -1,11 +1,3 @@
-//
-//  GgrMemoDomain.h
-//  GgrMemoDomain
-//
-//  Created by 野口和宏 on 2020/10/04.
-//  Copyright © 2020 NK. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
 
 //! Project version number for GgrMemoDomain.
