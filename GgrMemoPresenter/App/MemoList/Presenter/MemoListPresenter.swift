@@ -1,5 +1,4 @@
 import GgrMemoUtility
-import GgrMemoModel
 import GgrMemoDomain
 
 public protocol MemoListView: AnyObject {
