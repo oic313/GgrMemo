@@ -70,6 +70,10 @@ final class AddMemoViewController: UIViewController {
         memoTextField.becomeFirstResponder()
     }
     
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        self.viewDidLoad()
+    }
+    
     @objc func keyboardWillShow(_ notification: Notification) {
         guard let userInfo = notification.userInfo else { return }
         guard let duration = userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double else { return }

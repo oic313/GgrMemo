@@ -48,7 +48,7 @@
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="E1H-79-uU6">
                     <rect key="frame" x="0.0" y="87" width="414" height="50"/>
-                    <color key="backgroundColor" name="MainColor"/>
+                    <color key="backgroundColor" name="main"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="hWg-RA-PvJ"/>
                     </constraints>
@@ -67,7 +67,7 @@
                             <subviews>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vUb-NQ-gou">
                                     <rect key="frame" x="50" y="61" width="314" height="34"/>
-                                    <color key="backgroundColor" name="MainColor"/>
+                                    <color key="backgroundColor" name="main"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="34" id="sQf-BA-zOh"/>
                                     </constraints>
@@ -77,14 +77,14 @@
                                 </textField>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nDM-wz-mRh">
                                     <rect key="frame" x="50" y="156" width="314" height="34"/>
-                                    <color key="backgroundColor" name="MainColor"/>
+                                    <color key="backgroundColor" name="main"/>
                                     <color key="textColor" name="text"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="7TW-LG-fgl">
                                     <rect key="frame" x="50" y="200" width="314" height="34"/>
-                                    <color key="backgroundColor" name="SubColor"/>
+                                    <color key="backgroundColor" name="sub"/>
                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Csk-oV-eEy">
                                         <size key="itemSize" width="128" height="128"/>
                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -121,7 +121,7 @@
                                     </collectionViewFlowLayout>
                                 </collectionView>
                             </subviews>
-                            <color key="backgroundColor" name="MainColor"/>
+                            <color key="backgroundColor" name="main"/>
                             <constraints>
                                 <constraint firstItem="nDM-wz-mRh" firstAttribute="trailing" secondItem="vUb-NQ-gou" secondAttribute="trailing" id="0wB-s4-nt3"/>
                                 <constraint firstItem="alP-z8-rb9" firstAttribute="top" secondItem="vUb-NQ-gou" secondAttribute="bottom" constant="20" id="33S-xx-lv9"/>
@@ -178,7 +178,7 @@
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" name="MainColor"/>
+            <color key="backgroundColor" name="main"/>
             <constraints>
                 <constraint firstItem="JsO-MP-7QX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="2D1-y0-6gx"/>
                 <constraint firstItem="deV-oc-bYX" firstAttribute="top" secondItem="OWe-0v-003" secondAttribute="bottom" constant="10" id="71U-0x-mZX"/>
@@ -204,12 +204,6 @@
     <resources>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="xmark.circle.fill" catalog="system" width="128" height="121"/>
-        <namedColor name="MainColor">
-            <color red="1" green="0.97254901960784312" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="SubColor">
-            <color red="1" green="0.90196078431372551" blue="0.58039215686274515" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="main">
             <color red="1" green="0.97254901960784312" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
