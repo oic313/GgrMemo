@@ -11,3 +11,6 @@ submit_for_review false
 
 # HTMLで内容確認を行う場合はfalse 確認を行わずアップロードを行う場合はtrue
 force true
+
+# スクリーンショットのアップロードをスキップする場合はtrue
+skip_screenshots true
