@@ -11,7 +11,6 @@ final class MemoData: Object {
     @objc dynamic var isChecked = false
 
     var value: Memo { Memo(memo, isChecked: isChecked, id: id) }
-    var togleCheckStatus: Bool { !isChecked }
     
     override static func primaryKey() -> String? { "id" }
 }

@@ -1,0 +1,8 @@
+app_identifier("GgrMemo.GgrMemo") # The bundle identifier of your app
+apple_id("nowalicht313kn@gmail.com") # Your Apple email address
+
+itc_team_id("120472538") # App Store Connect Team ID
+team_id("53H47X4HXT") # Developer Portal Team ID
+
+# For more information about the Appfile, see:
+#     https://docs.fastlane.tools/advanced/#appfile

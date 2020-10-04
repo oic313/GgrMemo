@@ -1,0 +1,13 @@
+# The Deliverfile allows you to store various App Store Connect metadata
+# For more information, check out the docs
+# https://docs.fastlane.tools/actions/deliver/
+
+#######
+#設定値#
+#######
+
+# そのまま申請する場合はtrue しない場合はfalse
+submit_for_review false
+
+# HTMLで内容確認を行う場合はfalse 確認を行わずアップロードを行う場合はtrue
+force true

@@ -5,7 +5,8 @@ target 'GgrMemo' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  target 'GgrMemoModel' do
+  target 'GgrMemoInfra' do
     pod 'RealmSwift'
   end
+
 end

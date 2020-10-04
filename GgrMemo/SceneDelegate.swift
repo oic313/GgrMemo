@@ -1,5 +1,6 @@
 import UIKit
 import GgrMemoView
+import GgrMemoPresenter
 
 final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -11,7 +12,7 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
-        
+        RepositoryResolverHolder.shared.resolver = RepositoryResolverImpl()
         // MARK: XibのVCから起動させる処理
         let window = UIWindow(windowScene: scene as! UIWindowScene)
         self.window = window

@@ -43,6 +43,11 @@ final public class MemoListViewController: UIViewController {
         presenter.showPage()
     }
     
+    public override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        self.loadView()
+        self.viewDidLoad()
+    }
+    
     @IBAction func tapAddButton(_ sender: Any) {
         let addMemoViewController = AddMemoViewController()
         present(addMemoViewController, animated: true, completion: nil)

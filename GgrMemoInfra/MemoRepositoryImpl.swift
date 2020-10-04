@@ -1,22 +1,23 @@
-import RealmSwift
 import GgrMemoUtility
+import GgrMemoDomain
+import RealmSwift
 
-class MemoCoreLogic {
-
-    static func searchMemo(memo: Memo) -> MemoData? {
-        let realm = try! Realm()
-        let savedMemoData = realm.objects(MemoData.self).filter("id == %@", memo.id ?? "").first
-        return savedMemoData
+public class MemoRepositoryImpl: MemoRepository {
+    
+    public init(){}
+    
+    public func searchMemo(memo: Memo) -> Memo? {
+        searchMemoData(memo: memo)?.value
     }
     
-    static func searchCheckedMemos(isChecked: Bool) -> [Memo] {
+    public func searchCheckedMemos(isChecked: Bool) -> [Memo] {
         let realm = try! Realm()
         let savedMemoData = realm.objects(MemoData.self).filter("isChecked == %@", isChecked)
         let memos = Array(savedMemoData.map{ $0.value })
         return memos
     }
     
-    static func deleteMemo(memo: Memo) {
+    public func deleteMemo(memo: Memo) {
         let realm = try! Realm()
         guard let savedMemoData = realm.objects(MemoData.self).filter("id == %@", memo.id ?? "").first else { return }
         try! realm.write {
@@ -24,10 +25,10 @@ class MemoCoreLogic {
         }
     }
     
-    static func addNewMemo(memo: Memo, tag: Tag) {
+    public func addNewMemo(memo: Memo, tag: Tag) {
         // Realmを初期化
         let realm = try! Realm()
-//        print(Realm.Configuration.defaultConfiguration.fileURL!)
+        //        print(Realm.Configuration.defaultConfiguration.fileURL!)
         let savedMemoData = MemoData()
         // Realmに書き込み
         try! realm.write {
@@ -38,11 +39,11 @@ class MemoCoreLogic {
         }
     }
     
-    static func updateMemo(memo: Memo, tag: Tag, savedMemoDate: MemoData) {
+    public func updateMemo(memo: Memo, tag: Tag) {
         // Realmを初期化
         let realm = try! Realm()
-//        print(Realm.Configuration.defaultConfiguration.fileURL!)
-        let savedMemoData = savedMemoDate
+        //        print(Realm.Configuration.defaultConfiguration.fileURL!)
+        guard let savedMemoData = searchMemoData(memo: memo) else { return }
         // Realmに書き込み
         try! realm.write {
             savedMemoData.updateDate = NSDate()
@@ -53,23 +54,24 @@ class MemoCoreLogic {
         }
     }
     
-    static func updateMemoCheckedStatus(savedMemoDate: MemoData, bool: Bool) {
+    public func updateMemoCheckedStatus(savedMemo: Memo, bool: Bool) {
         // Realmを初期化
         let realm = try! Realm()
+        guard let savedMemoData = searchMemoData(memo: savedMemo) else { return }
         // Realmに書き込み
         try! realm.write {
-            savedMemoDate.isChecked = bool
+            savedMemoData.isChecked = bool
         }
     }
     
-    static func searchAllMemoData() -> [Memo] {
+    public func searchAllMemoData() -> [Memo] {
         let realm = try! Realm()
         let savedMemoData = realm.objects(MemoData.self).sorted(byKeyPath: "updateDate", ascending: false)
         let memos = Array(savedMemoData.map{ $0.value })
         return memos
     }
     
-    static func searchtMemoWithMatchTag(tag: Tag) -> [Memo] {
+    public func searchMemoWithMatchTag(tag: Tag) -> [Memo] {
         let realm = try! Realm()
         let savedMemoData = realm.objects(MemoData.self).filter("tag == %@", tag.value).sorted(byKeyPath: "updateDate", ascending: false)
         let memos = Array(savedMemoData.map{ $0.value })
@@ -78,6 +80,10 @@ class MemoCoreLogic {
     
 }
 
-
-
-
+private extension MemoRepositoryImpl {
+    func searchMemoData(memo: Memo) -> MemoData? {
+        let realm = try! Realm()
+        let savedMemoData = realm.objects(MemoData.self).filter("id == %@", memo.id ?? "").first
+        return savedMemoData
+    }
+}
